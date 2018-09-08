@@ -57,7 +57,7 @@
     "style-loader": "^0.21.0",
     "webpack": "^4.7.0",
     "webpack-dev-middleware": "^3.2.0",
-    "webpack-dev-server": "^3.1.4",
+    "webpack-dev-server": "^3.1.8",
     "webpack-merge": "^4.1.2",
     "xml-loader": "^1.2.1"
   }

@@ -1,0 +1,1016 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+
+
+    <link rel="stylesheet" href="../assets/css/portal.white-sd.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+    <link href="../libs/micon/css/micon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+
+    <!-- <style>
+    .perfect-scroll {
+      position: relative;
+      height: calc(100vh - 4rem);
+    }
+  </style> -->
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <header class="navbar navbar-expand flex-column flex-md-row sw-navbar">
+
+<span>
+        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Swastika I/O">
+            <img src="../assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
+        </a>
+
+        <span class="navbar-brand">mixcore</span>
+</span>
+        <button type="button" id="sidebarCollapse" class="btn btn-link">
+            <span class="mi mi-List"></span>
+        </button>
+
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav sw-navbar-nav flex-row">
+                <li class="nav-item"><a class="nav-link" href="#">eCom</a></li>
+                <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
+                <li class="nav-item active"><span class="nav-link">Index</span></li>
+
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+
+            <li class="nav-item mr-2">
+                <a class="nav-link p-2" href="#" data-toggle="modal" data-target="#modal-files">
+                    <i class="mi mi-Media"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link p-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="mi mi-World"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sw-versions">
+                    <a class="dropdown-item active" href="/vi-vn/Portal/">Tiếng Việt</a>
+                    <a class="dropdown-item" href="/en-us/Portal/">English</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-item nav-link text-success" href="#" id="sw-versions" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="mi mi-ActionCenterMirrored"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sw-versions">
+                    <a class="dropdown-item active" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                </div>
+            </li>
+            <li class="nav-item mr-2">
+                <form method="post" id="logoutForm" class="" action="/vi-vn/user/account/logout">
+                    <a class="nav-link p-2 text-danger" href="#" onclick="document.getElementById('logoutForm').submit();"
+                        rel="noopener" aria-label="Logout">
+                        <i class="mi mi-PowerButton"></i>
+                    </a>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA"></form>
+            </li>
+        </ul>
+        <a href="/vi-vn/portal/member/profile" title="smilefounder">
+            <img class="rounded-circle sw-avatar" alt="200x200" src="https://avatars1.githubusercontent.com/u/3785721?s=40&amp;v=4"
+                data-holder-rendered="true" style="width: 36px; height: 36px;">
+        </a>
+    </header>
+
+    <!-- Page Content Holder -->
+    <div class="container-fluid wrapper">
+        <div class="row flex-xl-nowrap">
+            <!-- Sidebar Holder -->
+
+            <div id="sidebar" class="sw-sidebar">
+                <form method="post" class="sw-search d-flex align-items-center ng-pristine ng-valid" action="/admin/search">
+                    <input type="search" class="form-control" id="search-input" name="keyword" placeholder="Search for..."
+                        aria-label="Search for..." autocomplete="off">
+                    <button class="btn btn-light sw-search-docs-toggle d-md-none p-0 ml-3" type="submit" data-toggle="collapse"
+                        data-target="#sw-docs-nav" aria-controls="sw-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+                            <title>Menu</title>
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                                d="M4 7h22M4 15h22M4 23h22"></path>
+                        </svg>
+                    </button>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KOuD896zE9FpXyo3z4qUnITyqLJObd-8sWCHWBMAbgKpoBDjCxTTaK-fn9pkbeyWi6aiOu15-1O4FCi0iYHV22A7_C_8nl1bjT9gWUpGWTRcxiso71cJhqbhcBxhsub88XHpqp3OAmg51CAe1EdWDBDA9MJ-Ei82UcnxV3Pa_P6peDY3ZqTytpkWhQlw7N7hA"
+                        autocomplete="off"></form>
+                <div class="perfect-scroll">
+                    <ul class="sw-links" id="sw-docs-nav" data-children=".sw-toc-item">
+                        <!-- DASHBOARD -->
+                        <li class="sw-toc-item mt-1 mb-1">
+                            <a class="sw-toc-link" href="/vi-vn/portal/dashboard/index">
+                                <i class="mi mi-Tiles mi-lg mi-fw"></i>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- ARTICLE -->
+                        <li class="sw-toc-item mt-1 mb-1 mb-1" is-active-menu="" asp-controllers="Articles">
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/draft">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseArticleSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapseArticleSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseArticleSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapseArticleSubMenus">
+                                <i class="mi mi-CashDrawer mi-lg mi-fw"></i>
+                                <span class="text">Orders</span>
+                            </div>
+                            <ul id="collapseArticleSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Article</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Article</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/draft">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-ReadingList mi-fw"></i>
+                                        <span class="text">Article...</span>
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                                <a class="btn btn-light">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- PRODUCT -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-menu="" asp-controllers="Product">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/draft">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseProductSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapseProductSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseProductSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapseProductSubMenus">
+                                <i class="mi mi-Package mi-lg mi-fw"></i>
+                                <span class="text">Products</span>
+                            </div>
+                            <ul id="collapseProductSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/create">
+                                        <i class="mi mi-Add mi-fw"></i>
+                                        <span class="text">Create Product</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Product</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/draft">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Package mi-fw"></i>
+                                        <span class="text">Product...</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                                <a class="btn btn-light">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- PAGES -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-route="" asp-controller="Pages" asp-action="Create">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapsePageSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapsePageSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapsePageSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapsePageSubMenus">
+                                <i class="mi mi-Emoji mi-lg mi-fw"></i>
+                                <span class="text">Customers</span>
+                            </div>
+                            <ul id="collapsePageSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Article</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive" is-active-menu="" asp-controllers="Pages" asp-action="AddData,EditData,Contents,Edit"
+                                    asp-route-id="1">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Page mi-fw"></i>
+                                        <span class="text">Home</span>
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/pages/edit/1/home_2_1_1_1">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Favorite MODULES -->
+
+                        <!-- MODULE -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-menu="" asp-controllers="Module">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a is-active-route="" class="btn btn-light" href="/vi-vn/portal/module/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/module/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseModuleSubMenus"
+                                        aria-expanded="false" aria-controls="collapseModuleSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseModuleSubMenus"
+                                aria-expanded="false" aria-controls="collapseModuleSubMenus">
+                                <i class="mi mi-TwoBars mi-lg mi-fw"></i>
+                                <span class="text">Analytics</span>
+                            </div>
+                            <ul id="collapseModuleSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a is-active-route="" class="sw-toc-sub-link mb-1" href="/vi-vn/portal/module/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Module</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/module/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Module</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-target="#" class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Widgets -->
+
+                        <!-- THEME -->
+                        <li class="sw-toc-item mt-1 mb-1">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/theme/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/theme/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseAppearanceSubMenus"
+                                        aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseAppearanceSubMenus"
+                                aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
+                                <i class="mi mi-Marquee mi-lg mi-fw"></i>
+                                <span class="text">Promotions</span>
+                            </div>
+                            <ul id="collapseAppearanceSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/theme/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/theme/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Theme</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive" is-active-menu="" asp-controllers="Theme" asp-action="AddData,EditData,Contents,Edit"
+                                    asp-route-id="1">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Color mi-fw"></i>
+                                        <span class="text">Default</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/template/index/1/masters">
+                                                    <span class="fas fa-paint-brush"></span>
+                                                </a>
+                                                <a href="/vi-vn/portal/file?folder=Templates%2FDefault" class="btn btn-light">
+                                                    <span class="fas fa-file"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/theme/edit/1">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+<hr>
+
+                        <!-- SETTING -->
+                        <li class="sw-toc-item mt-1 mb-1">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseSettingSubMenus"
+                                        aria-expanded="false" aria-controls="collapseSettingSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseSettingSubMenus"
+                                aria-expanded="false" aria-controls="collapseSettingSubMenus">
+                                <i class="mi mi-Settings mi-lg mi-fw mi-spin"></i>
+                                <span class="text">Settings</span>
+                            </div>
+                            <ul id="collapseSettingSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Repair mi-fw"></i>
+                                        <span class="text">Configurations</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/setting/configurations/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/setting/configurations">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-TimeLanguage mi-fw"></i>
+                                        <span class="text">Languages</span>
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/language/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/language/list">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-World mi-fw"></i>
+                                        <span class="text">Cultures</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/culture/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/culture/index">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sw-toc-item mt-1 mb-1"></li>
+                        <li class="sw-toc-item mt-1 mb-1"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- /.Sidebar Holder -->
+            <main class="py-md-3 px-md-2 sw-content w-100" role="main">
+                <form enctype="multipart/form-data" onsubmit="return false" action="/vi-vn/portal/dashboard/index"
+                    method="post">
+                    <section class="content container-fluid">
+                        <!-- <div class="row">
+      <div class="col-sm-8">
+        <h1 class="sw-title" id="content">Dashboard</h1>
+      </div>
+      <div class="col-sm-4">
+        <nav aria-label="breadcrumb" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item pull-right">
+              <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item pull-right">
+              <a href="#">Library</a>
+            </li>
+            <li class="breadcrumb-item pull-right active" aria-current="page">Data</li>
+          </ol>
+        </nav>
+      </div>
+    </div> -->
+                        <!-- https://bootstrapious.com/tutorial/sidebar/index4.html -->
+                        <div class="row sortable ui-sortable">
+                            <div class="col-sm-3 ui-sortable-handle">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <i class="mi mi-ReadingList mi-5x mi-fw text-primary"></i> <span style="font-size: 4rem;">
+                                            23</span>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <i class="mi mi-Calendar"></i> 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ui-sortable-handle">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <i class="mi mi-Page mi-5x mi-fw text-primary"></i> <span style="font-size: 4rem;">
+                                            4</span>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <i class="mi mi-Calendar"></i> 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ui-sortable-handle">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <i class="mi mi-AdjustHologram mi-5x mi-fw text-primary mi-pulse"></i> <span
+                                            style="font-size: 4rem;"> 79</span>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <i class="mi mi-Calendar"></i> 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-3 ui-sortable-handle">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <i class="mi mi-Contact mi-5x mi-fw text-primary"></i> <span style="font-size: 4rem;">
+                                            2k</span>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <i class="mi mi-Calendar"></i> 2 days ago
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card ">
+                                    <div class="card-header ">
+                                        <h4 class="card-title">Global Sales by Top Locations</h4>
+                                        <p class="card-category">All products that were shipped</p>
+                                    </div>
+                                    <div class="card-body ">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/US.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>USA</td>
+                                                                <td class="text-right">
+                                                                    2.920
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    53.23%
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/DE.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Germany</td>
+                                                                <td class="text-right">
+                                                                    1.300
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    20.43%
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/AU.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Australia</td>
+                                                                <td class="text-right">
+                                                                    760
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    10.35%
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/GB.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>United Kingdom</td>
+                                                                <td class="text-right">
+                                                                    690
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    7.87%
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/RO.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Romania</td>
+                                                                <td class="text-right">
+                                                                    600
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    5.94%
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>
+                                                                    <div class="flag">
+                                                                        <img src="../assets/img/flags/BR.png" <="" div="">
+                                                                    </div>
+                                                                </td>
+                                                                <td>Brasil</td>
+                                                                <td class="text-right">
+                                                                    550
+                                                                </td>
+                                                                <td class="text-right">
+                                                                    4.34%
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6 ml-auto mr-auto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card draggable-header ui-draggable">
+                                    <div class="card-header ui-draggable-handle">
+                                        Featured
+                                        <button type="button" id="sidebarCollapse" class="btn btn-link move">
+                                            <span class="oi oi-move"></span>
+                                        </button>
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="needs-validation" novalidate="">
+                                            <div class="form-row">
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationTooltip01">First name</label>
+                                                    <input type="text" class="form-control" id="validationTooltip01"
+                                                        placeholder="First name" value="Mark" required="">
+                                                    <div class="valid-tooltip">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationTooltip02">Last name</label>
+                                                    <input type="text" class="form-control" id="validationTooltip02"
+                                                        placeholder="Last name" value="Otto" required="">
+                                                    <div class="valid-tooltip">
+                                                        Looks good!
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mb-3">
+                                                    <label for="validationTooltipUsername">Username</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="validationTooltipUsername"
+                                                            placeholder="Username" aria-describedby="validationTooltipUsernamePrepend"
+                                                            required="">
+                                                        <div class="invalid-tooltip">
+                                                            Please choose a unique and valid username.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="col-md-6 mb-3">
+                                                    <label for="validationTooltip03">City</label>
+                                                    <input type="text" class="form-control" id="validationTooltip03"
+                                                        placeholder="City" required="">
+                                                    <div class="invalid-tooltip">
+                                                        Please provide a valid city.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <label for="validationTooltip04">State</label>
+                                                    <input type="text" class="form-control" id="validationTooltip04"
+                                                        placeholder="State" required="">
+                                                    <div class="invalid-tooltip">
+                                                        Please provide a valid state.
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 mb-3">
+                                                    <label for="validationTooltip05">Zip</label>
+                                                    <input type="text" class="form-control" id="validationTooltip05"
+                                                        placeholder="Zip" required="">
+                                                    <div class="invalid-tooltip">
+                                                        Please provide a valid zip.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="btn btn-primary" type="submit">Submit form</button>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlInput1">Email address</label>
+                                                <input type="email" class="form-control" id="exampleFormControlInput1"
+                                                    placeholder="name@example.com">
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect1">Example select</label>
+                                                <select class="form-control" id="exampleFormControlSelect1">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect2">Example multiple select</label>
+                                                <select multiple class="form-control" id="exampleFormControlSelect2">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlTextarea1">Example textarea</label>
+                                                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Special title treatment</h4>
+                                        <p class="card-text">With supporting text below as a natural lead-in to
+                                            additional content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="card">
+                                    <div class="card-header">
+                                        Featured
+                                    </div>
+                                    <div class="card-body">
+                                        <h4 class="card-title">Special title treatment</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col">#</th>
+                                                    <th scope="col">First Name</th>
+                                                    <th scope="col">Last Name</th>
+                                                    <th scope="col">Username</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">1</th>
+                                                    <td>Mark</td>
+                                                    <td>Otto</td>
+                                                    <td>mdo</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">2</th>
+                                                    <td>Jacob</td>
+                                                    <td>Thornton</td>
+                                                    <td>fat</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">3</th>
+                                                    <td>Larry</td>
+                                                    <td>the Bird</td>
+                                                    <td>twitter</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </form>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
+
+                <!-- <footer class="footer">
+                    <div class="container">
+                        <nav>
+                            <p class="copyright text-center">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>2018
+                                <a href="http://www.swastika.io">Swastika I/O</a>, made with <span class="mi-stack mi-lg">
+                                    <i class="mi mi-HeartFill mi-stack-1x  text-danger"></i>
+                                    <i class="mi mi-Heart mi-stack-1x"></i>
+                                </span> for a better web
+                            </p>
+                        </nav>
+                    </div>
+                </footer> -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                      <div class="copyright float-right" id="date">©
+                        <script>
+                            document.write(new Date().getFullYear())
+                        </script>
+                        <a href="http://mixcore.net">mixcore</a>, made by human on earth
+                      </div>
+                    </div>
+                  </footer>
+            </main>
+        </div>
+    </div>
+
+    <style>
+        /* helper to ensure that razor (which is correctly detected by ACE) is also highlighted */
+        .ace_razor {
+            background-color: yellow;
+        }
+
+        /* make sure the highlighted text is also black, otherwise it a kind of gray */
+        .ace_punctuation.ace_short.ace_razor {
+            color: black;
+        }
+
+        .ace_punctuation.ace_block.ace_razor {
+            color: black;
+        }
+    </style>
+
+    <div class="modal modal-danger fade" id="modal-error">
+        <div class="modal-dialog modal-lg">
+            <form id="frm-data" action="/api/vi-vn/portal/module/ajaxsavemoduledata" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title">Edit</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
+            </form>
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal modal-default fade show" id="modal-files">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-md-11">
+                        <h2 class="modal-title">Upload file</h2>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="col-lg-4">
+
+                                <input type="file" id="file">
+                            </div>
+                        </div>
+                        <div class="col-lg-2" style="margin-bottom: 10px;">
+                            <a href="#" class="btn btn-success btn-block" onclick="SW.Common.loadFileStream('Images')">Submit
+                                file...</a>
+                        </div>
+                    </div>
+                    <table class="table table-condensed">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>
+                                    Folder
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    FullPath
+                                </th>
+                                <th>
+                                    Content
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- Core -->
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/popper/popper.min.js"></script>
+    <script src="../assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="../assets/vendor/headroom/headroom.min.js"></script>
+    <!-- Optional JS -->
+    <script src="../assets/vendor/onscreen/onscreen.min.js"></script>
+    <script src="../assets/vendor/nouislider/js/nouislider.min.js"></script>
+    <script src="../assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="../assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="..//assets/js/mix-fe-portal.js"></script>
+</body>
+
+</html>

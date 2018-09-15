@@ -1,4 +1,5 @@
 // Your variable overrides
+$main-bg: #fff;
 $body-bg: #f9fafb;
 //$body-color: rgb(230, 230, 230);
 $color:#72777a;
@@ -6,8 +7,9 @@ $link-color:#72777a;
 $link-hover-color:#313435;
 
 // form
-$input-focus-color:#fff;
+$input-focus-color:#fff; 
 $input-placeholder-color:rgb(199, 199, 199);
+$input-group-addon-bg:#fff; 
 
 $card-cap-bg:#fff;
 $card-bg:rgba(255, 255, 255, 0.5);
@@ -24,20 +26,19 @@ $theme-colors: (
     "danger": #ff4136
   );
 
+$dropdown-border-width: 0;
+
   
 // Core
 
 @import "bootstrap/functions";
-@import "custom/functions";
 
-@import "custom/variables";
 @import "bootstrap/variables";
 
 @import "bootstrap/mixins";
-@import "custom/mixins";
 
 // Bootstrap components
-
+ 
 @import "bootstrap/root";
 @import "bootstrap/reboot";
 @import "bootstrap/type";
@@ -90,10 +91,11 @@ $theme-colors: (
 @import "white_sd/micon";
 @import "white_sd/modal";
 @import "white_sd/images";
+@import "white_sd/dropdown"
 
 
 // Vendor
 
-@import "custom/vendor/bootstrap-datepicker.scss";
-@import "custom/vendor/headroom.scss";
-@import "custom/vendor/nouislider.scss";
+// @import "custom/vendor/bootstrap-datepicker.scss";
+// @import "custom/vendor/headroom.scss";
+// @import "custom/vendor/nouislider.scss";

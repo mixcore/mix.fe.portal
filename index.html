@@ -745,23 +745,60 @@
                     </button>
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    
-                        <div class="form-group">
-                            <label for="exampleInputEmail1">Email address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    <form class="needs-validation" novalidate="">
+                        <div class="form-row">
+                          <div class="col-md-4 mb-3">
+                            <label for="validationTooltip01">First name</label>
+                            <input type="text" class="form-control" id="validationTooltip01" placeholder="First name" value="Mark" required="">
+                            <div class="valid-tooltip">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationTooltip02">Last name</label>
+                            <input type="text" class="form-control" id="validationTooltip02" placeholder="Last name" value="Otto" required="">
+                            <div class="valid-tooltip">
+                              Looks good!
+                            </div>
+                          </div>
+                          <div class="col-md-4 mb-3">
+                            <label for="validationTooltipUsername">Username</label>
+                            <div class="input-group">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="validationTooltipUsernamePrepend">@</span>
+                              </div>
+                              <input type="text" class="form-control" id="validationTooltipUsername" placeholder="Username" aria-describedby="validationTooltipUsernamePrepend" required="">
+                              <div class="invalid-tooltip">
+                                Please choose a unique and valid username.
+                              </div>
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                            <label for="validationTooltip03">City</label>
+                            <input type="text" class="form-control" id="validationTooltip03" placeholder="City" required="">
+                            <div class="invalid-tooltip">
+                              Please provide a valid city.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationTooltip04">State</label>
+                            <input type="text" class="form-control" id="validationTooltip04" placeholder="State" required="">
+                            <div class="invalid-tooltip">
+                              Please provide a valid state.
+                            </div>
+                          </div>
+                          <div class="col-md-3 mb-3">
+                            <label for="validationTooltip05">Zip</label>
+                            <input type="text" class="form-control" id="validationTooltip05" placeholder="Zip" required="">
+                            <div class="invalid-tooltip">
+                              Please provide a valid zip.
+                            </div>
+                          </div>
                         </div>
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input"> Check me out
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                      </form>
                     
                 </div>
             </div>
@@ -774,34 +811,36 @@
                     Featured
                 </div>
                 <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon1"></span>
-                        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                    </div>
-                    <br>
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-                        <span class="input-group-addon" id="basic-addon2">example.com</span>
-                    </div>
-                    <br>
-                    <label for="basic-url">Your vanity URL</label>
-                    <div class="input-group">
-                        <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
-                        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-                    </div>
-                    <br>
-                    <div class="input-group">
-                        <span class="input-group-addon">$</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                        <span class="input-group-addon">.00</span>
-                    </div>
-                    <br>
-                    <div class="input-group">
-                        <span class="input-group-addon">$</span>
-                        <span class="input-group-addon">0.00</span>
-                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                    </div>
+                    <form>
+                        <div class="form-group">
+                          <label for="exampleFormControlInput1">Email address</label>
+                          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect1">Example select</label>
+                          <select class="form-control" id="exampleFormControlSelect1">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlSelect2">Example multiple select</label>
+                          <select multiple class="form-control" id="exampleFormControlSelect2">
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                          </select>
+                        </div>
+                        <div class="form-group">
+                          <label for="exampleFormControlTextarea1">Example textarea</label>
+                          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+                      </form>
                 </div>
             </div>
         </div>

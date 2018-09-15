@@ -19,14 +19,15 @@ $text-muted:rgb(5, 5, 5);
 $navbar-dark-color: $color;
 $navbar-dark-hover-color: #313435;
 $navbar-dark-disabled-color:#8a8a8a;
-$navbar-dark-active-color:#2196f3;
+$navbar-dark-active-color:#2196f3; 
 
 $theme-colors: (
     "primary": #2196f3,
     "danger": #ff4136
-  );
+  ); 
 
-$dropdown-border-width: 0;
+$dropdown-border-width: 1px;
+$dropdown-border-color: rgba(0, 0, 0, 0.01);
 
   
 // Core

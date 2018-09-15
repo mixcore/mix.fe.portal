@@ -2095,7 +2095,7 @@ input[type="button"].btn-block {
   list-style: none;
   background-color: #fff;
   background-clip: padding-box;
-  border: 0 solid rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.01);
   border-radius: 0.25rem; }
 
 .dropdown-menu-right {
@@ -6441,7 +6441,8 @@ a:hover {
     height: 1rem;
     vertical-align: text-top; }
   .sw-navbar .dropdown-menu {
-    font-size: .875rem; }
+    font-size: .875rem;
+    top: 51px; }
   .sw-navbar .dropdown-item.active {
     font-weight: 500;
     color: #212529;

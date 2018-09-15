@@ -32,20 +32,28 @@
     <!-- Page Header -->
     <header class="navbar navbar-expand flex-column flex-md-row sw-navbar">
 
-<span>
-        <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Swastika I/O">
-            <img src="../assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
-        </a>
+        <span>
+            <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Swastika I/O">
+                <img src="../assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
+            </a>
 
-        <span class="navbar-brand">mixcore</span>
-</span>
+            <span class="navbar-brand">mixcore</span>
+        </span>
         <button type="button" id="sidebarCollapse" class="btn btn-link">
             <span class="mi mi-List"></span>
         </button>
 
         <div class="navbar-nav-scroll">
             <ul class="navbar-nav sw-navbar-nav flex-row">
-                <li class="nav-item"><a class="nav-link" href="#">eCom</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">eCom</a>
+
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="sw-system">
+                        <a class="dropdown-item active" href="/vi-vn/Portal/">CMS</a>
+                        <a class="dropdown-item" href="/en-us/Portal/">eCom</a>
+                        <a class="dropdown-item" href="/en-us/Portal/">Forum</a>
+                    </div>
+                </li>
                 <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
                 <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
                 <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
@@ -432,7 +440,7 @@
                                 </li>
                             </ul>
                         </li>
-<hr>
+                        <hr>
 
                         <!-- SETTING -->
                         <li class="sw-toc-item mt-1 mb-1">
@@ -884,14 +892,14 @@
                 </footer> -->
                 <footer class="footer">
                     <div class="container-fluid">
-                      <div class="copyright float-right" id="date">©
-                        <script>
-                            document.write(new Date().getFullYear())
-                        </script>
-                        <a href="http://mixcore.net">mixcore</a>, made by human on earth
-                      </div>
+                        <div class="copyright float-right" id="date">©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://mixcore.net">mixcore</a>, made by human on earth
+                        </div>
                     </div>
-                  </footer>
+                </footer>
             </main>
         </div>
     </div>

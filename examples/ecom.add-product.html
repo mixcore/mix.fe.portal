@@ -550,11 +550,11 @@
                                                 ng-model="$ctrl.product.title" ng-blur="$ctrl.generateSEO()"
                                                 placeholder="Short Sleeve T-Shirt">
                                         </div>
-
+<!-- 
                                         <div class="form-group">
                                             <label>Excerpt</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                        </div>
+                                        </div> -->
                                         <div class="form-group">
                                             <label>Body content</label>
                                             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
@@ -588,6 +588,10 @@
                                 <div class="card ng-scope" ng-if="$ctrl.product!=null">
                                     <h6 class="card-header">
                                         Pricing
+
+                                        <button class="btn btn-link text-primary btn-sm float-right" type="button"
+                                            data-toggle="collapse" data-target="#advance-pricing-content" aria-controls="advance-pricing-content"
+                                            aria-expanded="false" aria-label="Toggle navigation">Advance pricing</button>
                                     </h6>
                                     <div class="card-body">
 
@@ -598,7 +602,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">$</span>
                                                     </div>
-                                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                                    <input type="text" class="form-control" placeholder="0.0">
 
                                                 </div>
                                             </div>
@@ -612,6 +616,45 @@
                                             <input type="checkbox" class="custom-control-input" id="customCheck1">
                                             <label class="custom-control-label" for="customCheck1">Charge taxes on this
                                                 product</label>
+                                        </div>
+                                        <div id="advance-pricing-content" class="collapse">
+                                            <hr>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label>Special price</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">$</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label>Special price from</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="mi mi-Calendar"></i></span>
+                                                        </div>
+                                                        <input type="datetime" class="form-control">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col">
+                                                        <label>to</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="mi mi-Calendar"></i></span>
+                                                            </div>
+                                                            <input type="datetime" class="form-control">
+    
+                                                        </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -698,37 +741,43 @@
                                 <div class="card ng-scope" ng-if="$ctrl.product!=null">
                                     <div class="card-header">
                                         <h6>Search engine listing preview
-                                                <button class="btn btn-link text-primary btn-sm float-right" type="button" data-toggle="collapse" data-target="#seo-tab-content" aria-controls="seo-tab-content" aria-expanded="false" aria-label="Toggle navigation">Edit website SEO</button>
+                                            <button class="btn btn-link text-primary btn-sm float-right" type="button"
+                                                data-toggle="collapse" data-target="#seo-tab-content" aria-controls="seo-tab-content"
+                                                aria-expanded="false" aria-label="Toggle navigation">Edit website SEO</button>
 
                                         </h6>
-                                        <p class="text-muted">Add a title and description to see how this product might appear in a search engine listing.</p>
+                                        <p class="text-muted">Add a title and description to see how this product might
+                                            appear in a search engine listing.</p>
                                     </div>
 
                                     <div id="seo-tab-content" class="card-body collapse">
 
-                                            <div class="form-group">
-                                                    <label>Page title</label>
-                                                    <small id="emailHelp" class="form-text text-muted float-right">0 of 70 characters used</small>
-                                                    <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
-                                                        ng-model="$ctrl.product.title" ng-blur="$ctrl.generateSEO()"
-                                                        placeholder="Short Sleeve T-Shirt">
+                                        <div class="form-group">
+                                            <label>Page title</label>
+                                            <small id="emailHelp" class="form-text text-muted float-right">0 of 70
+                                                characters used</small>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                ng-model="$ctrl.product.title" ng-blur="$ctrl.generateSEO()"
+                                                placeholder="Short Sleeve T-Shirt">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Meta description
+                                            </label>
+                                            <small id="emailHelp" class="form-text text-muted float-right">0 of 320
+                                                characters used</small>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL and handle</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">http://domain.../products/</span>
                                                 </div>
-        
-                                                <div class="form-group">
-                                                    <label>Meta description
-                                                        </label>
-                                                        <small id="emailHelp" class="form-text text-muted float-right">0 of 320 characters used</small>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label>URL and handle</label>
-                                                    <div class="input-group">
-                                                            <div class="input-group-prepend">
-                                                              <span class="input-group-text" id="basic-addon1">http://domain.../products/</span>
-                                                            </div>
-                                                            <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
-                                                          </div>
-                                                </div>
+                                                <input type="text" class="form-control" placeholder="Username"
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
 
                                     </div>
                                 </div>

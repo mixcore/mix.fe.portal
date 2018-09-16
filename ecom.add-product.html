@@ -1,0 +1,1134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Hello, world!</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
+
+
+    <link rel="stylesheet" href="./assets/css/portal.white-sd.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
+        crossorigin="anonymous">
+    <link href="./libs/micon/css/micon.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+
+    <!-- <style>
+    .perfect-scroll {
+      position: relative;
+      height: calc(100vh - 4rem);
+    }
+  </style> -->
+
+    <style>
+    </style>
+</head>
+
+<body>
+    <!-- Page Header -->
+    <header class="navbar navbar-expand flex-column flex-md-row sw-navbar">
+
+        <span>
+            <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Swastika I/O">
+                <img src="./assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
+            </a>
+
+            <span class="navbar-brand">mixcore</span>
+        </span>
+        <button type="button" id="sidebarCollapse" class="btn btn-link">
+            <span class="mi mi-List"></span>
+        </button>
+
+        <div class="navbar-nav-scroll">
+            <ul class="navbar-nav sw-navbar-nav flex-row">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">eCom</a>
+
+                    <div class="dropdown-menu dropdown-menu-left" aria-labelledby="sw-system">
+                        <a class="dropdown-item active" href="/vi-vn/Portal/">CMS</a>
+                        <a class="dropdown-item" href="/en-us/Portal/">eCom</a>
+                        <a class="dropdown-item" href="/en-us/Portal/">Forum</a>
+                    </div>
+                </li>
+                <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
+                <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                <span class="mi mi-ChevronRightSmall breadcrumb-item"></span>
+                <li class="nav-item active"><span class="nav-link">Index</span></li>
+
+            </ul>
+        </div>
+
+        <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+
+            <li class="nav-item mr-2">
+                <a class="nav-link p-2" href="#" data-toggle="modal" data-target="#modal-files">
+                    <i class="mi mi-Media"></i>
+                </a>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-link p-2" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="mi mi-World"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sw-versions">
+                    <a class="dropdown-item active" href="/vi-vn/Portal/">Tiếng Việt</a>
+                    <a class="dropdown-item" href="/en-us/Portal/">English</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown mr-2">
+                <a class="nav-item nav-link text-success" href="#" id="sw-versions" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    <i class="mi mi-ActionCenterMirrored"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="sw-versions">
+                    <a class="dropdown-item active" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                    <a class="dropdown-item" href="#">Lorem...</a>
+                </div>
+            </li>
+            <li class="nav-item mr-2">
+                <form method="post" id="logoutForm" class="" action="/vi-vn/user/account/logout">
+                    <a class="nav-link p-2 text-danger" href="#" onclick="document.getElementById('logoutForm').submit();"
+                        rel="noopener" aria-label="Logout">
+                        <i class="mi mi-PowerButton"></i>
+                    </a>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA"></form>
+            </li>
+        </ul>
+        <a href="/vi-vn/portal/member/profile" title="smilefounder">
+            <img class="rounded-circle sw-avatar" alt="200x200" src="https://avatars1.githubusercontent.com/u/3785721?s=40&amp;v=4"
+                data-holder-rendered="true" style="width: 36px; height: 36px;">
+        </a>
+    </header>
+
+    <!-- Page Content Holder -->
+    <div class="container-fluid wrapper">
+        <div class="row flex-xl-nowrap">
+            <!-- Sidebar Holder -->
+
+            <div id="sidebar" class="sw-sidebar">
+                <form method="post" class="sw-search d-flex align-items-center ng-pristine ng-valid" action="/admin/search">
+                    <input type="search" class="form-control" id="search-input" name="keyword" placeholder="Search for..."
+                        aria-label="Search for..." autocomplete="off">
+                    <button class="btn btn-light sw-search-docs-toggle d-md-none p-0 ml-3" type="submit" data-toggle="collapse"
+                        data-target="#sw-docs-nav" aria-controls="sw-docs-nav" aria-expanded="false" aria-label="Toggle docs navigation">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" width="30" height="30" focusable="false">
+                            <title>Menu</title>
+                            <path stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-miterlimit="10"
+                                d="M4 7h22M4 15h22M4 23h22"></path>
+                        </svg>
+                    </button>
+                    <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KOuD896zE9FpXyo3z4qUnITyqLJObd-8sWCHWBMAbgKpoBDjCxTTaK-fn9pkbeyWi6aiOu15-1O4FCi0iYHV22A7_C_8nl1bjT9gWUpGWTRcxiso71cJhqbhcBxhsub88XHpqp3OAmg51CAe1EdWDBDA9MJ-Ei82UcnxV3Pa_P6peDY3ZqTytpkWhQlw7N7hA"
+                        autocomplete="off"></form>
+                <div class="perfect-scroll">
+                    <ul class="sw-links" id="sw-docs-nav" data-children=".sw-toc-item">
+                        <!-- DASHBOARD -->
+                        <li class="sw-toc-item mt-1 mb-1">
+                            <a class="sw-toc-link" href="/vi-vn/portal/dashboard/index">
+                                <i class="mi mi-Tiles mi-lg mi-fw"></i>
+                                <span class="text">Dashboard</span>
+                            </a>
+                        </li>
+
+                        <!-- ARTICLE -->
+                        <li class="sw-toc-item mt-1 mb-1 mb-1" is-active-menu="" asp-controllers="Articles">
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/create">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/index">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/articles/draft">
+                                        <span class="mi mi-Preview"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseArticleSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapseArticleSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseArticleSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapseArticleSubMenus">
+                                <i class="mi mi-CashDrawer mi-lg mi-fw"></i>
+                                <span class="text">Orders</span>
+                            </div>
+                            <ul id="collapseArticleSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/create">
+                                        <i class="mi mi-List  mi-fw"></i>
+                                        <span class="text">All orders</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/index">
+                                        <i class="mi mi-Save mi-fw"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/articles/draft">
+                                        <i class="mi mi-Preview mi-fw"></i>
+                                        <span class="text">Abandoned checkouts</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <!-- PRODUCT -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-menu="" asp-controllers="Product">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/product/draft">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseProductSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapseProductSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseProductSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapseProductSubMenus">
+                                <i class="mi mi-Package mi-lg mi-fw"></i>
+                                <span class="text">Products</span>
+                            </div>
+                            <ul id="collapseProductSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">All products</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/create">
+                                        <i class="mi mi-ImportAll mi-fw"></i>
+                                        <span class="text">Transfers</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/draft">
+                                        <i class="mi mi-ShowAllFiles3Legacy mi-fw"></i>
+                                        <span class="text">Inventory</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/product/draft">
+                                        <i class="mi mi-Folder mi-fw"></i>
+                                        <span class="text">Collections</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </li>
+
+                        <!-- PAGES -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-route="" asp-controller="Pages" asp-action="Create">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/pages">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapsePageSubMenus"
+                                        role="button" aria-expanded="false" aria-controls="collapsePageSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapsePageSubMenus" role="button"
+                                aria-expanded="false" aria-controls="collapsePageSubMenus">
+                                <i class="mi mi-Emoji mi-lg mi-fw"></i>
+                                <span class="text">Customers</span>
+                            </div>
+                            <ul id="collapsePageSubMenus" class="collapse list-unstyled" role="tabpanel" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Page</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Article</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/pages">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive" is-active-menu="" asp-controllers="Pages" asp-action="AddData,EditData,Contents,Edit"
+                                    asp-route-id="1">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Page mi-fw"></i>
+                                        <span class="text">Home</span>
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/pages/edit/1/home_2_1_1_1">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Favorite MODULES -->
+
+                        <!-- MODULE -->
+                        <li class="sw-toc-item mt-1 mb-1" is-active-menu="" asp-controllers="Module">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a is-active-route="" class="btn btn-light" href="/vi-vn/portal/module/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/module/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a class="btn btn-light">
+                                        <span class="mi mi-Save"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseModuleSubMenus"
+                                        aria-expanded="false" aria-controls="collapseModuleSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseModuleSubMenus"
+                                aria-expanded="false" aria-controls="collapseModuleSubMenus">
+                                <i class="mi mi-TwoBars mi-lg mi-fw"></i>
+                                <span class="text">Analytics</span>
+                            </div>
+                            <ul id="collapseModuleSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a is-active-route="" class="sw-toc-sub-link mb-1" href="/vi-vn/portal/module/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Module</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/module/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Module</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a data-target="#" class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Save"></i>
+                                        <span class="text">Draft</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- Widgets -->
+
+                        <!-- THEME -->
+                        <li class="sw-toc-item mt-1 mb-1">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a class="btn btn-light" href="/vi-vn/portal/theme/create">
+                                        <span class="mi mi-Add"></span>
+                                    </a>
+                                    <a class="btn btn-light" href="/vi-vn/portal/theme/index">
+                                        <span class="mi mi-List"></span>
+                                    </a>
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseAppearanceSubMenus"
+                                        aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseAppearanceSubMenus"
+                                aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
+                                <i class="mi mi-Marquee mi-lg mi-fw"></i>
+                                <span class="text">Promotions</span>
+                            </div>
+                            <ul id="collapseAppearanceSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/theme/create">
+                                        <i class="mi mi-Add  mi-fw"></i>
+                                        <span class="text">Create Theme</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="sw-toc-sub-link mb-1" href="/vi-vn/portal/theme/index">
+                                        <i class="mi mi-List mi-fw"></i>
+                                        <span class="text">List Theme</span>
+                                    </a>
+                                </li>
+
+                                <li class="hide-on-sb-inactive" is-active-menu="" asp-controllers="Theme" asp-action="AddData,EditData,Contents,Edit"
+                                    asp-route-id="1">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Color mi-fw"></i>
+                                        <span class="text">Default</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/template/index/1/masters">
+                                                    <span class="fas fa-paint-brush"></span>
+                                                </a>
+                                                <a href="/vi-vn/portal/file?folder=Templates%2FDefault" class="btn btn-light">
+                                                    <span class="fas fa-file"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/theme/edit/1">
+                                                    <span class="fas fa-pencil-alt"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <hr>
+
+                        <!-- SETTING -->
+                        <li class="sw-toc-item mt-1 mb-1">
+
+                            <div class="inner">
+                                <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                    <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseSettingSubMenus"
+                                        aria-expanded="false" aria-controls="collapseSettingSubMenus">
+                                        <span class="fas fa-chevron-right"></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sw-toc-link" data-toggle="collapse" data-target="#collapseSettingSubMenus"
+                                aria-expanded="false" aria-controls="collapseSettingSubMenus">
+                                <i class="mi mi-Settings mi-lg mi-fw mi-spin"></i>
+                                <span class="text">Settings</span>
+                            </div>
+                            <ul id="collapseSettingSubMenus" class="collapse list-unstyled" data-parent="#sw-docs-nav">
+                                <li>
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-Repair mi-fw"></i>
+                                        <span class="text">Configurations</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/setting/configurations/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/setting/configurations">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-TimeLanguage mi-fw"></i>
+                                        <span class="text">Languages</span>
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/language/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/language/list">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sw-toc-sub-link mb-1">
+                                        <i class="mi mi-World mi-fw"></i>
+                                        <span class="text">Cultures</span>
+
+                                        <div class="inner">
+                                            <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+                                                <a class="btn btn-light" href="/vi-vn/portal/culture/create">
+                                                    <span class="mi mi-Add"></span>
+                                                </a>
+                                                <a class="btn btn-light" href="/vi-vn/portal/culture/index">
+                                                    <span class="mi mi-List"></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="sw-toc-item mt-1 mb-1"></li>
+                        <li class="sw-toc-item mt-1 mb-1"></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- /.Sidebar Holder -->
+            <main class="py-md-3 px-md-2 sw-content w-100" role="main">
+                <form enctype="multipart/form-data" onsubmit="return false" action="/vi-vn/portal/dashboard/index"
+                    method="post">
+                    <section class="content container-fluid">
+                        <!-- <div class="row">
+      <div class="col-sm-8">
+        <h1 class="sw-title" id="content">Dashboard</h1>
+      </div>
+      <div class="col-sm-4">
+        <nav aria-label="breadcrumb" role="navigation">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item pull-right">
+              <a href="#">Home</a>
+            </li>
+            <li class="breadcrumb-item pull-right">
+              <a href="#">Library</a>
+            </li>
+            <li class="breadcrumb-item pull-right active" aria-current="page">Data</li>
+          </ol>
+        </nav>
+      </div>
+    </div> -->
+                        <div class="row position-sticky" style="top: 3.5rem; z-index: 12;">
+                            <div class="col-12">
+                                <div class="card sw-nav-action mb-3">
+                                    <div class="nav card-body p-3 justify-content-end">
+                                        <div class="btn-group mr-2" role="group" aria-label="First group">
+                                            <button type="button" class="btn btn-secondary btn-sm px-5"><i class="mi mi-Cancel"></i>
+                                                Cancel</button>
+                                        </div>
+                                        <div class="btn-group" role="group" aria-label="First group">
+                                            <button type="button" class="btn btn-primary pl-5 pr-4"><i class="mi mi-Save"></i>
+                                                Save and continue</button>
+                                            <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <span class="sr-only">Toggle Dropdown</span>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Save and exit</a>
+                                                <a class="dropdown-item" href="#">Save and publish</a>
+                                                <!-- <div role="separator" class="dropdown-divider"></div>
+                                                <a class="dropdown-item" href="#">Separated link</a> -->
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <section class="col-lg-8">
+
+                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                    <h6 class="card-header">
+                                        Add product
+                                    </h6>
+                                    <div class="card-body">
+
+                                        <div class="form-group">
+                                            <label>Title</label>
+                                            <input type="text" class="form-control form-control-lg ng-pristine ng-untouched ng-valid ng-empty"
+                                                ng-model="$ctrl.product.title" ng-blur="$ctrl.generateSEO()"
+                                                placeholder="Short Sleeve T-Shirt">
+                                        </div>
+<!-- 
+                                        <div class="form-group">
+                                            <label>Excerpt</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div> -->
+                                        <div class="form-group">
+                                            <label>Body content</label>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card" ng-init="$ctrl.init()">
+                                    <h6 class="card-header ng-binding">
+                                        Images
+                                        <button class="btn btn-primary btn-sm float-right" type="button">Upload image</button>
+                                    </h6>
+                                    <div class="card-body row">
+                                        <div class="col-4">
+                                            <img data-src="holder.js/200x200" class="rounded w-100" alt="200x200" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                        </div>
+                                        <div class="col-8">
+                                            <img data-src="holder.js/200x200" class="rounded mx-auto mb-1 w-25" alt="200x200"
+                                                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                            <img data-src="holder.js/200x200" class="rounded mx-auto mb-1 w-25" alt="200x200"
+                                                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                            <img data-src="holder.js/200x200" class="rounded mx-auto mb-1 w-25" alt="200x200"
+                                                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                            <img data-src="holder.js/200x200" class="rounded mx-auto mb-1 w-25" alt="200x200"
+                                                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                            <img data-src="holder.js/200x200" class="rounded mx-auto mb-1 w-25" alt="200x200"
+                                                src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22200%22%20height%3D%22200%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20200%20200%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_165e1ad0cd6%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A10pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_165e1ad0cd6%22%3E%3Crect%20width%3D%22200%22%20height%3D%22200%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%2274.4296875%22%20y%3D%22104.5%22%3E200x200%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                    <h6 class="card-header">
+                                        Pricing
+
+                                        <button class="btn btn-link text-primary btn-sm float-right" type="button"
+                                            data-toggle="collapse" data-target="#advance-pricing-content" aria-controls="advance-pricing-content"
+                                            aria-expanded="false" aria-label="Toggle navigation">Advance pricing</button>
+                                    </h6>
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Price</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                        <span class="input-group-text">$</span>
+                                                    </div>
+                                                    <input type="text" class="form-control" placeholder="0.0">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group col">
+                                                <label>Price Unit</label>
+                                                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                    ng-model="$ctrl.product.priceUnit">
+                                            </div>
+                                        </div>
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                            <label class="custom-control-label" for="customCheck1">Charge taxes on this
+                                                product</label>
+                                        </div>
+                                        <div id="advance-pricing-content" class="collapse">
+                                            <hr>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label>Special price</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">$</span>
+                                                        </div>
+                                                        <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col">
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="form-group col">
+                                                    <label>Special price from</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text"><i class="mi mi-Calendar"></i></span>
+                                                        </div>
+                                                        <input type="datetime" class="form-control">
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col">
+                                                        <label>to</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text"><i class="mi mi-Calendar"></i></span>
+                                                            </div>
+                                                            <input type="datetime" class="form-control">
+    
+                                                        </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                    <h6 class="card-header">
+                                        Inventory
+                                    </h6>
+                                    <div class="card-body">
+
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>SKU (Stock Keeping Unit)</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group col">
+                                                <label>Barcode (ISBN, UPC, GTIN, etc.)</label>
+                                                <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                    ng-model="$ctrl.product.priceUnit">
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Inventory policy
+                                                </label>
+                                                <div class="input-group mb-3">
+                                                    <select class="custom-select" id="inputGroupSelect01">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">Don't track inventory</option>
+                                                        <option value="2">Tracks this product's inventory</option>
+                                                    </select>
+
+                                                </div>
+                                            </div>
+                                            <div class="form-group col">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                    <h6 class="card-header">
+                                        Shipping
+                                    </h6>
+                                    <div class="card-body">
+
+                                        <div class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input" id="isPhysic">
+                                            <label class="custom-control-label" for="isPhysic">This is a physical
+                                                product</label>
+                                        </div>
+                                        <hr>
+
+                                        <div class="row">
+                                            <div class="form-group col">
+                                                <label>Weight</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)"
+                                                        placeholder="0.0">
+                                                    <select class="custom-select" id="inputGroupSelect01">
+                                                        <option value="1">lb</option>
+                                                        <option value="2">oz</option>
+                                                        <option selected>kg</option>
+                                                        <option value="3">g</option>
+                                                    </select>
+                                                </div>
+
+                                                <small id="emailHelp" class="form-text text-muted">Used to calculate
+                                                    shipping rates at checkout.</small>
+                                            </div>
+                                            <div class="form-group col">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                    <div class="card-header">
+                                        <h6>Search engine listing preview
+                                            <button class="btn btn-link text-primary btn-sm float-right" type="button"
+                                                data-toggle="collapse" data-target="#seo-tab-content" aria-controls="seo-tab-content"
+                                                aria-expanded="false" aria-label="Toggle navigation">Edit website SEO</button>
+
+                                        </h6>
+                                        <p class="text-muted">Add a title and description to see how this product might
+                                            appear in a search engine listing.</p>
+                                    </div>
+
+                                    <div id="seo-tab-content" class="card-body collapse">
+
+                                        <div class="form-group">
+                                            <label>Page title</label>
+                                            <small id="emailHelp" class="form-text text-muted float-right">0 of 70
+                                                characters used</small>
+                                            <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                ng-model="$ctrl.product.title" ng-blur="$ctrl.generateSEO()"
+                                                placeholder="Short Sleeve T-Shirt">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>Meta description
+                                            </label>
+                                            <small id="emailHelp" class="form-text text-muted float-right">0 of 320
+                                                characters used</small>
+                                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>URL and handle</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="basic-addon1">http://domain.../products/</span>
+                                                </div>
+                                                <input type="text" class="form-control" placeholder="Username"
+                                                    aria-label="Username" aria-describedby="basic-addon1">
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="col-lg-4">
+                                <div class="card">
+                                    <h6 class="card-header">
+                                        Info
+                                    </h6>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <div class="btn-group btn-group-sm btn-group-toggle d-flex w-100">
+                                                <!-- ngRepeat: stt in $ctrl.swStatus track by $index --><label
+                                                    ng-repeat="stt in $ctrl.swStatus track by $index" ng-switch="stt"
+                                                    ng-class="{active: $index == $ctrl.status}" class="btn btn-outline-primary btn-block mt-0 ng-scope">
+                                                    <input ng-model="$ctrl.status" type="radio" value="0" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        id="pageType_0" name="202">
+                                                    <!-- ngSwitchWhen: Deleted --><i ng-switch-when="Deleted" class="mi mi-Delete mi-lg mi-fw ng-scope"
+                                                        title="Deleted"></i><!-- end ngSwitchWhen: -->
+                                                    <!-- ngSwitchWhen: Preview -->
+                                                    <!-- ngSwitchWhen: Published -->
+                                                    <!-- ngSwitchWhen: Draft -->
+                                                    <!-- ngSwitchWhen: Schedule -->
+                                                </label><!-- end ngRepeat: stt in $ctrl.swStatus track by $index --><label
+                                                    ng-repeat="stt in $ctrl.swStatus track by $index" ng-switch="stt"
+                                                    ng-class="{active: $index == $ctrl.status}" class="btn btn-outline-primary btn-block mt-0 ng-scope">
+                                                    <input ng-model="$ctrl.status" type="radio" value="1" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        id="pageType_1" name="204">
+                                                    <!-- ngSwitchWhen: Deleted -->
+                                                    <!-- ngSwitchWhen: Preview --><i ng-switch-when="Preview" class="mi mi-Preview mi-lg mi-fw ng-scope"
+                                                        title="Preview"></i><!-- end ngSwitchWhen: -->
+                                                    <!-- ngSwitchWhen: Published -->
+                                                    <!-- ngSwitchWhen: Draft -->
+                                                    <!-- ngSwitchWhen: Schedule -->
+                                                </label><!-- end ngRepeat: stt in $ctrl.swStatus track by $index --><label
+                                                    ng-repeat="stt in $ctrl.swStatus track by $index" ng-switch="stt"
+                                                    ng-class="{active: $index == $ctrl.status}" class="btn btn-outline-primary btn-block mt-0 ng-scope active">
+                                                    <input ng-model="$ctrl.status" type="radio" value="2" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        id="pageType_2" name="206">
+                                                    <!-- ngSwitchWhen: Deleted -->
+                                                    <!-- ngSwitchWhen: Preview -->
+                                                    <!-- ngSwitchWhen: Published --><i ng-switch-when="Published" class="mi mi-Page mi-lg mi-fw ng-scope"
+                                                        title="Published"></i><!-- end ngSwitchWhen: -->
+                                                    <!-- ngSwitchWhen: Draft -->
+                                                    <!-- ngSwitchWhen: Schedule -->
+                                                </label><!-- end ngRepeat: stt in $ctrl.swStatus track by $index --><label
+                                                    ng-repeat="stt in $ctrl.swStatus track by $index" ng-switch="stt"
+                                                    ng-class="{active: $index == $ctrl.status}" class="btn btn-outline-primary btn-block mt-0 ng-scope">
+                                                    <input ng-model="$ctrl.status" type="radio" value="3" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        id="pageType_3" name="208">
+                                                    <!-- ngSwitchWhen: Deleted -->
+                                                    <!-- ngSwitchWhen: Preview -->
+                                                    <!-- ngSwitchWhen: Published -->
+                                                    <!-- ngSwitchWhen: Draft --><i ng-switch-when="Draft" class="fas fa-pencil-alt mi-lg mi-flip-horizontal ng-scope"
+                                                        title="Draft"></i><!-- end ngSwitchWhen: -->
+                                                    <!-- ngSwitchWhen: Schedule -->
+                                                </label><!-- end ngRepeat: stt in $ctrl.swStatus track by $index --><label
+                                                    ng-repeat="stt in $ctrl.swStatus track by $index" ng-switch="stt"
+                                                    ng-class="{active: $index == $ctrl.status}" class="btn btn-outline-primary btn-block mt-0 ng-scope">
+                                                    <input ng-model="$ctrl.status" type="radio" value="4" class="custom-control-input ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                        id="pageType_4" name="210">
+                                                    <!-- ngSwitchWhen: Deleted -->
+                                                    <!-- ngSwitchWhen: Preview -->
+                                                    <!-- ngSwitchWhen: Published -->
+                                                    <!-- ngSwitchWhen: Draft -->
+                                                    <!-- ngSwitchWhen: Schedule --><i ng-switch-when="Schedule" class="mi mi-Calendar mi-lg mi-flip-horizontal ng-scope"
+                                                        title="Schedule"></i><!-- end ngSwitchWhen: -->
+                                                </label><!-- end ngRepeat: stt in $ctrl.swStatus track by $index -->
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Publish product on</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="date" />
+                                                <select class="custom-select" id="inputGroupSelect01">
+                                                    <option selected>Time</option>
+                                                    <option value="">10:30am</option>
+                                                    <option value="">11:00am</option>
+                                                    <option value="">11:30am</option>
+                                                    <option value="">12:00pm</option>
+                                                    <option value="">12:30pm</option>
+                                                    <option value="">1:00pm</option>
+                                                    <option value="">1:30pm</option>
+                                                    <option value="">2:00pm</option>
+                                                    <option value="">2:30pm</option>
+                                                    <option value="">3:00pm</option>
+                                                    <option value="">3:30pm</option>
+                                                    <option value="">4:00pm</option>
+                                                    <option value="">4:30pm</option>
+                                                    <option value="">5:00pm</option>
+                                                    <option value="">5:30pm</option>
+                                                    <option value="">6:00pm</option>
+                                                    <option value="">6:30pm</option>
+                                                    <option value="">7:00pm</option>
+                                                    <option value="">7:30pm</option>
+                                                    <option value="">8:00pm</option>
+                                                    <option value="">8:30pm</option>
+                                                    <option value="">9:00pm</option>
+                                                    <option value="">9:30pm</option>
+                                                    <option value="">10:00pm</option>
+                                                    <option value="">10:30pm</option>
+                                                    <option value="">11:00pm</option>
+                                                    <option value="">11:30pm</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card">
+                                    <h6 class="card-header">
+                                        Organization
+                                    </h6>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <label>Product type</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="input" placeholder="Input type..." />
+
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Type 1</a>
+                                                        <a class="dropdown-item" href="#">Type 2</a>
+                                                        <a class="dropdown-item" href="#">Type 3</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Brand</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="input" placeholder="Input brand..." />
+
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Type 1</a>
+                                                        <a class="dropdown-item" href="#">Type 2</a>
+                                                        <a class="dropdown-item" href="#">Type 3</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Vendor</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="input" placeholder="Input vendor..." />
+
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Type 1</a>
+                                                        <a class="dropdown-item" href="#">Type 2</a>
+                                                        <a class="dropdown-item" href="#">Type 3</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="form-group">
+                                            <label>Collections</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="input" placeholder="Input collections..." />
+
+                                                <div class="input-group-append">
+                                                    <button type="button" class="btn btn-outline-primary dropdown-toggle dropdown-toggle-split"
+                                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <span class="sr-only">Toggle Dropdown</span>
+                                                    </button>
+                                                    <div class="dropdown-menu">
+                                                        <a class="dropdown-item" href="#">Type 1</a>
+                                                        <a class="dropdown-item" href="#">Type 2</a>
+                                                        <a class="dropdown-item" href="#">Type 3</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+
+                                        <div class="form-group">
+                                            <label>Tags</label>
+                                            <div class="input-group">
+                                                <input class="form-control" type="input" placeholder="vintage, cotton, summer" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </section>
+
+
+                </form>
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
+
+                <!-- <footer class="footer">
+                    <div class="container">
+                        <nav>
+                            <p class="copyright text-center">
+                                ©
+                                <script>
+                                    document.write(new Date().getFullYear())
+                                </script>2018
+                                <a href="http://www.swastika.io">Swastika I/O</a>, made with <span class="mi-stack mi-lg">
+                                    <i class="mi mi-HeartFill mi-stack-1x  text-danger"></i>
+                                    <i class="mi mi-Heart mi-stack-1x"></i>
+                                </span> for a better web
+                            </p>
+                        </nav>
+                    </div>
+                </footer> -->
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="copyright float-right" id="date">©
+                            <script>
+                                document.write(new Date().getFullYear())
+                            </script>
+                            <a href="http://mixcore.net">mixcore</a>, made by human on earth
+                        </div>
+                    </div>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <style>
+        /* helper to ensure that razor (which is correctly detected by ACE) is also highlighted */
+        .ace_razor {
+            background-color: yellow;
+        }
+
+        /* make sure the highlighted text is also black, otherwise it a kind of gray */
+        .ace_punctuation.ace_short.ace_razor {
+            color: black;
+        }
+
+        .ace_punctuation.ace_block.ace_razor {
+            color: black;
+        }
+    </style>
+
+    <div class="modal modal-danger fade" id="modal-error">
+        <div class="modal-dialog modal-lg">
+            <form id="frm-data" action="/api/vi-vn/portal/module/ajaxsavemoduledata" method="post">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title">Edit</h4>
+                    </div>
+                    <div class="modal-body">
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
+            </form>
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+    <div class="modal modal-default fade show" id="modal-files">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <div class="col-md-11">
+                        <h2 class="modal-title">Upload file</h2>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="col-lg-4">
+
+                                <input type="file" id="file">
+                            </div>
+                        </div>
+                        <div class="col-lg-2" style="margin-bottom: 10px;">
+                            <a href="#" class="btn btn-success btn-block" onclick="SW.Common.loadFileStream('Images')">Submit
+                                file...</a>
+                        </div>
+                    </div>
+                    <table class="table table-condensed">
+                        <thead class="thead-light">
+                            <tr>
+                                <th>
+                                    Folder
+                                </th>
+                                <th>
+                                    Name
+                                </th>
+                                <th>
+                                    FullPath
+                                </th>
+                                <th>
+                                    Content
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+    <!-- Core -->
+    <script src="./assets/vendor/jquery/jquery.min.js"></script>
+    <script src="./assets/vendor/popper/popper.min.js"></script>
+    <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/vendor/headroom/headroom.min.js"></script>
+    <!-- Optional JS -->
+    <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+    <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+    <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+    <script src="..//assets/js/mix-fe-portal.js"></script>
+</body>
+
+</html>

@@ -227,6 +227,7 @@
             margin-right: 5px; 
             position: relative;
             top:2px;
+            color: #2196f3;
         }
         ul li .sw-toc-sub-link{
             padding: .175rem 2rem;
@@ -292,6 +293,11 @@
             color: $link-hover-color;
             //background-color: transparent;
             border-left-color: $color;
+        }
+        .btn-group:hover{
+            .mi{
+                margin-right: 0;
+            }
         }
         
         &:hover {

@@ -3,8 +3,8 @@ $(document).ready(function () {
     // const container = document.querySelector('.perfect-scroll');
     // const ps = new PerfectScrollbar(container);
     
-    // // or just with selector string
-    // const ps = new PerfectScrollbar('.perfect-scroll');
+    // or just with selector string
+    const ps = new PerfectScrollbar('main');
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');

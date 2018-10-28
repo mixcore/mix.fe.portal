@@ -10000,7 +10000,7 @@ a:hover {
 @media (min-width: 768px) {
   @supports ((position: -webkit-sticky) or (position: sticky)) {
     .sw-links {
-      max-height: calc(100vh - 4rem);
+      height: calc(100vh - 4rem);
       overflow-y: auto;
       margin-bottom: 0;
     }

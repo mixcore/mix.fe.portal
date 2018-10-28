@@ -380,7 +380,7 @@
     width: 100%;
     @include media-breakpoint-up(md) {
         @supports (position: sticky) {
-            max-height: calc(100vh - 4rem);
+            height: calc(100vh - 4rem);
             overflow-y: auto;
             margin-bottom: 0;
         }

@@ -4,3 +4,8 @@
 .table thead th { 
     border-bottom: 1px;
 }
+
+.form-control{
+    border: 0px;
+    background-color: $input-bg;
+}

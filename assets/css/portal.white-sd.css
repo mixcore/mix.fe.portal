@@ -1959,7 +1959,7 @@ pre code {
   font-size: 1rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #f1f3f4;
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -1983,7 +1983,7 @@ pre code {
 
 .form-control:focus {
   color: #fff;
-  background-color: #fff;
+  background-color: #f1f3f4;
   border-color: #9acffa;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
@@ -2017,7 +2017,7 @@ pre code {
 
 select.form-control:focus::-ms-value {
   color: #495057;
-  background-color: #fff;
+  background-color: #f1f3f4;
 }
 
 .form-control-file,
@@ -3831,7 +3831,7 @@ input[type="button"].btn-block {
   line-height: 1.5;
   color: #495057;
   vertical-align: middle;
-  background: #fff url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
+  background: #f1f3f4 url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'%3E%3Cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3E%3C/svg%3E") no-repeat right 0.75rem center;
   background-size: 8px 10px;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
@@ -3849,7 +3849,7 @@ input[type="button"].btn-block {
 
 .custom-select:focus::-ms-value {
   color: #495057;
-  background-color: #fff;
+  background-color: #f1f3f4;
 }
 
 .custom-select[multiple], .custom-select[size]:not([size="1"]) {
@@ -3926,7 +3926,7 @@ input[type="button"].btn-block {
   padding: 0.375rem 0.75rem;
   line-height: 1.5;
   color: #495057;
-  background-color: #fff;
+  background-color: #f1f3f4;
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
@@ -10014,7 +10014,6 @@ a:hover {
 }
 
 .sidebar-background {
-  /* background-image: url(https://demos.creative-tim.com/material-dashboard-dark/assets/img/sidebar-2.jpg); */
   position: absolute;
   z-index: 1;
   height: 100%;
@@ -10147,6 +10146,11 @@ a:hover {
 
 .table thead th {
   border-bottom: 1px;
+}
+
+.form-control {
+  border: 0px;
+  background-color: #f1f3f4;
 }
 
 .switch {

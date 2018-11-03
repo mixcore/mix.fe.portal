@@ -3,6 +3,11 @@
 }
 .table thead th { 
     border-bottom: 1px;
+    font-weight: 500;
+}
+.table .thead-light th
+{
+    background-color: $table-head-bg;
 }
 
 .form-control{

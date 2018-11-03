@@ -1860,7 +1860,7 @@ pre code {
 
 .table .thead-light th {
   color: #495057;
-  background-color: #e9ecef;
+  background-color: #f1f3f4;
   border-color: #dee2e6;
 }
 
@@ -9737,7 +9737,7 @@ a:hover {
 }
 
 .sw-sidebar.active .sw-toc-item .sw-toc-link {
-  padding: .5rem .5rem;
+  padding: .5rem .2rem;
   text-align: center;
   font-size: 0.85em;
 }
@@ -10146,6 +10146,11 @@ a:hover {
 
 .table thead th {
   border-bottom: 1px;
+  font-weight: 500;
+}
+
+.table .thead-light th {
+  background-color: #f1f3f4;
 }
 
 .form-control {
@@ -10315,5 +10320,17 @@ img {
 .dropdown-menu {
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.table .thead-dark th {
+  color: #f9fafb;
+  background-color: #212529;
+  border-color: #32383e;
+}
+
+.table .thead-light th {
+  color: #495057;
+  background-color: #f1f3f4;
+  border-color: #dee2e6;
 }
 /*# sourceMappingURL=portal.white-sd.css.map */

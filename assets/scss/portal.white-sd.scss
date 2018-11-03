@@ -12,6 +12,8 @@ $input-placeholder-color:rgb(199, 199, 199);
 $input-group-addon-bg:#fff; 
 $input-bg: #f1f3f4;
 
+$table-head-bg: #f1f3f4;
+
 $card-cap-bg:#fff;
 $card-bg:rgba(255, 255, 255, 0.5);
 $card-border-color:rgba(177, 177, 177, 0.125);;
@@ -93,7 +95,8 @@ $dropdown-border-color: rgba(0, 0, 0, 0.01);
 @import "white_sd/micon";
 @import "white_sd/modal";
 @import "white_sd/images";
-@import "white_sd/dropdown"
+@import "white_sd/dropdown";
+@import "white_sd/tables";
 
 
 // Vendor

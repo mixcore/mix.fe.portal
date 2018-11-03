@@ -224,7 +224,7 @@
 
         
         .mi{
-            margin-right: 5px; 
+            margin-right: 10px; 
             position: relative;
             top:2px;
             color: #2196f3;
@@ -289,7 +289,7 @@
         }
         .active a,
         .active:hover a {
-            font-weight: 500;
+            // font-weight: 500;
             color: $link-hover-color;
             //background-color: transparent;
             border-left-color: $color;
@@ -322,7 +322,7 @@
             display: block;
             padding: .5rem 1.5rem;
             padding-right: 0;
-            font-weight: 500;
+            font-weight: 400;
             color: $color;
             span:first-child {
                 padding-right: 10px;
@@ -341,17 +341,18 @@
                 }
                 a{
                     color: #fff;
+                    text-decoration: none;
                 }
                 
                 .btn-group{
                     opacity: 1;
                 }
-            }
+            } 
             .mi{
                 position: relative;
                 top: 3px;
                 color: $sw-blue;
-                margin-right: 5px;
+                margin-right: 10px;
             }
         }
     }

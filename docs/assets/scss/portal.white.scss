@@ -28,13 +28,13 @@ $theme-colors: (
 // Core
 
 @import "bootstrap/functions";
-@import "custom/functions";
+// @import "white/functions";
 
-@import "custom/variables";
+@import "white/variables";
 @import "bootstrap/variables";
 
 @import "bootstrap/mixins";
-@import "custom/mixins";
+// @import "white/mixins";
 
 // Bootstrap components
 
@@ -71,20 +71,20 @@ $theme-colors: (
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 
-@import "swastika";
-@import "variables";
-@import "reboot";
-@import "nav";
-@import "navbar";
-@import "sidebar";
-@import "card";
-@import "breadcrumb";
-@import "text";
-@import "nav-action";
-@import "buttons";
-@import "form";
-@import "switch";
-@import "custom-forms";
-@import "micon";
-@import "modal";
-@import "images";
+@import "white/swastika";
+@import "white/variables";
+@import "white/reboot";
+@import "white/nav";
+@import "white/navbar";
+@import "white/sidebar";
+@import "white/card";
+@import "white/breadcrumb";
+@import "white/text";
+@import "white/nav-action";
+@import "white/buttons";
+@import "white/form";
+@import "white/switch";
+@import "white/custom-forms";
+@import "white/micon";
+@import "white/modal";
+@import "white/images";

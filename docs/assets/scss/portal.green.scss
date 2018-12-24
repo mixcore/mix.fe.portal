@@ -22,13 +22,13 @@ $theme-colors: (
 // Core
 
 @import "bootstrap/functions";
-@import "custom/functions";
+// @import "green/functions";
 
-@import "custom/variables";
+@import "green/variables";
 @import "bootstrap/variables";
 
 @import "bootstrap/mixins";
-@import "custom/mixins";
+// @import "green/mixins";
 
 // Bootstrap components
 
@@ -65,11 +65,11 @@ $theme-colors: (
 @import "bootstrap/utilities";
 @import "bootstrap/print";
 
-@import "variables";
-@import "reboot";
-@import "nav";
-@import "sidebar";
-@import "card";
-@import "breadcrumb";
-@import "text";
-@import "nav-action";
+@import "green/variables";
+@import "green/reboot";
+@import "green/nav";
+@import "green/sidebar";
+@import "green/card";
+@import "green/breadcrumb";
+@import "green/text";
+@import "green/nav-action";

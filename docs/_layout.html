@@ -6,315 +6,303 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <link rel="stylesheet" href="./assets/scss/bundle.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
     <link href="./libs/micon/css/micon.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+
+    <style>
+    </style>
 </head>
 
 <body>
-        <div class="header collapse d-lg-flex p-0">
-                <div class="container-fluid">
-                  <div class="d-flex">
-                    <a class="header-brand" href="./index.html">
-                      <img src="./assets/img/swastika-io-logo-blue.svg" class="header-brand-img" alt="mixcore">
-                    </a>
-                    <div class="">
-                            <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
-                              <li class="nav-item">
-                                <a href="./index.html" class="nav-link active">Home</a>                     
-                              </li>
-                              <li class="nav-item">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">Interface&nbsp;<i class="fe fe-chevron-down"></i></a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                  <a href="./cards.html" class="dropdown-item ">Cards design</a>
-                                  <a href="./charts.html" class="dropdown-item ">Charts</a>
-                                  <a href="./pricing-cards.html" class="dropdown-item ">Pricing cards</a>
-                                </div>
-                              </li>
-                              <li class="nav-item dropdown">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">Components</a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                  <a href="./maps.html" class="dropdown-item ">Maps</a>
-                                  <a href="./icons.html" class="dropdown-item ">Icons</a>
-                                  <a href="./store.html" class="dropdown-item ">Store</a>
-                                  <a href="./blog.html" class="dropdown-item ">Blog</a>
-                                  <a href="./carousel.html" class="dropdown-item ">Carousel</a>
-                                </div>
-                              </li>
-                              <li class="nav-item dropdown">
-                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown">Pages</a>
-                                <div class="dropdown-menu dropdown-menu-arrow">
-                                  <a href="./profile.html" class="dropdown-item ">Profile</a>
-                                  <a href="./login.html" class="dropdown-item ">Login</a>
-                                  <a href="./register.html" class="dropdown-item ">Register</a>
-                                  <a href="./forgot-password.html" class="dropdown-item ">Forgot password</a>
-                                  <a href="./400.html" class="dropdown-item ">400 error</a>
-                                  <a href="./401.html" class="dropdown-item ">401 error</a>
-                                  <a href="./403.html" class="dropdown-item ">403 error</a>
-                                  <a href="./404.html" class="dropdown-item ">404 error</a>
-                                  <a href="./500.html" class="dropdown-item ">500 error</a>
-                                  <a href="./503.html" class="dropdown-item ">503 error</a>
-                                  <a href="./email.html" class="dropdown-item ">Email</a>
-                                  <a href="./empty.html" class="dropdown-item ">Empty page</a>
-                                  <a href="./rtl.html" class="dropdown-item ">RTL mode</a>
-                                </div>
-                              </li>
-                              <li class="nav-item dropdown">
-                                <a href="./form-elements.html" class="nav-link">Forms</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="./gallery.html" class="nav-link">Gallery</a>
-                              </li>
-                              <li class="nav-item">
-                                <a href="./docs/index.html" class="nav-link">Documentation</a>
-                              </li>
-                            </ul>
-                          </div>
-                    <div class="d-flex order-lg-2 ml-auto">
-                        
-                      <div class="nav-item d-none d-md-flex">
-                        <a href="" class="btn btn-sm btn-outline-primary" target="_blank">Source code</a>
-                      </div>
-                      <div class="dropdown d-none d-md-flex">
-                        <a class="nav-link icon" data-toggle="dropdown">
-                          <i class="fe fe-bell"></i>
-                          <span class="nav-unread"></span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a href="#" class="dropdown-item d-flex">
-                            <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
-                            <div>
-                              <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
-                              <div class="small text-muted">10 minutes ago</div>
-                            </div>
-                          </a>
-                          <a href="#" class="dropdown-item d-flex">
-                            <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
-                            <div>
-                              <strong>Alice</strong> started new task: UI design.
-                              <div class="small text-muted">1 hour ago</div>
-                            </div>
-                          </a>
-                          <a href="#" class="dropdown-item d-flex">
-                            <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
-                            <div>
-                              <strong>Rose</strong> deployed new version of NodeJS REST Api V3
-                              <div class="small text-muted">2 hours ago</div>
-                            </div>
-                          </a>
-                          <div class="dropdown-divider"></div>
-                          <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
-                        </div>
-                      </div>
-                      <div id="dropdownSettings" class="dropdown">
-                        <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
-                          <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
-                          <span class="ml-2 d-none d-lg-block">
-                            <span class="text-default">Jane Pearson</span>
-                            <small class="text-muted d-block mt-1">Administrator</small>
-                          </span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-user"></i> Profile
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-settings"></i> Settings
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <span class="float-right"><span class="badge badge-primary">6</span></span>
-                            <i class="dropdown-icon fe fe-mail"></i> Inbox
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-send"></i> Message
-                          </a>
-                          <div class="dropdown-divider"></div>
-                          <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-help-circle"></i> Need help?
-                          </a>
-                          <a class="dropdown-item" href="#">
-                            <i class="dropdown-icon fe fe-log-out"></i> Sign out
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                    <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
-                      <span class="header-toggler-icon"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
     <!-- NEW HEADER -->
+    <div class="header">
+            <div class="container-fluid">
+                <div class="d-flex">
+                
+                <a class="mr-auto header-brand ml-7" href="./index.html">
+                    <img src="./assets/img/swastika-io-logo-blue.svg" class="header-brand-img" alt="mixcore">Mixcore
+                </a>          
+               
+                <div class="d-flex order-lg-2 ml-auto  mr-md-7">
+                    
+                    <div class="nav-item d-none d-md-flex">
+                    <a href="" class="btn btn-sm btn-outline-primary" target="_blank">Source code</a>
+                    </div>
+                    <div class="dropdown d-none d-md-flex">
+                    <a class="nav-link icon" data-toggle="dropdown">
+                        <i class="fe fe-bell"></i>
+                        <span class="nav-unread"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a href="#" class="dropdown-item d-flex">
+                        <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/male/41.jpg)"></span>
+                        <div>
+                            <strong>Nathan</strong> pushed new commit: Fix page load performance issue.
+                            <div class="small text-muted">10 minutes ago</div>
+                        </div>
+                        </a>
+                        <a href="#" class="dropdown-item d-flex">
+                        <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/1.jpg)"></span>
+                        <div>
+                            <strong>Alice</strong> started new task: UI design.
+                            <div class="small text-muted">1 hour ago</div>
+                        </div>
+                        </a>
+                        <a href="#" class="dropdown-item d-flex">
+                        <span class="avatar mr-3 align-self-center" style="background-image: url(demo/faces/female/18.jpg)"></span>
+                        <div>
+                            <strong>Rose</strong> deployed new version of NodeJS REST Api V3
+                            <div class="small text-muted">2 hours ago</div>
+                        </div>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="#" class="dropdown-item text-center text-muted-dark">Mark all as read</a>
+                    </div>
+                    </div>
+                    <div id="dropdownSettings" class="dropdown">
+                    <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                        <span class="avatar" style="background-image: url(./demo/faces/female/25.jpg)"></span>
+                        <span class="ml-2 d-none d-lg-block">
+                        <span class="text-default">Jane Pearson</span>
+                        <small class="text-muted d-block mt-1">Administrator</small>
+                        </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                        <a class="dropdown-item" href="#">
+                        <i class="dropdown-icon fe fe-user"></i> Profile
+                        </a>
+                        <a class="dropdown-item" href="#">
+                        <i class="dropdown-icon fe fe-settings"></i> Settings
+                        </a>
+                        <a class="dropdown-item" href="#">
+                        <span class="float-right"><span class="badge badge-primary">6</span></span>
+                        <i class="dropdown-icon fe fe-mail"></i> Inbox
+                        </a>
+                        <a class="dropdown-item" href="#">
+                        <i class="dropdown-icon fe fe-send"></i> Message
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">
+                        <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+                        </a>
+                        <a class="dropdown-item" href="#">
+                        <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                <a href="#" class="header-toggler d-lg-none ml-3 mt-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                    <span class="header-toggler-icon"></span>
+                </a>
+                </div>
+            </div>
+    </div>
     
-    <!-- Page Header -->
-    <header class="navbar navbar-expand flex-column flex-md-row sw-navbar position-sticky">
-
-        
-    </header>
-
     <!-- Page Content Holder -->
     <div class="container-fluid wrapper">
         <div class="row flex-xl-nowrap">
             <!-- Sidebar Holder -->
 
-            <div id="sidebar" class="col-md-2 sw-sidebar">
-                    <div class="list-group list-group-transparent mb-0">
+            <div id="sidebar" class="w-100">
+                <div class="row sw-sidebar d-lg-flex p-2 collapse" id="headerMenuCollapse">
+                    <div class="col-md-12">
+                            <form class="input-icon my-lg-0">
+                                <input type="search" class="form-control header-search" placeholder="Search&hellip;" tabindex="1">
+                                <div class="input-icon-addon">
+                                <i class="fe fe-search"></i>
+                                </div>
+                            </form>
+                            </div>
+                    <div class="col-md-12 list-group list-group-transparent mb-0 bdrb bdrt pt-2 mt-4">
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center active">
-                              <span class="icon mr-3"><i class="fe fe-inbox"></i></span>Inbox
+                              <span class="icon mr-3"><i class="fe fe-inbox"></i></span>Dashboard
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-send"></i></span>Sent Mail
+                              <span class="icon mr-3"><i class="fe fe-send"></i></span>Articles
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-alert-circle"></i></span>Important
+                              <span class="icon mr-3"><i class="fe fe-alert-circle"></i></span>Pages
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-star"></i></span>Starred
+                              <span class="icon mr-3"><i class="fe fe-star"></i></span>Modules
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-file"></i></span>Drafts
+                              <span class="icon mr-3"><i class="fe fe-file"></i></span>Themes
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-tag"></i></span>Tags
+                              <span class="icon mr-3"><i class="fe fe-tag"></i></span>Media
                             </a>
                             <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
-                              <span class="icon mr-3"><i class="fe fe-trash-2"></i></span>Trash
+                              <span class="icon mr-3"><i class="fe fe-file"></i></span>File
+                            </a>
+                            <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <span class="icon mr-3"><i class="fe fe-user"></i></span>User
+                            </a>
+                            <a href="optiongroup.html" class="list-group-item list-group-item-action d-flex align-items-center">
+                                    <span class="icon mr-3"><i class="fe fe-settings"></i></span>Settings
                             </a>
                           </div>
+                    <div class="col-md-12 mt-4">
+                        <a href="#" class="btn btn-secondary btn-block">Cancel</a>                            
+                        <a href="#" class="btn btn-primary btn-block">Save</a>                            
+                    </div>
+                </div>
             </div>
 
-           
+
+            <main class="col-md-10 py-3 px-md-5 sw-content w-100" role="main">
+                <div class="container">
+                    <div class="page-header mt-0 pb-3 bdrb">
+                      <h1 class="page-title">
+                        Gallery
+                      </h1>
+                      <div class="page-subtitle">1 - 12 of 1713 photos</div>
+                      <!-- <div class="page-options d-flex">
+                        <select class="form-control custom-select w-auto">
+                          <option value="asc">Newest</option>
+                          <option value="desc">Oldest</option>
+                        </select>
+                        <div class="input-icon ml-2">
+                          <span class="input-icon-addon">
+                            <i class="fe fe-search"></i>
+                          </span>
+                          <input type="text" class="form-control w-10" placeholder="Search photo">
+                        </div>
+                      </div> -->
+                    </div>
+<!-- MAIN BODY goes here -->
+
+
+<!-- END MAIN BODY -->
+                  </div>
             </main>
-        </div>
-    </div>
-    <footer class="footer">
-            <div class="container-fluid">
-                <div class="copyright float-right" id="date">©
-                    <script>
-                        document.write(new Date().getFullYear())
-                    </script>
-                    <a href="http://mixcore.net">mixcore</a>, made by human on earth
-                </div>
-            </div>
-        </footer>
-    <style>
-        /* helper to ensure that razor (which is correctly detected by ACE) is also highlighted */
-        .ace_razor {
-            background-color: yellow;
-        }
-
-        /* make sure the highlighted text is also black, otherwise it a kind of gray */
-        .ace_punctuation.ace_short.ace_razor {
-            color: black;
-        }
-
-        .ace_punctuation.ace_block.ace_razor {
-            color: black;
-        }
-    </style>
-
-    <div class="modal modal-danger fade" id="modal-error">
-        <div class="modal-dialog modal-lg">
-            <form id="frm-data" action="/api/vi-vn/portal/module/ajaxsavemoduledata" method="post">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                        <h4 class="modal-title">Edit</h4>
-                    </div>
-                    <div class="modal-body">
-                    </div>
-                    <div class="modal-footer">
-                        <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
-                    </div>
-                </div>
-                <!-- /.modal-content -->
-                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
-            </form>
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-    <div class="modal modal-default fade show" id="modal-files">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <div class="col-md-11">
-                        <h2 class="modal-title">Upload file</h2>
-                    </div>
-                    <div class="col-md-1">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">×</span>
-                        </button>
-                    </div>
-                </div>
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-lg-10">
-                            <div class="col-lg-4">
-
-                                <input type="file" id="file">
-                            </div>
-                        </div>
-                        <div class="col-lg-2" style="margin-bottom: 10px;">
-                            <a href="#" class="btn btn-success btn-block" onclick="SW.Common.loadFileStream('Images')">Submit
-                                file...</a>
-                        </div>
-                    </div>
-                    <table class="table table-condensed">
-                        <thead class="thead-light">
-                            <tr>
-                                <th>
-                                    Folder
-                                </th>
-                                <th>
-                                    Name
-                                </th>
-                                <th>
-                                    FullPath
-                                </th>
-                                <th>
-                                    Content
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-                <div class="modal-footer">
-                    <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
-                </div>
-            </div>
-            <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-    </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E="
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
-    <!-- Core -->
-    <script src="./assets/vendor/jquery/jquery.min.js"></script>
-    <script src="./assets/vendor/popper/popper.min.js"></script>
-    <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
-    <script src="./assets/vendor/headroom/headroom.min.js"></script>
-    <!-- Optional JS -->
-    <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
-    <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
-    <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-
-    <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-
-    <script src="./assets/js/mix-fe-portal.js"></script>
-</body>
-
-</html>
+          </div>
+      </div>
+     
+      <style>
+          /* helper to ensure that razor (which is correctly detected by ACE) is also highlighted */
+          .ace_razor {
+              background-color: yellow;
+          }
+  
+          /* make sure the highlighted text is also black, otherwise it a kind of gray */
+          .ace_punctuation.ace_short.ace_razor {
+              color: black;
+          }
+  
+          .ace_punctuation.ace_block.ace_razor {
+              color: black;
+          }
+      </style>
+  
+      <div class="modal modal-danger fade" id="modal-error">
+          <div class="modal-dialog modal-lg">
+              <form id="frm-data" action="/api/vi-vn/portal/module/ajaxsavemoduledata" method="post">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                          <h4 class="modal-title">Edit</h4>
+                      </div>
+                      <div class="modal-body">
+                      </div>
+                      <div class="modal-footer">
+                          <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                      </div>
+                  </div>
+                  <!-- /.modal-content -->
+                  <input name="__RequestVerificationToken" type="hidden" value="CfDJ8F52z55vngJLih5VSOPxTRPXq1MLsF_n52IZ3uu-pwvJf8a-1QsVYVWnEGhVIyKSp-5_ZpZJiutWg8f_bbmcchaLpQK10bSINOFzW5l2Px6ouO6t91RM6bZzL1e42tX857GngOlissphjvfpP1B2g_kzpBheNhnr7rp91AjBxSZazzZLzB1vSeugc48TqkleyA">
+              </form>
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+  
+      <div class="modal modal-default fade show" id="modal-files">
+          <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <div class="col-md-11">
+                          <h2 class="modal-title">Upload file</h2>
+                      </div>
+                      <div class="col-md-1">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">×</span>
+                          </button>
+                      </div>
+                  </div>
+                  <div class="modal-body">
+                      <div class="row">
+                          <div class="col-lg-10">
+                              <div class="col-lg-4">
+  
+                                  <input type="file" id="file">
+                              </div>
+                          </div>
+                          <div class="col-lg-2" style="margin-bottom: 10px;">
+                              <a href="#" class="btn btn-success btn-block" onclick="SW.Common.loadFileStream('Images')">Submit
+                                  file...</a>
+                          </div>
+                      </div>
+                      <table class="table table-condensed">
+                          <thead class="thead-light">
+                              <tr>
+                                  <th>
+                                      Folder
+                                  </th>
+                                  <th>
+                                      Name
+                                  </th>
+                                  <th>
+                                      FullPath
+                                  </th>
+                                  <th>
+                                      Content
+                                  </th>
+                              </tr>
+                          </thead>
+                          <tbody></tbody>
+                      </table>
+                  </div>
+                  <div class="modal-footer">
+                      <a class="btn btn- btn-primary btn-warning" data-dismiss="modal">Close</a>
+                  </div>
+              </div>
+              <!-- /.modal-content -->
+          </div>
+          <!-- /.modal-dialog -->
+      </div>
+  
+      <footer class="footer">
+              <div class="container-fluid">
+                  <div class="copyright float-right" id="date">©
+                      <script>
+                          document.write(new Date().getFullYear())
+                      </script>
+                      <a href="http://mixcore.net">mixcore</a>, made by human on earth
+                  </div>
+              </div>
+      </footer>
+  
+      <!-- Core -->
+      <script src="./assets/vendor/jquery/jquery.min.js"></script>
+      <script src="./assets/vendor/popper/popper.min.js"></script>
+      <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
+      <script src="./assets/vendor/headroom/headroom.min.js"></script>
+      <!-- Optional JS -->
+      <script src="./assets/vendor/onscreen/onscreen.min.js"></script>
+      <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
+      <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+  
+      <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+  
+      <script src="./assets/js/mix-fe-portal.js"></script>
+  </body>
+  
+  </html>
+  

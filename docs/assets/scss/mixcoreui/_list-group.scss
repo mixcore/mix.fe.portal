@@ -28,4 +28,33 @@
 									
 		}
 	}
+
+	.row>.option-group-item{
+		height: 100px;
+		font-weight: 300;
+		line-height: 0;
+		text-transform: initial;
+		letter-spacing: initial;
+		box-sizing: border-box;
+		display: flex;
+		width: 100%;
+		color: rgb(33, 43, 54);
+		cursor: pointer;
+		padding: 1.2rem;
+		border-width: 0px;
+		border-radius: 3px;
+
+		.media-description{
+			line-height: 1rem;
+		}
+		&:hover{
+			background-color: rgba(70, 127, 207, 0.06);
+			
+			.avatar{
+				background-color: rgb(223, 227, 232);
+		
+			}		
+									
+		}
+	}
 }

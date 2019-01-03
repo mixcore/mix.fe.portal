@@ -1,0 +1,25 @@
+// Border
+.bdr{
+	border: $border-general!important;
+}
+
+.bdrt{
+	border-top: $border-general!important;
+}
+
+.bdrr{
+	border-right: $border-general!important;
+}
+
+.bdrb{
+	border-bottom: $border-general!important;
+}
+
+.bdrl{
+	border-left: $border-general!important;
+}
+
+// Background
+.bg-white{
+	background-color: white;
+}

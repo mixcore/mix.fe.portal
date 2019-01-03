@@ -3,7 +3,7 @@
 	border-top: $border-width solid $border-color;
 	font-size: px2rem(14px);
 	padding: 1.25rem 0;
-	color: $text-muted;
+	color: $text-muted;	
 
 	a:not(.btn) {
 		color: $text-muted-dark;
@@ -12,4 +12,7 @@
 	@media print {
 		display: none;
 	}
+}
+.copyright{
+	margin-top: -10px;
 }

@@ -1,0 +1,18 @@
+.sw-sidebar{
+	position: sticky;
+	top: 10px;
+}
+#headerMenuCollapse{
+	margin: 0;
+
+	.list-group{
+		padding-left: 0.75rem;
+	}
+}
+
+
+@media (min-width: 1280px) {
+	#sidebar{
+		border-right: 1px solid rgba(0, 40, 100, 0.12) !important;
+	}
+}

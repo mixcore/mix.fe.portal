@@ -85,6 +85,7 @@ Dimmer
 		left: 0;
 		right: 0;
 		transform: translateY(-50%);
+		z-index: 9999;
 	}
 
 	&.active {
@@ -93,7 +94,7 @@ Dimmer
 		}
 
 		.dimmer-content {
-			opacity: .5;
+			opacity: .1;
 			pointer-events: none;
 		}
 	}

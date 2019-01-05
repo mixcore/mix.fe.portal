@@ -24,9 +24,9 @@ body {
 }
 
 body *::-webkit-scrollbar {
-	width: 6px;
-	height: 6px;
-	transition: .3s background;
+	width: 3px;
+	height: 0px;
+	transition: .3s background; 
 }
 
 body *::-webkit-scrollbar-thumb {

@@ -4208,6 +4208,10 @@ input[type="button"].btn-block {
   text-align: center;
 }
 
+.nav.nav-pills .nav-item > .nav-link:not(.active):hover {
+  background: rgba(70, 127, 207, 0.06);
+}
+
 .tab-content > .tab-pane {
   display: none;
 }
@@ -5435,9 +5439,6 @@ input[type="button"].btn-block {
 }
 
 .list-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

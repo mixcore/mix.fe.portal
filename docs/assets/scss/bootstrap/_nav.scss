@@ -103,6 +103,13 @@
   }
 }
 
+.nav.nav-pills{
+  .nav-item>.nav-link:not(.active):hover{
+    background: rgba(70, 127, 207, 0.06);
+
+    // font-weight: 600;
+  }
+}
 
 // Tabbable tabs
 //

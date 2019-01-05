@@ -11,8 +11,12 @@
 }
 
 
-@media (min-width: 1280px) {
-	#sidebar{
-		border-right: 1px solid rgba(0, 40, 100, 0.12) !important;
-	}
+// @media (min-width: 1280px) {
+// 	#sidebar{
+// 		border-right: 1px solid rgba(0, 40, 100, 0.12) !important;
+// 	}
+// }
+
+.mh-100{
+	height: $window-wo-height;
 }

@@ -1,6 +1,6 @@
 .table {
 	thead {
-		//background: $table-accent-bg;
+		background: $table-accent-bg;
 
 		th {
 			border-top: 0;
@@ -9,7 +9,11 @@
 			padding-bottom: .5rem;
 		}
 	}
-
+	tbody{
+		td{
+			padding: 5px!important;
+		}
+	}
 	th {
 		color: $text-muted;
 		text-transform: uppercase;
@@ -17,7 +21,6 @@
 		font-weight: 400;
 	}
 }
-
 .table-md {
 	th,
 	td {

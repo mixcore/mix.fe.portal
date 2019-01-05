@@ -312,3 +312,6 @@ $nav-tabs-link-active-bg: transparent;
 
 //Borders
 $border-general: 1px solid rgba(0, 40, 100, 0.12);
+
+// Window height w/o header
+$window-wo-height: calc(100% - 53px);

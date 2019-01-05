@@ -9,6 +9,10 @@
 		font-size: 1rem;
 		vertical-align: -2px;
 	}
+
+	&.custom-select.custom-select-sm{
+		min-height: 39px;
+	}
 }
 
 .btn-icon {
@@ -115,3 +119,4 @@
 		border-color: $yiq-text-dark;
 	}
 }
+

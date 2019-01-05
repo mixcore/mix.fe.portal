@@ -8,18 +8,25 @@ var open = require('gulp-open');
 var Paths = {
   HERE: './',
   DIST: 'dist/',
-  CSS: './assets/css/',
-  SCSS_TOOLKIT_SOURCES: './assets/scss/portal.white-sd.scss',
-  SCSS: './assets/scss/**/**'
+  CSS: 'docs/assets/css/',
+  CSSMIX: 'C:/_Simon/MixCore/_Git/Src/mix.core/src/Mix.Cms.Web/wwwroot/css/portal2/',
+  SCSS_TOOLKIT_SOURCES: 'docs/assets/scss/bundle.scss',
+  SCSS: 'docs/assets/scss/**/**'
 };
 
 gulp.task('compile-scss', function() {
-  return gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+  gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(sourcemaps.write(Paths.HERE))
     .pipe(gulp.dest(Paths.CSS));
+  gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+    .pipe(sourcemaps.init())
+    .pipe(sass().on('error', sass.logError))
+    .pipe(autoprefixer())
+    .pipe(sourcemaps.write(Paths.HERE))
+    .pipe(gulp.dest(Paths.CSSMIX));
 });
 
 gulp.task('watch', function() {

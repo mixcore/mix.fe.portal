@@ -9,8 +9,8 @@ var Paths = {
   HERE: './',
   DIST: 'dist/',
   CSS: 'docs/assets/css/',
-  CSSMIX: 'C:/_Simon/MixCore/_Git/Src/mix.core/src/Mix.Cms.Web/wwwroot/css/portal2/',
-  SCSS_TOOLKIT_SOURCES: 'docs/assets/scss/bundle.scss',
+  CSSMIX: 'C:/_Simon/MixCore/_Git/v1/mix.core/src/Mix.Cms.Web/wwwroot/css/portal',
+  SCSS_TOOLKIT_SOURCES: 'docs/assets/scss/mixcore.scss',
   SCSS: 'docs/assets/scss/**/**'
 };
 

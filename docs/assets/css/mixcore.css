@@ -6369,6 +6369,9 @@ a.text-dark:hover, a.text-dark:focus {
   height: 40px;
   border: 1px solid #ccc; }
 
+.form-group.no-border.input-lg .input-group-text, .input-group.no-border.input-lg .input-group-text {
+  padding: 15px 10px 15px 19px !important; }
+
 body::before {
   position: fixed;
   background-size: cover;
@@ -6926,4 +6929,4 @@ img {
   background-color: #f1f3f4;
   border-color: #dee2e6; }
 
-/*# sourceMappingURL=bundle.css.map */
+/*# sourceMappingURL=mixcore.css.map */

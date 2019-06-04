@@ -4,7 +4,7 @@ $(document).ready(function () {
     // const ps = new PerfectScrollbar(container);
     
     // or just with selector string
-    const ps = new PerfectScrollbar('main');
+    // const ps = new PerfectScrollbar('main');
 
     $('#sidebarCollapse').on('click', function () {
         $('#sidebar').toggleClass('active');

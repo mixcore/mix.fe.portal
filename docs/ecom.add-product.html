@@ -11,11 +11,10 @@
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"> -->
 
 
-    <link rel="stylesheet" href="./assets/css/portal.white-sd.css">
+    <link rel="stylesheet" href="./assets/scss/mix.fe.portal.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg"
         crossorigin="anonymous">
-    <link href="./libs/micon/css/micon.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/vendor/perfect-scrollbar/perfect-scrollbar.css">
+    <link href="libs/micon/css/micon.min.css" rel="stylesheet">
 
     <!-- <style>
     .perfect-scroll {
@@ -34,7 +33,7 @@
 
         <span>
             <a class="navbar-brand mr-0 mr-md-2" href="/" aria-label="Swastika I/O">
-                <img src="./assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
+                <img src="assets/img/swastika-io-logo-blue.svg" alt="Kiwi standing on oval" width="35px">
             </a>
 
             <span class="navbar-brand">mixcore</span>
@@ -123,7 +122,7 @@
                         </svg>
                     </button>
                     <input name="__RequestVerificationToken" type="hidden" value="CfDJ8KOuD896zE9FpXyo3z4qUnITyqLJObd-8sWCHWBMAbgKpoBDjCxTTaK-fn9pkbeyWi6aiOu15-1O4FCi0iYHV22A7_C_8nl1bjT9gWUpGWTRcxiso71cJhqbhcBxhsub88XHpqp3OAmg51CAe1EdWDBDA9MJ-Ei82UcnxV3Pa_P6peDY3ZqTytpkWhQlw7N7hA"
-                        autocomplete="off"></form>
+                        autocomplete="off" style="max-height: 4rem;"></form>
                 <div class="perfect-scroll">
                     <ul class="sw-links" id="sw-docs-nav" data-children=".sw-toc-item">
                         <!-- DASHBOARD -->
@@ -149,7 +148,7 @@
                                     </a>
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseArticleSubMenus"
                                         role="button" aria-expanded="false" aria-controls="collapseArticleSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -197,7 +196,7 @@
                                     </a>
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseProductSubMenus"
                                         role="button" aria-expanded="false" aria-controls="collapseProductSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -252,7 +251,7 @@
                                     </a>
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapsePageSubMenus"
                                         role="button" aria-expanded="false" aria-controls="collapsePageSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -316,7 +315,7 @@
                                     </a>
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseModuleSubMenus"
                                         aria-expanded="false" aria-controls="collapseModuleSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -362,7 +361,7 @@
                                     </a>
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseAppearanceSubMenus"
                                         aria-expanded="false" aria-controls="collapseAppearanceSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -417,7 +416,7 @@
                                 <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                     <a href="#" class="btn btn-light" data-toggle="collapse" data-target="#collapseSettingSubMenus"
                                         aria-expanded="false" aria-controls="collapseSettingSubMenus">
-                                        <span class="fas fa-chevron-right"></span>
+                                        <span class="mi mi-ChevronRightSmall"></span>
                                     </a>
                                 </div>
                             </div>
@@ -486,29 +485,11 @@
             </div>
 
             <!-- /.Sidebar Holder -->
-            <main class="py-md-3 px-md-2 sw-content w-100" role="main">
+            <main class="py-md-3 px-md-2 sw-content w-100" role="main" style="">
                 <form enctype="multipart/form-data" onsubmit="return false" action="/vi-vn/portal/dashboard/index"
                     method="post">
                     <section class="content container-fluid">
-                        <!-- <div class="row">
-      <div class="col-sm-8">
-        <h1 class="sw-title" id="content">Dashboard</h1>
-      </div>
-      <div class="col-sm-4">
-        <nav aria-label="breadcrumb" role="navigation">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item pull-right">
-              <a href="#">Home</a>
-            </li>
-            <li class="breadcrumb-item pull-right">
-              <a href="#">Library</a>
-            </li>
-            <li class="breadcrumb-item pull-right active" aria-current="page">Data</li>
-          </ol>
-        </nav>
-      </div>
-    </div> -->
-                        <div class="row position-sticky" style="z-index: 12;">
+                        <div class="row position-sticky" style="top: 4rem; z-index: 12;">
                             <div class="col-12">
                                 <div class="card sw-nav-action mb-3">
                                     <div class="nav card-body p-3 justify-content-end">
@@ -538,7 +519,7 @@
                         <div class="row">
                             <section class="col-lg-8">
 
-                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                <div class="card mb-3 ng-scope" ng-if="$ctrl.product!=null">
                                     <h6 class="card-header">
                                         Add product
                                     </h6>
@@ -561,7 +542,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" ng-init="$ctrl.init()">
+                                <div class="card mb-3 " ng-init="$ctrl.init()">
                                     <h6 class="card-header ng-binding">
                                         Images
                                         <button class="btn btn-primary btn-sm float-right" type="button">Upload image</button>
@@ -585,7 +566,7 @@
                                     </div>
                                 </div>
 
-                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                <div class="card mb-3  ng-scope" ng-if="$ctrl.product!=null">
                                     <h6 class="card-header">
                                         Pricing
 
@@ -660,7 +641,7 @@
                                 </div>
 
 
-                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                <div class="card mb-3  ng-scope" ng-if="$ctrl.product!=null">
                                     <h6 class="card-header">
                                         Inventory
                                     </h6>
@@ -701,7 +682,7 @@
                                 </div>
 
 
-                                <div class="card ng-scope" ng-if="$ctrl.product!=null">
+                                <div class="card  mb-3 ng-scope" ng-if="$ctrl.product!=null">
                                     <h6 class="card-header">
                                         Shipping
                                     </h6>
@@ -783,7 +764,7 @@
                                 </div>
                             </section>
                             <section class="col-lg-4">
-                                <div class="card">
+                                <div class="card mb-3 ">
                                     <h6 class="card-header">
                                         Info
                                     </h6>
@@ -1126,7 +1107,7 @@
     <script src="./assets/vendor/nouislider/js/nouislider.min.js"></script>
     <script src="./assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
-    <script src="./assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <!-- <script src="assets/vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script> -->
 
     <script src="./assets/js/mix-fe-portal.js"></script>
 </body>

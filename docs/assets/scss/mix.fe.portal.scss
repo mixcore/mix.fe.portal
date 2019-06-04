@@ -1,0 +1,106 @@
+// Your variable overrides
+$main-bg: #fff;
+$body-bg: #f9fafb;
+//$body-color: rgb(230, 230, 230);
+$color:#72777a;
+$link-color:#72777a;
+$link-hover-color:#313435;
+
+// form
+// $input-focus-color:#fff; 
+// $input-placeholder-color:rgb(199, 199, 199);
+// $input-group-addon-bg:#fff; 
+// $input-bg: #f1f3f4;
+
+$table-head-bg: #f1f3f4;
+
+$card-cap-bg:#fff;
+$card-bg:#fff;
+$card-border-color:rgb(234, 234, 234);
+$text-muted:#aab4b9;
+
+$navbar-dark-color: $color;
+$navbar-dark-hover-color: #313435;
+$navbar-dark-disabled-color:#8a8a8a;
+$navbar-dark-active-color:#2196f3; 
+
+$theme-colors: (
+    "primary": #2196f3,
+    "danger": #ff4136
+  ); 
+
+// $dropdown-border-width: 1px;
+// $dropdown-border-color: rgba(0, 0, 0, 0.01);
+
+  
+// Core
+
+@import "bootstrap-4.3.1/functions";
+
+@import "bootstrap-4.3.1/variables";
+
+@import "bootstrap-4.3.1/mixins";
+
+// Bootstrap components
+ 
+@import "bootstrap-4.3.1/root";
+@import "bootstrap-4.3.1/reboot";
+@import "bootstrap-4.3.1/type";
+@import "bootstrap-4.3.1/images";
+@import "bootstrap-4.3.1/code";
+@import "bootstrap-4.3.1/grid";
+@import "bootstrap-4.3.1/tables";
+@import "bootstrap-4.3.1/forms";
+@import "bootstrap-4.3.1/buttons";
+@import "bootstrap-4.3.1/transitions";
+@import "bootstrap-4.3.1/dropdown";
+@import "bootstrap-4.3.1/button-group";
+@import "bootstrap-4.3.1/input-group";
+@import "bootstrap-4.3.1/custom-forms";
+@import "bootstrap-4.3.1/nav";
+@import "bootstrap-4.3.1/navbar";
+@import "bootstrap-4.3.1/card";
+@import "bootstrap-4.3.1/breadcrumb";
+@import "bootstrap-4.3.1/pagination";
+@import "bootstrap-4.3.1/badge";
+@import "bootstrap-4.3.1/jumbotron";
+@import "bootstrap-4.3.1/alert";
+@import "bootstrap-4.3.1/progress";
+@import "bootstrap-4.3.1/media";
+@import "bootstrap-4.3.1/list-group";
+@import "bootstrap-4.3.1/close";
+@import "bootstrap-4.3.1/modal";
+@import "bootstrap-4.3.1/tooltip";
+@import "bootstrap-4.3.1/popover";
+@import "bootstrap-4.3.1/carousel";
+@import "bootstrap-4.3.1/utilities";
+@import "bootstrap-4.3.1/print";
+
+// Custom components
+
+// @import "mix.fe.portal/mixore";
+@import "mix.fe.portal/variables";
+// @import "mix.fe.portal/reboot";
+// @import "mix.fe.portal/nav";
+@import "mix.fe.portal/navbar";
+@import "mix.fe.portal/sidebar";
+// @import "mix.fe.portal/card";
+// @import "mix.fe.portal/breadcrumb";
+// @import "mix.fe.portal/text";
+// @import "mix.fe.portal/nav-action";
+// @import "mix.fe.portal/buttons";
+// @import "mix.fe.portal/form";
+// @import "mix.fe.portal/switch";
+// @import "mix.fe.portal/custom-forms";
+// @import "mix.fe.portal/micon";
+// @import "mix.fe.portal/modal";
+// @import "mix.fe.portal/images";
+// @import "mix.fe.portal/dropdown";
+// @import "mix.fe.portal/tables";
+ 
+
+// Vendor
+
+// @import "custom/vendor/bootstrap-datepicker.scss";
+// @import "custom/vendor/headroom.scss";
+// @import "custom/vendor/nouislider.scss";

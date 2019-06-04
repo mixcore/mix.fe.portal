@@ -3675,7 +3675,6 @@ input[type="button"].btn-block {
 .input-group-sm > .input-group-append > .input-group-text,
 .input-group-sm > .input-group-prepend > .btn,
 .input-group-sm > .input-group-append > .btn {
-  height: calc(1.8125rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -4200,6 +4199,10 @@ input[type="button"].btn-block {
       -ms-flex-positive: 1;
           flex-grow: 1;
   text-align: center;
+}
+
+.nav.nav-pills .nav-item > .nav-link:not(.active):hover {
+  background: rgba(70, 127, 207, 0.06);
 }
 
 .tab-content > .tab-pane {
@@ -5429,9 +5432,6 @@ input[type="button"].btn-block {
 }
 
 .list-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;

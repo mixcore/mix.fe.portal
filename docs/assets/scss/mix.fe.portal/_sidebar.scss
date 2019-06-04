@@ -85,6 +85,7 @@
                 font-size: 0.85em;
                 .text{
                     text-indent: -9999px;
+                    color:#fff !important;
                 }
                 span:first-child {
                     padding-right: 0;
@@ -97,6 +98,9 @@
                     //color: #fff;
                     span:first-child {
                         color: #fff; 
+                    }
+                    a{
+                        color:#fff !important;
                     }
                 }
             }
@@ -117,6 +121,10 @@
                     .mi{
                         color: #2196f3;
                         font-size: 2em;
+                    }
+                    
+                    a{
+                        color:#fff !important;
                     }
                 }
             }
@@ -335,6 +343,10 @@
                 
                 .btn-group{
                     opacity: 1;
+                }
+                a{
+                    color: #fff;
+                    text-decoration: none;
                 }
             }
             .mi{

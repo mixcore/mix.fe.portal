@@ -1,10 +1,12 @@
 // Your variable overrides
-$main-bg: #fff;
-$body-bg: #f9fafb;
+$main-bg: #22252a;
+$body-bg: rgb(45, 48, 53);
 //$body-color: rgb(230, 230, 230);
-$color:#72777a;
-$link-color:#72777a;
-$link-hover-color:#313435;
+$color:#34373d;
+$link-color:#ffffff;
+$link-hover-color:#9bfff3;
+
+
 
 // form
 // $input-focus-color:#fff; 
@@ -12,25 +14,30 @@ $link-hover-color:#313435;
 // $input-group-addon-bg:#fff; 
 // $input-bg: #f1f3f4;
 
-$table-head-bg: #f1f3f4;
+// $table-head-bg: #f1f3f4;
 
-$card-cap-bg:#fff;
-$card-bg:#fff;
-$card-border-color:rgb(234, 234, 234);
-$text-muted:#aab4b9;
+// $card-cap-bg:#fff;
+// $card-bg:#fff;
+// $card-border-color:rgb(234, 234, 234);
+// $text-muted:#aab4b9;
 
-$input-placeholder-color: #c6c6c6;
+// form
+$input-focus-color:#fff;
+$input-placeholder-color:rgb(199, 199, 199);
 
 $navbar-dark-color: $color;
 $navbar-dark-hover-color: #313435;
 $navbar-dark-disabled-color:#8a8a8a;
 $navbar-dark-active-color:#2196f3; 
 
-$theme-colors: (
-    "primary": #2196f3,
-    "danger": #ff4136
-  ); 
 
+$card-bg:rgba(0,0,0,.5);
+$text-muted:#fff;
+
+$theme-colors: (
+    "primary": #209e91,
+    "danger": #ff4136
+  );
 // $dropdown-border-width: 1px;
 // $dropdown-border-color: rgba(0, 0, 0, 0.01);
 
@@ -81,11 +88,11 @@ $theme-colors: (
 // Custom components
 
 // @import "mix.fe.portal/mixore";
-@import "mix.fe.portal/variables";
+@import "mix.fe.portal-dark/variables";
 // @import "mix.fe.portal/reboot";
 // @import "mix.fe.portal/nav";
-@import "mix.fe.portal/navbar";
-@import "mix.fe.portal/sidebar";
+@import "mix.fe.portal-dark/navbar";
+@import "mix.fe.portal-dark/sidebar";
 // @import "mix.fe.portal/card";
 // @import "mix.fe.portal/breadcrumb";
 // @import "mix.fe.portal/text";

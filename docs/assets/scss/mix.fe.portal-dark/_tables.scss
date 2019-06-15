@@ -1,0 +1,14 @@
+.table {
+  color: $color;
+  tr {
+    border-bottom: 1px solid;
+
+    td {
+      border: 0px;
+    }
+  }
+}
+.table-hover tbody tr:hover {
+  //color: #212529;
+  background-color: theme-color($key: "primary");
+}

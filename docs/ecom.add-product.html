@@ -1108,6 +1108,280 @@
         <!-- /.modal-dialog -->
     </div>
 
+    <table id="list-page" class="table table-sm table-hover" dnd-list="data.items" dnd-disable-if="canDrag" cellspacing="0" ng-init="getList()">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col" width="4%">
+                    <span class="oi oi-sort-ascending"></span>
+                </th>
+                <th scope="col" width="20%">
+                    Title
+                </th>
+                <th scope="col">
+                    Description
+                </th>
+                <th scope="col" width="15%">
+                    Created Date
+                </th>
+                <th scope="col" width="10%">
+                    By
+                </th>
+                <th scope="col" width="5%" class="text-right">Actions</th>
+            </tr>
+        </thead>
+
+        <!-- ngRepeat: item in data.items --><tbody ng-repeat="item in data.items" dnd-draggable="item" dnd-effect-allowed="move" dnd-selected="selected = item" dnd-moved="updateInfos($index)" ng-class="{'selected': selected === item}" style="border: 1px;" class="ng-scope" draggable="true">
+            <tr class="" sort-model="category" sort-model-id="5">
+                <td style="cursor:move;" class="drag-header">
+                    <span class="fas fa-sort"></span>
+                </td>
+
+                <td class="ng-binding">
+                    403
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        
+                    </small>
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        04.06.19 10:59 PM
+                    </small>
+                </td>
+                <td class="ng-binding">
+                    SuperAdmin
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm btn-group-sm float-right" role="group" aria-label="Actions">
+
+                        <!-- ngIf: item.childs.length>0 -->
+
+                        <a href="/portal/page/details/5" class="btn btn-light">
+                            <span class="fas fa-pencil-alt text-primary"></span>
+                        </a>
+                        <a href="https://localhost:5001/en-us/403" target="_blank" class="btn btn-light"><span class="far fa-eye text-primary"></span></a>
+                        <!-- ngIf: item.type==2 -->
+                        <!-- 
+                                    <a ng-if="item.type==2" href="#" data-toggle="modal" data-target="#modal-articles" class="btn btn-light">
+                                        <span class="fas fa-list text-info"></span>
+                                    </a>-->
+                        <a class="btn btn-light" ng-click="remove(item.id)">
+                            <span class="fa fa-times text-danger"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="padding:0">
+                    <div class="collapse" id="childs-5">
+                        <!-- ngIf: item.childs.length>0 -->
+                    </div>
+                </td>
+            </tr>
+        </tbody><!-- end ngRepeat: item in data.items --><tbody ng-repeat="item in data.items" dnd-draggable="item" dnd-effect-allowed="move" dnd-selected="selected = item" dnd-moved="updateInfos($index)" ng-class="{'selected': selected === item}" style="border: 1px;" class="ng-scope" draggable="true">
+            <tr class="" sort-model="category" sort-model-id="4">
+                <td style="cursor:move;" class="drag-header">
+                    <span class="fas fa-sort"></span>
+                </td>
+
+                <td class="ng-binding">
+                    404
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        
+                    </small>
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        04.06.19 10:59 PM
+                    </small>
+                </td>
+                <td class="ng-binding">
+                    SuperAdmin
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm btn-group-sm float-right" role="group" aria-label="Actions">
+
+                        <!-- ngIf: item.childs.length>0 -->
+
+                        <a href="/portal/page/details/4" class="btn btn-light">
+                            <span class="fas fa-pencil-alt text-primary"></span>
+                        </a>
+                        <a href="https://localhost:5001/en-us/404" target="_blank" class="btn btn-light"><span class="far fa-eye text-primary"></span></a>
+                        <!-- ngIf: item.type==2 -->
+                        <!-- 
+                                    <a ng-if="item.type==2" href="#" data-toggle="modal" data-target="#modal-articles" class="btn btn-light">
+                                        <span class="fas fa-list text-info"></span>
+                                    </a>-->
+                        <a class="btn btn-light" ng-click="remove(item.id)">
+                            <span class="fa fa-times text-danger"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="padding:0">
+                    <div class="collapse" id="childs-4">
+                        <!-- ngIf: item.childs.length>0 -->
+                    </div>
+                </td>
+            </tr>
+        </tbody><!-- end ngRepeat: item in data.items --><tbody ng-repeat="item in data.items" dnd-draggable="item" dnd-effect-allowed="move" dnd-selected="selected = item" dnd-moved="updateInfos($index)" ng-class="{'selected': selected === item}" style="border: 1px;" class="ng-scope" draggable="true">
+            <tr class="" sort-model="category" sort-model-id="3">
+                <td style="cursor:move;" class="drag-header">
+                    <span class="fas fa-sort"></span>
+                </td>
+
+                <td class="ng-binding">
+                    Search
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        
+                    </small>
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        04.06.19 10:59 PM
+                    </small>
+                </td>
+                <td class="ng-binding">
+                    SuperAdmin
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm btn-group-sm float-right" role="group" aria-label="Actions">
+
+                        <!-- ngIf: item.childs.length>0 -->
+
+                        <a href="/portal/page/details/3" class="btn btn-light">
+                            <span class="fas fa-pencil-alt text-primary"></span>
+                        </a>
+                        <a href="https://localhost:5001/en-us/search" target="_blank" class="btn btn-light"><span class="far fa-eye text-primary"></span></a>
+                        <!-- ngIf: item.type==2 --><a ng-if="item.type==2" href="/portal/page/page-article/list/3" class="btn btn-light ng-scope">
+                            <span class="fas fa-list text-info"></span>
+                        </a><!-- end ngIf: item.type==2 -->
+                        <!-- 
+                                    <a ng-if="item.type==2" href="#" data-toggle="modal" data-target="#modal-articles" class="btn btn-light">
+                                        <span class="fas fa-list text-info"></span>
+                                    </a>-->
+                        <a class="btn btn-light" ng-click="remove(item.id)">
+                            <span class="fa fa-times text-danger"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="padding:0">
+                    <div class="collapse" id="childs-3">
+                        <!-- ngIf: item.childs.length>0 -->
+                    </div>
+                </td>
+            </tr>
+        </tbody><!-- end ngRepeat: item in data.items --><tbody ng-repeat="item in data.items" dnd-draggable="item" dnd-effect-allowed="move" dnd-selected="selected = item" dnd-moved="updateInfos($index)" ng-class="{'selected': selected === item}" style="border: 1px;" class="ng-scope" draggable="true">
+            <tr class="" sort-model="category" sort-model-id="2">
+                <td style="cursor:move;" class="drag-header">
+                    <span class="fas fa-sort"></span>
+                </td>
+
+                <td class="ng-binding">
+                    Tag
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        
+                    </small>
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        04.06.19 10:59 PM
+                    </small>
+                </td>
+                <td class="ng-binding">
+                    SuperAdmin
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm btn-group-sm float-right" role="group" aria-label="Actions">
+
+                        <!-- ngIf: item.childs.length>0 -->
+
+                        <a href="/portal/page/details/2" class="btn btn-light">
+                            <span class="fas fa-pencil-alt text-primary"></span>
+                        </a>
+                        <a href="https://localhost:5001/en-us/tag" target="_blank" class="btn btn-light"><span class="far fa-eye text-primary"></span></a>
+                        <!-- ngIf: item.type==2 --><a ng-if="item.type==2" href="/portal/page/page-article/list/2" class="btn btn-light ng-scope">
+                            <span class="fas fa-list text-info"></span>
+                        </a><!-- end ngIf: item.type==2 -->
+                        <!-- 
+                                    <a ng-if="item.type==2" href="#" data-toggle="modal" data-target="#modal-articles" class="btn btn-light">
+                                        <span class="fas fa-list text-info"></span>
+                                    </a>-->
+                        <a class="btn btn-light" ng-click="remove(item.id)">
+                            <span class="fa fa-times text-danger"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="padding:0">
+                    <div class="collapse" id="childs-2">
+                        <!-- ngIf: item.childs.length>0 -->
+                    </div>
+                </td>
+            </tr>
+        </tbody><!-- end ngRepeat: item in data.items --><tbody ng-repeat="item in data.items" dnd-draggable="item" dnd-effect-allowed="move" dnd-selected="selected = item" dnd-moved="updateInfos($index)" ng-class="{'selected': selected === item}" style="border: 1px;" class="ng-scope" draggable="true">
+            <tr class="" sort-model="category" sort-model-id="1">
+                <td style="cursor:move;" class="drag-header">
+                    <span class="fas fa-sort"></span>
+                </td>
+
+                <td class="ng-binding">
+                    Home
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        
+                    </small>
+                </td>
+                <td>
+                    <small class="ng-binding">
+                        04.06.19 10:59 PM
+                    </small>
+                </td>
+                <td class="ng-binding">
+                    SuperAdmin
+                </td>
+                <td>
+                    <div class="btn-group btn-group-sm btn-group-sm float-right" role="group" aria-label="Actions">
+
+                        <!-- ngIf: item.childs.length>0 -->
+
+                        <a href="/portal/page/details/1" class="btn btn-light">
+                            <span class="fas fa-pencil-alt text-primary"></span>
+                        </a>
+                        <a href="https://localhost:5001/en-us/home" target="_blank" class="btn btn-light"><span class="far fa-eye text-primary"></span></a>
+                        <!-- ngIf: item.type==2 -->
+                        <!-- 
+                                    <a ng-if="item.type==2" href="#" data-toggle="modal" data-target="#modal-articles" class="btn btn-light">
+                                        <span class="fas fa-list text-info"></span>
+                                    </a>-->
+                        <a class="btn btn-light" ng-click="remove(item.id)">
+                            <span class="fa fa-times text-danger"></span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="7" style="padding:0">
+                    <div class="collapse" id="childs-1">
+                        <!-- ngIf: item.childs.length>0 -->
+                    </div>
+                </td>
+            </tr>
+        </tbody><!-- end ngRepeat: item in data.items -->
+    </table>
+
     <div class="modal modal-default fade show" id="modal-files">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">

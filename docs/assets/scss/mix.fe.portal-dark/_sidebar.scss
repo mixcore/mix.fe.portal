@@ -94,7 +94,7 @@
                 &:hover {
                     color: #fff;
                     text-decoration: none;
-                    // background-color: #2196f3 !important;
+                    // background-color: theme-color($key: "primary") !important;
                     //color: #fff;
                     span:first-child {
                         color: #fff; 
@@ -112,19 +112,19 @@
             }
 
             &:hover {
-                // background-color: #2196f3 !important;
+                // background-color: theme-color($key: "primary") !important;
                 .sw-toc-link {
-                    color: #0c83e2 !important;
+                    color: $color !important;
                     span:first-child {
-                        color: #0c83e2;
+                        color: $color;
                     }
                     .mi{
-                        color: #2196f3;
+                        color: theme-color($key: "primary");
                         font-size: 2em;
                     }
                     
                     a{
-                        color:#fff !important;
+                        color:$color !important;
                     }
                 }
             }
@@ -189,7 +189,7 @@
             .fas{
                 padding: 0 !important;
                 margin:0;
-                color: #2196f3 !important;
+                color: theme-color($key: "primary") !important;
             }
         }
     }
@@ -263,16 +263,16 @@
                 }
                 .btn:hover {
                     .fas{
-                        color: #2196f3 !important;
+                        color: theme-color($key: "primary") !important;
                     }
                 }
             }
 
             
             &:hover {
-                color: #2196f3;
+                color: theme-color($key: "primary");
                 // text-decoration: none;
-                // background-color: #2196f3;
+                // background-color: theme-color($key: "primary");
                 // //color: #fff;
                 // span:first-child {
                 //     color: #fff; 
@@ -304,7 +304,7 @@
         &:hover {
             // color: #fff;
             // text-decoration: none;
-            // background-color: #2196f3;
+            // background-color: theme-color($key: "primary");
             // //color: #fff;
             // span:first-child {
             //     color: #fff; 
@@ -327,12 +327,12 @@
             color: $color;
             span:first-child {
                 padding-right: 10px;
-                color: #2196f3; 
+                color: theme-color($key: "primary"); 
             } // All levels of nav
             &:hover {
                 color: #fff;
                 text-decoration: none;
-                background-color: #2196f3;
+                background-color: theme-color($key: "primary");
                 //color: #fff;
                 span:first-child {
                     color: #fff; 

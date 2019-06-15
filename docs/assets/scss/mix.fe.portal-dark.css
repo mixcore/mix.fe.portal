@@ -10932,4 +10932,13 @@ body {
   color: #cccccc;
   background-color: #1e1e1e;
 }
+
+.dropdown-menu {
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-item {
+  color: #cccccc;
+}
 /*# sourceMappingURL=mix.fe.portal-dark.css.map */

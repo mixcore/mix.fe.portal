@@ -2037,22 +2037,22 @@ pre code {
 }
 
 .form-control::-webkit-input-placeholder {
-  color: #c7c7c7;
+  color: #555555;
   opacity: 1;
 }
 
 .form-control:-ms-input-placeholder {
-  color: #c7c7c7;
+  color: #555555;
   opacity: 1;
 }
 
 .form-control::-ms-input-placeholder {
-  color: #c7c7c7;
+  color: #555555;
   opacity: 1;
 }
 
 .form-control::placeholder {
-  color: #c7c7c7;
+  color: #555555;
   opacity: 1;
 }
 

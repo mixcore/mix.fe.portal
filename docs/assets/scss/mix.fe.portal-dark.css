@@ -10444,16 +10444,11 @@ body {
   border-bottom: 1px solid #777;
 }
 
-.nav-tabs .nav-link {
-  font-size: small;
-}
-
 .nav-tabs .nav-link.active,
 .nav-tabs .nav-item.show .nav-link {
   color: #209e91;
   background-color: #1e1e1e;
   border-color: #777 #777 #1e1e1e;
-  font-size: 16px;
 }
 
 .nav-tabs .nav-link:hover, .nav-tabs .nav-tabs .nav-link:focus {

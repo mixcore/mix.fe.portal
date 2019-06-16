@@ -1,6 +1,7 @@
 // Your variable overrides
 $main-bg: #1e1e1e;
 $body-bg: #1e1e1e;
+$table-dark-row-hover: #151515;
 $sidebar-item-hover-gb: #151515;
 //$body-color: rgb(230, 230, 230);
 $color:#cccccc;
@@ -35,7 +36,7 @@ $navbar-dark-active-color:#2196f3;
 
 
 $card-bg:1e1e1e;
-$text-muted:#fff;
+$text-muted:#444;
 
 $theme-colors: (
     "primary": #209e91,
@@ -107,7 +108,7 @@ $theme-colors: (
 @import "mix.fe.portal-dark/custom-forms";
 // @import "mix.fe.portal-dark/micon";
 @import "mix.fe.portal-dark/tables";
-// @import "mix.fe.portal-dark/modal";
+@import "mix.fe.portal-dark/modal";
 // @import "mix.fe.portal-dark/images";
 // @import "mix.fe.portal-dark/dropdown";
 // @import "mix.fe.portal-dark/tables";

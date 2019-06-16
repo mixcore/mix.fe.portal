@@ -325,6 +325,9 @@
             padding-right: 0;
             font-weight: 500;
             color: $color;
+            .text{
+                color: $color !important;
+            }
             span:first-child {
                 padding-right: 10px;
                 color: theme-color($key: "primary"); 

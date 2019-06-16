@@ -1,5 +1,10 @@
 .table {
   color: $color;
+  th {
+    font-weight: bold;
+    font-size: small;
+    color: $color;
+  }
   tr {
     border-bottom: 1px solid;
 

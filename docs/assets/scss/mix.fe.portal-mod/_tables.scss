@@ -1,0 +1,23 @@
+.table {
+  // color: $color;
+  th {
+    font-weight: normal;
+    font-size: small;
+    // color: $color;
+  }
+  tbody {
+    tr {
+      border: 0px;
+      td {
+        border-top: 1px solid #444;
+      }
+    }
+  }
+}
+.table-hover tbody tr:hover {
+  // color: $link-hover-color;
+  // background-color: $table-dark-row-hover;
+
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}

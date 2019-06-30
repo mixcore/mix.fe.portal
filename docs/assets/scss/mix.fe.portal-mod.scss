@@ -1,0 +1,75 @@
+
+
+
+@import "mix.fe.portal-mod/variables";
+  
+// Core
+@import "bootstrap-4.3.1/functions";
+@import "bootstrap-4.3.1/variables";
+@import "bootstrap-4.3.1/mixins";
+
+// Bootstrap components 
+@import "bootstrap-4.3.1/root";
+@import "bootstrap-4.3.1/reboot";
+@import "bootstrap-4.3.1/type";
+@import "bootstrap-4.3.1/images";
+@import "bootstrap-4.3.1/code";
+@import "bootstrap-4.3.1/grid";
+@import "bootstrap-4.3.1/tables";
+@import "bootstrap-4.3.1/forms";
+@import "bootstrap-4.3.1/buttons";
+@import "bootstrap-4.3.1/transitions";
+@import "bootstrap-4.3.1/dropdown";
+@import "bootstrap-4.3.1/button-group";
+@import "bootstrap-4.3.1/input-group";
+@import "bootstrap-4.3.1/custom-forms";
+@import "bootstrap-4.3.1/nav";
+@import "bootstrap-4.3.1/navbar";
+@import "bootstrap-4.3.1/card";
+@import "bootstrap-4.3.1/breadcrumb";
+@import "bootstrap-4.3.1/pagination";
+@import "bootstrap-4.3.1/badge";
+@import "bootstrap-4.3.1/jumbotron";
+@import "bootstrap-4.3.1/alert";
+@import "bootstrap-4.3.1/progress";
+@import "bootstrap-4.3.1/media";
+@import "bootstrap-4.3.1/list-group";
+@import "bootstrap-4.3.1/close";
+@import "bootstrap-4.3.1/modal";
+@import "bootstrap-4.3.1/tooltip";
+@import "bootstrap-4.3.1/popover";
+@import "bootstrap-4.3.1/carousel";
+@import "bootstrap-4.3.1/utilities";
+@import "bootstrap-4.3.1/print";
+
+// Custom components
+// @import "mix.fe.portal-mod/mixore";
+@import "mix.fe.portal-mod/reboot";
+@import "mix.fe.portal-mod/nav";
+@import "mix.fe.portal-mod/navbar";
+@import "mix.fe.portal-mod/sidebar";
+@import "mix.fe.portal-mod/card";
+@import "mix.fe.portal-mod/input-group";
+// @import "mix.fe.portal-mod/breadcrumb";
+// @import "mix.fe.portal-mod/text";
+// @import "mix.fe.portal-mod/nav-action";
+// @import "mix.fe.portal-mod/buttons";
+// @import "mix.fe.portal-mod/form";
+// @import "mix.fe.portal-mod/switch";
+@import "mix.fe.portal-mod/custom-forms";
+// @import "mix.fe.portal-mod/micon";
+@import "mix.fe.portal-mod/tables";
+@import "mix.fe.portal-mod/modal";
+@import "mix.fe.portal-mod/pagination";
+// @import "mix.fe.portal-mod/dropdown";
+// @import "mix.fe.portal-mod/tables";
+
+
+@import "mix.fe.portal-mod/dnd";
+ 
+
+// Vendor
+
+// @import "custom/vendor/bootstrap-datepicker.scss";
+// @import "custom/vendor/headroom.scss";
+// @import "custom/vendor/nouislider.scss";

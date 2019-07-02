@@ -33,7 +33,7 @@
         padding: .125rem 1.5rem;
         color: #99979c;
         &:hover {
-            color: $link-hover-color;
+            // color: $link-hover-color;
             text-decoration: none;
         }
     }
@@ -289,14 +289,14 @@
         }
         
         li a:hover {
-            color: $link-hover-color;
+            // color: $link-hover-color;
             text-decoration: none;
             //background-color: rgba(0, 0, 0, 0.25);
         }
         .active a,
         .active:hover a {
             font-weight: 500;
-            color: $link-hover-color;
+            // color: $link-hover-color;
             //background-color: transparent;
             // border-left-color: $color;
         }

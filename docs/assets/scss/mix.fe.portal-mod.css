@@ -10501,7 +10501,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .sw-navbar .navbar-nav .nav-link.active, .sw-navbar .navbar-nav .nav-link:hover {
-  color: #0056b3;
   background-color: transparent;
 }
 
@@ -10572,7 +10571,6 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .toc-entry a:hover {
-  color: #0056b3;
   text-decoration: none;
 }
 
@@ -10773,14 +10771,12 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .sw-sidebar .sw-toc-item li a:hover {
-  color: #0056b3;
   text-decoration: none;
 }
 
 .sw-sidebar .sw-toc-item .active a,
 .sw-sidebar .sw-toc-item .active:hover a {
   font-weight: 500;
-  color: #0056b3;
 }
 
 .sw-sidebar .sw-toc-item:hover .inner:first-child .btn-group {

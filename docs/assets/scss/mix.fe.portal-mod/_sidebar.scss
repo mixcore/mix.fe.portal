@@ -92,9 +92,9 @@
                 }
 
                 &:hover {
-                    // color: $color;
+                    color: $white;
                     text-decoration: none;
-                    // background-color: theme-color($key: "primary") !important;
+                    background-color: theme-color($key: "primary") !important;
                     //color: $color;
                     span:first-child {
                         // color: $color; 
@@ -112,7 +112,7 @@
             }
 
             &:hover {
-                // background-color: theme-color($key: "primary") !important;
+                background-color: theme-color($key: "primary") !important;
                 .sw-toc-link {
                     // color: $color !important;
                     span:first-child {
@@ -333,9 +333,9 @@
                 color: theme-color($key: "primary"); 
             } // All levels of nav
             &:hover {
-                // color: $color;
+                color: $body-bg;
                 text-decoration: none;
-                // background-color: $sidebar-item-hover-gb;
+                background-color: theme-color($key: "primary");
                 //color: $color;
                 span:first-child {
                     // color: $color; 
@@ -348,7 +348,7 @@
                     opacity: 1;
                 }
                 a{
-                    // color: $color;
+                    color: $body-bg;
                     text-decoration: none;
                 }
             }

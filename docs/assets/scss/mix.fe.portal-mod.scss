@@ -1,9 +1,11 @@
 
 
+
   
 // Core
 @import "bootstrap-4.3.1/functions";
 
+@import "mix.fe.portal-mod/reboot";
 @import "mix.fe.portal-mod/variables";
 
 @import "bootstrap-4.3.1/variables";
@@ -47,7 +49,6 @@
 
 // Custom components
 // @import "mix.fe.portal-mod/mixore";
-@import "mix.fe.portal-mod/reboot";
 @import "mix.fe.portal-mod/nav";
 @import "mix.fe.portal-mod/navbar";
 @import "mix.fe.portal-mod/sidebar";

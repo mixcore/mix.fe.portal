@@ -25,3 +25,4 @@
 
 
 ((Get-Content -path mix.fe.portal-mod.css -Raw) -replace 'rgba\(0, 123, 255','hsla(var(--primary-color-hue,211), 100%, 50%') | Set-Content -Path mix.fe.portal-mod.css
+((Get-Content -path mix.fe.portal-mod.css -Raw) -replace 'rgba\(38, 143, 255','hsla(var(--primary-color-hue,211), 100%, 50%') | Set-Content -Path mix.fe.portal-mod.css

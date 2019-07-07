@@ -9,7 +9,7 @@
     tr {
       border: 0px;
       td {
-        border-top: 1px solid #444;
+        //border-top: 1px solid #444;
       }
     }
   }
@@ -18,6 +18,6 @@
   // color: $link-hover-color;
   // background-color: $table-dark-row-hover;
 
-  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }

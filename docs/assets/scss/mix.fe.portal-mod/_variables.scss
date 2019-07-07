@@ -36,11 +36,10 @@ $colors: () !default;
 $colors: map-merge(
   (
     "bg-color": $white,
-    "text-color":$gray-900,
-    "primary-color-hue":211,
-    "primary-color-saturation":100%,
-    "primary-color-brightness":50%,
-
+    "text-color": $gray-900,
+    "primary-color-hue": 211,
+    "primary-color-saturation": 100%,
+    "primary-color-brightness": 50%,
     "blue": $blue,
     "indigo": $indigo,
     "purple": $purple,
@@ -74,6 +73,7 @@ $dark: $gray-800 !default;
 
 $body-bg: v(bg-color, $white) !default;
 $body-color: v(text-color, $gray-900) !default;
+$table-hover-bg: rgba($blue, 0.075) !default;
 // $card-bg: v(bg-color, $white) !default;
 
 // //$component-active-bg:         $primary !default;

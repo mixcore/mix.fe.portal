@@ -41,9 +41,12 @@
     }
 
     .navbar-brand{
-      img{
-        animation: mi-spin 30s infinite linear;
-      }
+      // img{
+      //   animation: mi-spin 30s infinite linear;
+      // }
+      // background-color: $primary;
+      // -webkit-mask:  url(icon.svg) no-repeat 50% 50%;
+      // mask: url(icon.svg) no-repeat 50% 50%;
     }
   
     .navbar-nav {

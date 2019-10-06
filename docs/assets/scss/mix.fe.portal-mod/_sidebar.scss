@@ -34,7 +34,7 @@
         color: #99979c;
         &:hover {
             // color: $link-hover-color;
-            text-decoration: none;
+            text-decoration: none; 
         }
     }
 } //
@@ -43,12 +43,15 @@
 .sw-sidebar {
     order: 0;
     background-color: $body-bg;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    border-bottom: 1px solid $card-border-color;
     // color: $color; TODO
     padding-right: 15px;
     padding-left: 15px;
     width: calc(100vw - 4rem);
     transition: all 0.3s;
+
+    -webkit-box-shadow: $box-shadow-sm;
+    box-shadow: $box-shadow-sm;
 
     
     .inner{
@@ -370,7 +373,7 @@
             z-index: 1000;
             height: calc(100vh - 4rem);
         }
-        border-right: 1px solid rgba(0, 0, 0, .1);
+        border-right: 1px solid $card-border-color;
     }
     @include media-breakpoint-up(xl) {
         max-width: 270px;

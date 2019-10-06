@@ -33,7 +33,9 @@
 
         <span>
             <a class="navbar-brand ml-2" href="/" aria-label="Swastika I/O">
-                <div class="mixcore-logo" style="width: 115px;height: 25px;background-color: #007bff;-webkit-mask:  url(../docs/assets/img/mixcore-logo-green.svg) no-repeat 50% 50%; mask: url(../docs/assets/img/mixcore-logo-green.svg) no-repeat 50% 50%;"></div>
+                <div class="mixcore-logo"
+                    style="width: 115px;height: 25px;background-color: #007bff;-webkit-mask:  url(../docs/assets/img/mixcore-logo-green.svg) no-repeat 50% 50%; mask: url(../docs/assets/img/mixcore-logo-green.svg) no-repeat 50% 50%;">
+                </div>
                 <!-- <img src="assets/img/mixcore-logo-green.svg" alt="Kiwi standing on oval" height="25px"> -->
             </a>
 
@@ -780,6 +782,1102 @@
 
                                     </div>
                                 </div>
+
+                                <div class="mb-3 tabbable ng-isolate-scope" select-callback="selectPane(pane)">
+
+                                    <div class="card-header-nav-pills">
+                                        <ul class="nav nav-tabs text-center nav-fill">
+                                            <!-- ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link  active" ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">Attributes</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">General</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">SEO</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">Parents</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">Module</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">Medias</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                            <li class="nav-item ng-scope" ng-repeat="pane in panes">
+                                                <a class="nav-link " ng-class="{active:pane.selected}" href=""
+                                                    ng-click="select(pane)">Related</a>
+                                            </li><!-- end ngRepeat: pane in panes -->
+                                        </ul>
+                                    </div>
+                                    <div class="tab-content" ng-transclude="">
+                                        <div class="card tab-pane ng-scope ng-isolate-scope active"
+                                            ng-class="{active: selected}" ng-transclude="" header="Attributes">
+                                            <!-- ngRepeat: value in activedData.attributeData.data.values | orderBy:'priority' track by $index -->
+                                            <div class="card-body ng-scope"
+                                                ng-repeat="value in activedData.attributeData.data.values | orderBy:'priority' track by $index">
+                                                <attribute-value-editor attribute-value="value" is-show-title="'true'"
+                                                    parent-type="'1'" parent-id="activedData.attributeData.id"
+                                                    class="ng-isolate-scope">
+                                                    <!-- ngIf: !$ctrl.attributeValue.field.isSelect -->
+                                                    <div ng-if="!$ctrl.attributeValue.field.isSelect"
+                                                        class="form-group row ng-scope">
+                                                        <div class="col-2">
+                                                            <!-- ngIf: $ctrl.isShowTitle=='true' -->
+                                                            <h6 class="control-label m-0 ng-binding ng-scope"
+                                                                ng-if="$ctrl.isShowTitle=='true'"
+                                                                ng-bind="$ctrl.attributeValue.field.title">Rating</h6>
+                                                            <!-- end ngIf: $ctrl.isShowTitle=='true' -->
+                                                            <div ng-switch="$ctrl.attributeValue.field.dataType">
+                                                                <!-- ngSwitchWhen: 0 -->
+                                                                <!-- ngSwitchWhen: 1 -->
+                                                                <!-- ngSwitchWhen: 2 -->
+                                                                <!-- ngSwitchWhen: 3 -->
+                                                                <!-- ngSwitchWhen: 4 -->
+                                                                <!-- ngSwitchWhen: 5 -->
+                                                                <!-- ngSwitchWhen: 6 -->
+                                                                <!-- ngSwitchWhen: 7 -->
+                                                                <!-- ngSwitchWhen: 8 -->
+                                                                <!-- ngSwitchWhen: 9 -->
+                                                                <!-- ngSwitchWhen: 10 -->
+                                                                <!-- ngSwitchWhen: 11 -->
+                                                                <!-- ngSwitchWhen: 12 -->
+                                                                <!-- ngSwitchWhen: 13 -->
+                                                                <!-- ngSwitchWhen: 14 -->
+                                                                <!-- ngSwitchWhen: 15 -->
+                                                                <!-- ngSwitchWhen: 16 --><small
+                                                                    class="text-muted ng-scope" ng-switch-when="16">
+                                                                    <!--upload-->
+                                                                    (Upload)
+                                                                </small><!-- end ngSwitchWhen: -->
+                                                                <!-- ngSwitchWhen: 17 -->
+                                                                <!-- ngSwitchWhen: 18 -->
+                                                                <!-- ngSwitchWhen: 19 -->
+                                                                <!-- ngSwitchWhen: 20 -->
+                                                                <!-- ngSwitchWhen: 21 -->
+                                                                <!-- ngSwitchWhen: 22 -->
+                                                                <!-- ngSwitchWhen: 23 -->
+                                                            </div>
+                                                        </div>
+                                                        <div ng-switch="$ctrl.attributeValue.field.dataType"
+                                                            class="col-10 pb-4">
+                                                            <!-- ngSwitchWhen: 0 -->
+                                                            <!-- ngSwitchWhen: 1 -->
+                                                            <!-- ngSwitchWhen: 2 -->
+                                                            <!-- ngSwitchWhen: 3 -->
+                                                            <!-- ngSwitchWhen: 4 -->
+                                                            <!-- ngSwitchWhen: 5 -->
+                                                            <!-- ngSwitchWhen: 6 -->
+                                                            <!-- ngSwitchWhen: 7 -->
+                                                            <!-- ngSwitchWhen: 8 -->
+                                                            <!-- ngSwitchWhen: 9 -->
+                                                            <!-- ngSwitchWhen: 10 -->
+                                                            <!-- ngSwitchWhen: 11 -->
+                                                            <!-- ngSwitchWhen: 12 -->
+                                                            <!-- ngSwitchWhen: 13 -->
+                                                            <!-- ngSwitchWhen: 14 -->
+                                                            <!-- ngSwitchWhen: 15 -->
+                                                            <!-- ngSwitchWhen: 16 -->
+                                                            <div class="text-muted ng-scope" ng-switch-when="16">
+                                                                <!--upload-->
+                                                                <custom-image header="'Image'" type="'Posts'"
+                                                                    folder="'Attributes'"
+                                                                    src-url="$ctrl.attributeValue.stringValue"
+                                                                    src="$ctrl.attributeValue.stringValue" auto="'true'"
+                                                                    class="ng-isolate-scope">
+                                                                    <div class="card mb-3 custom-image"
+                                                                        ng-init="$ctrl.init()">
+                                                                        <h6 class="card-header ng-binding">
+                                                                            Image
+
+                                                                            <a class="btn btn-link text-primary btn-sm float-right py-0"
+                                                                                data-toggle="modal"
+                                                                                data-target="#modal-files-search-5">
+                                                                                <i class="fa fa-folder-open"></i> Browse
+                                                                            </a>
+                                                                            <a class="btn btn-link text-primary btn-sm float-right py-0"
+                                                                                ng-click="$ctrl.isShowBrowser = !$ctrl.isShowBrowser"><i
+                                                                                    class="fa fa-file-upload"></i>
+                                                                                Upload</a>
+                                                                        </h6>
+                                                                        <div ng-show="$ctrl.isShowBrowser"
+                                                                            class="card-header ng-hide">
+                                                                            <div class="input-group mb-3">
+                                                                                <div class="input-group-prepend">
+                                                                                    <span
+                                                                                        class="input-group-text">URL</span>
+                                                                                </div>
+                                                                                <input type="text"
+                                                                                    onclick="this.select()"
+                                                                                    ng-model="$ctrl.srcUrl"
+                                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                                                    placeholder="https://your-image-url...">
+                                                                            </div>
+                                                                            <div class="input-group">
+                                                                                <div class="custom-file">
+                                                                                    <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                                                                                    <input id="5" type="file" name="pic"
+                                                                                        ngf-select="$ctrl.selectFile($file, $invalidFiles)"
+                                                                                        data-file="file.file"
+                                                                                        class="position-absolute hidden ng-isolate-scope">
+                                                                                    <label class="custom-file-label"
+                                                                                        for="5">Upload file...</label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="card-body p-0"
+                                                                            style="background:url(/images/upload-image-thumbnail.png) no-repeat center;  cursor:pointer; min-height: 200px;">
+                                                                            <!-- ngIf: $ctrl.isImage --><img
+                                                                                ng-if="$ctrl.isImage" imageonload=""
+                                                                                ng-src="/assets/img/image_placeholder.jpg"
+                                                                                name="pic"
+                                                                                class="custom-file-img d-block ng-scope ml-auto mr-auto w-100"
+                                                                                accept="image/*"
+                                                                                src="/assets/img/image_placeholder.jpg">
+                                                                            <!-- end ngIf: $ctrl.isImage -->
+                                                                            <!-- ngIf: !$ctrl.isImage && $ctrl.srcUrl -->
+                                                                            <input type="hidden"
+                                                                                value="Posts/Attributes"
+                                                                                class="folder-val" autocomplete="off">
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <div class="modal modal-default fade show"
+                                                                        id="modal-files-search-5"
+                                                                        ng-init="getListMedias()">
+                                                                        <div
+                                                                            class="modal-dialog modal-dialog-centered modal-lg">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title"
+                                                                                        id="exampleModalLabel"><i
+                                                                                            class="mi mi-Media"></i>
+                                                                                        Medias Manager</h5>
+                                                                                    <button type="button" class="close"
+                                                                                        data-dismiss="modal"
+                                                                                        aria-label="Close">
+                                                                                        <span
+                                                                                            aria-hidden="true">×</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <!-- <div class="modal-body" style="height: calc(100vh - 143px);overflow-y: auto;"> -->
+                                                                                <div class="modal-body">
+                                                                                    <media-navs prefix="$ctrl.id"
+                                                                                        data="$ctrl.mediaNavs"
+                                                                                        is-single="'true'"
+                                                                                        output="$ctrl.srcUrl"
+                                                                                        class="ng-isolate-scope">
+                                                                                        <div class="tab-pane"
+                                                                                            ng-init="$ctrl.loadMedias()">
+                                                                                            <div class="row">
+                                                                                                <div class="col-12">
+                                                                                                    <h6>Selected items
+                                                                                                    </h6>
+                                                                                                    <navs
+                                                                                                        data="$ctrl.data"
+                                                                                                        prefix="$ctrl.prefix"
+                                                                                                        class="ng-isolate-scope">
+                                                                                                        <ul dnd-list="$ctrl.data"
+                                                                                                            class="m-0">
+                                                                                                            <!-- ngRepeat: nav in $ctrl.data -->
+                                                                                                        </ul>
+                                                                                                    </navs>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <hr>
+                                                                                            <!--activeMedias-->
+                                                                                            <div class="row">
+                                                                                                <div class="col-12">
+                                                                                                    <media-upload
+                                                                                                        on-update="$ctrl.loadMedias()"
+                                                                                                        class="ng-isolate-scope">
+                                                                                                        <div
+                                                                                                            class="form-row">
+                                                                                                            <div
+                                                                                                                class="form-group col-md-5">
+                                                                                                                <label
+                                                                                                                    for="inputEmail4">Title</label>
+                                                                                                                <input
+                                                                                                                    type="text"
+                                                                                                                    placeholder="Media Title"
+                                                                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                                                    ng-model="$ctrl.activedData.title">
+                                                                                                            </div>
+                                                                                                            <div
+                                                                                                                class="form-group col-md-7">
+                                                                                                                <label
+                                                                                                                    for="inputPassword4">Description</label>
+                                                                                                                <input
+                                                                                                                    type="text"
+                                                                                                                    placeholder="Media Description"
+                                                                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                                                    ng-model="$ctrl.activedData.description">
+                                                                                                            </div>
+                                                                                                        </div>
+
+                                                                                                        <custom-file
+                                                                                                            header="''"
+                                                                                                            folder="'Medias'"
+                                                                                                            media-file="$ctrl.activedData.mediaFile"
+                                                                                                            data="$ctrl.activedData"
+                                                                                                            src-url="$ctrl.activedData.mediaFile.fullPath"
+                                                                                                            save="$ctrl.save($ctrl.activedData)"
+                                                                                                            auto="'false'"
+                                                                                                            class="ng-isolate-scope">
+                                                                                                            <div class="form-row"
+                                                                                                                ng-init="$ctrl.init()">
+                                                                                                                <input
+                                                                                                                    type="hidden"
+                                                                                                                    value="/Medias"
+                                                                                                                    class="folder-val"
+                                                                                                                    autocomplete="off">
+                                                                                                                <div
+                                                                                                                    class="form-group col-md-5">
+                                                                                                                    <input
+                                                                                                                        type="text"
+                                                                                                                        placeholder="https://your-image-url..."
+                                                                                                                        ng-model="$ctrl.src"
+                                                                                                                        ng-change="$ctrl.srcUrl = $ctrl.src"
+                                                                                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    class="form-group col-md-4">
+                                                                                                                    <div
+                                                                                                                        class="custom-file">
+                                                                                                                        <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                                                                                                                        <input
+                                                                                                                            id="0.2780885806906004"
+                                                                                                                            type="file"
+                                                                                                                            name="pic"
+                                                                                                                            ngf-select="$ctrl.selectFile($file, $invalidFiles)"
+                                                                                                                            data-file="file.file"
+                                                                                                                            class="form-control position-absolute hidden ng-isolate-scope"
+                                                                                                                            style="width:100%; /*height:130px;*/ cursor:pointer;">
+                                                                                                                        <label
+                                                                                                                            class="custom-file-label"
+                                                                                                                            for="0.2780885806906004">Or
+                                                                                                                            choose
+                                                                                                                            file...</label>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                                <div
+                                                                                                                    class="form-group col-md-3">
+                                                                                                                    <button
+                                                                                                                        type="button"
+                                                                                                                        ng-click="$ctrl.save({activedData: $ctrl.data})"
+                                                                                                                        class="btn btn-secondary btn-block">
+                                                                                                                        <span
+                                                                                                                            class="fa fa-file-upload"></span>
+                                                                                                                        Upload</button>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </custom-file>
+                                                                                                    </media-upload>
+                                                                                                </div>
+
+                                                                                            </div>
+                                                                                            <hr>
+                                                                                            <div class="row mb-3">
+                                                                                                <!-- <div class="col-12">
+                                        <h3>Medias</h3>
+                                    </div> -->
+                                                                                                <div class="col-md-8">
+                                                                                                    <div class="btn-toolbar mb-3"
+                                                                                                        role="toolbar"
+                                                                                                        aria-label="Toolbar with button groups">
+
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="col-md-4">
+                                                                                                    <div
+                                                                                                        class="input-group input-group-sm">
+                                                                                                        <div
+                                                                                                            class="input-group-prepend">
+                                                                                                            <div class="input-group-text"
+                                                                                                                id="btnGroupAddon">
+                                                                                                                <i class="mi mi-Search btn-search-media"
+                                                                                                                    ng-click="$ctrl.loadMedias()"
+                                                                                                                    style="top:0;cursor:pointer;"></i>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <input
+                                                                                                            type="text"
+                                                                                                            ng-model="$ctrl.request.keyword"
+                                                                                                            ng-enter="$ctrl.loadMedias()"
+                                                                                                            class="form-control media-keyword ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                                            placeholder="Search media items..."
+                                                                                                            aria-label="Search media items..."
+                                                                                                            aria-describedby="btnGroupAddon">
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <div class="card-columns"
+                                                                                                style="column-count: 3 !important;column-gap: 0.75rem;">
+                                                                                                <!-- ngRepeat: media in $ctrl.medias.items -->
+                                                                                            </div>
+                                                                                            <!-- ngIf: $ctrl.medias.totalPage>0 -->
+                                                                                        </div>
+                                                                                    </media-navs>
+                                                                                </div>
+                                                                                <div class="modal-footer ng-hide"
+                                                                                    ng-show="data.totalItems > 0">
+                                                                                    <paging
+                                                                                        class="small col-md-12 ng-isolate-scope"
+                                                                                        page="data.page"
+                                                                                        page-size="data.pageSize"
+                                                                                        total="data.totalItems"
+                                                                                        ul-class="pagination justify-content-end m-0"
+                                                                                        a-class="page-link"
+                                                                                        paging-action="getList(page-1)"
+                                                                                        scroll-top="true">
+                                                                                        <ul data-ng-hide="Hide"
+                                                                                            data-ng-class="ulClass"
+                                                                                            class="pagination justify-content-end m-0">
+                                                                                            <!-- ngRepeat: Item in List -->
+                                                                                        </ul>
+                                                                                    </paging>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- /.modal-content -->
+                                                                        </div>
+                                                                        <!-- /.modal-dialog -->
+                                                                    </div>
+                                                                </custom-image>
+                                                            </div><!-- end ngSwitchWhen: -->
+                                                            <!-- ngSwitchWhen: 17 -->
+                                                            <!-- ngSwitchWhen: 18 -->
+                                                            <!-- ngSwitchWhen: 19 -->
+                                                            <!-- ngSwitchWhen: 20 -->
+                                                            <!-- ngSwitchWhen: 21 -->
+                                                            <!-- ngSwitchWhen: 22 -->
+                                                            <!-- ngSwitchWhen: 23 -->
+                                                        </div>
+                                                    </div><!-- end ngIf: !$ctrl.attributeValue.field.isSelect -->
+                                                    <!-- TODO: Only allow stringValue -->
+                                                    <!-- ngIf: $ctrl.attributeValue.field.isSelect -->
+                                                </attribute-value-editor>
+                                            </div>
+                                            <!-- end ngRepeat: value in activedData.attributeData.data.values | orderBy:'priority' track by $index -->
+                                        </div>
+                                        <div class="card tab-pane ng-scope ng-isolate-scope"
+                                            ng-class="{active: selected}" ng-transclude="" header="General">
+                                            <div class="card-body ng-scope">
+                                                <post-general is-admin="isAdmin" post="activedData"
+                                                    class="ng-isolate-scope">
+                                                    <div class="tab-pane fade active show" id="pills-general"
+                                                        role="tabpanel" aria-labelledby="pills-general-tab">
+
+                                                        <div class="form-group">
+                                                            <label class="control-label">Source URL</label>
+                                                            <input type="text"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                ng-model="$ctrl.post.source">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label class="control-label">Tags</label>
+                                                            <!--<input type="text" class="form-control tags" ng-model="$ctrl.post.tags">-->
+                                                            <tags-input ng-model="$ctrl.post.listTag"
+                                                                class="ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty ng-valid-max-tags ng-valid-min-tags ng-valid-leftover-text">
+                                                                <div class="host" tabindex="-1"
+                                                                    ng-click="eventHandlers.host.click()"
+                                                                    ti-transclude-append="">
+                                                                    <div class="tags" ng-class="{focused: hasFocus}">
+                                                                        <ul class="tag-list">
+                                                                            <!-- ngRepeat: tag in tagList.items track by track(tag) -->
+                                                                        </ul><input
+                                                                            class="input ng-pristine ng-untouched ng-valid ng-empty"
+                                                                            autocomplete="off" ng-model="newTag.text"
+                                                                            ng-model-options="{getterSetter: true}"
+                                                                            ng-keydown="eventHandlers.input.keydown($event)"
+                                                                            ng-focus="eventHandlers.input.focus($event)"
+                                                                            ng-blur="eventHandlers.input.blur($event)"
+                                                                            ng-paste="eventHandlers.input.paste($event)"
+                                                                            ng-trim="false"
+                                                                            ng-class="{'invalid-tag': newTag.invalid}"
+                                                                            ng-disabled="disabled"
+                                                                            ti-bind-attrs="{type: options.type, placeholder: options.placeholder, tabindex: options.tabindex, spellcheck: options.spellcheck}"
+                                                                            ti-autosize="" type="text"
+                                                                            placeholder="Add a tag"
+                                                                            spellcheck="true"><span class="input"
+                                                                            style="visibility: hidden; width: auto; white-space: pre; display: none;">Add
+                                                                            a tag</span>
+                                                                    </div>
+                                                                    <!--<auto-complete source="$ctrl.loadTags($query)"></auto-complete>-->
+                                                                </div>
+                                                            </tags-input>
+                                                        </div>
+                                                        <!-- <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="mb-3">
+                                            <properties-structure  ng-if="$ctrl.isAdmin" title="'Extra Properties'" columns="$ctrl.post.columns"></properties-structure>
+                                            <properties-value title="''" columns="$ctrl.post.columns" properties="$ctrl.post.properties">
+                                                </properties-value>
+                                        </div>
+                                    </div>
+                                </div> -->
+                                                    </div>
+                                                </post-general>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}"
+                                            ng-transclude="" header="SEO">
+                                            <div class="card card-body ng-scope">
+                                                <post-seo post="activedData" class="ng-isolate-scope">
+                                                    <div class="tab-pane">
+                                                        <div class="form-group">
+                                                            <label>Friendly URL Name</label>
+                                                            <input type="text"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                ng-model="$ctrl.post.seoName">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Friendly Title</label>
+                                                            <input type="text"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                ng-model="$ctrl.post.seoTitle">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Meta Description</label>
+                                                            <input type="text"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                ng-model="$ctrl.post.seoDescription">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Meta Keywords</label>
+                                                            <input type="text"
+                                                                class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                ng-model="$ctrl.post.seoKeywords">
+                                                        </div>
+                                                    </div>
+                                                </post-seo>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}"
+                                            ng-transclude="" header="Parents">
+                                            <div class="card card-body ng-scope">
+                                                <post-parents post="activedData" class="ng-isolate-scope">
+                                                    <div class="row ng-isolate-scope">
+                                                        <div class="col-md-9">
+                                                            <div class="tab-content" ng-transclude="">
+                                                                <div class="tab-pane ng-scope ng-isolate-scope active"
+                                                                    ng-class="{active: selected}" ng-transclude=""
+                                                                    header="Categories">
+                                                                    <navs data="$ctrl.post.categories" prefix="'cate'"
+                                                                        class="ng-scope ng-isolate-scope">
+                                                                        <ul dnd-list="$ctrl.data" class="m-0">
+                                                                            <!-- ngRepeat: nav in $ctrl.data -->
+                                                                        </ul>
+                                                                    </navs>
+                                                                </div>
+                                                                <div class="tab-pane ng-scope ng-isolate-scope"
+                                                                    ng-class="{active: selected}" ng-transclude=""
+                                                                    header="Modules">
+                                                                    <navs data="$ctrl.post.modules" prefix="'module'"
+                                                                        class="ng-scope ng-isolate-scope">
+                                                                        <ul dnd-list="$ctrl.data" class="m-0">
+                                                                            <!-- ngRepeat: nav in $ctrl.data -->
+                                                                            <li ng-repeat="nav in $ctrl.data"
+                                                                                class="container border-left-0 border-right-0 py-1 rounded-0 ng-scope"
+                                                                                dnd-draggable="nav" dnd-type="'nav'"
+                                                                                dnd-effect-allowed="move"
+                                                                                dnd-selected="$ctrl.selected = nav"
+                                                                                dnd-moved="$ctrl.updateOrders($index)"
+                                                                                ng-class="{'selected': $ctrl.selected === nav}"
+                                                                                draggable="true">
+                                                                                <div class="row">
+                                                                                    <div class="drag-header"
+                                                                                        style="cursor:grab; width: 15px;">
+                                                                                        <small
+                                                                                            class="fa fa-grip-vertical text-black-50 align-middle"></small>
+                                                                                    </div>
+                                                                                    <!--<div class="col-1">
+                                            <input type="text" ng-model="nav.priority" ng-change="$ctrl.updatePriorities()" 
+                                                   class="item-priority d-none form-control form-control-sm d"/>
+                                        </div>-->
+                                                                                    <div class="col-7">
+                                                                                        <div
+                                                                                            class="custom-control custom-switch">
+                                                                                            <input type="checkbox"
+                                                                                                ng-change="$ctrl.callback({nav: nav})"
+                                                                                                ng-model="nav.isActived"
+                                                                                                id="module_0"
+                                                                                                class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty">
+                                                                                            <label
+                                                                                                class="custom-control-label align-middle ng-binding"
+                                                                                                for="module_0"
+                                                                                                ng-bind="$ctrl.limString(nav.description, 30)"></label>
+                                                                                        </div>
+                                                                                        <span class="switch switch-sm">
+
+
+                                                                                        </span>
+                                                                                    </div>
+                                                                                    <div class="col-2 text-right">
+                                                                                        <img class="rounded" height="30"
+                                                                                            ng-src="assets/img/bg26.jpg"
+                                                                                            src="assets/img/bg26.jpg">
+                                                                                    </div>
+
+                                                                                    <div class="col-2 text-right">
+                                                                                        <!-- ngIf: $ctrl.detailsUrl -->
+                                                                                    </div>
+
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- end ngRepeat: nav in $ctrl.data -->
+                                                                        </ul>
+                                                                    </navs>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-3">
+                                                            <div class="card-header-nav-pills">
+                                                                <ul class="nav flex-column nav-pills">
+                                                                    <!-- ngRepeat: pane in panes -->
+                                                                    <li class="nav-item ng-scope"
+                                                                        ng-repeat="pane in panes">
+                                                                        <a class="nav-link  active"
+                                                                            ng-class="{active:pane.selected}" href=""
+                                                                            ng-click="select(pane)">Categories</a>
+                                                                    </li><!-- end ngRepeat: pane in panes -->
+                                                                    <li class="nav-item ng-scope"
+                                                                        ng-repeat="pane in panes">
+                                                                        <a class="nav-link "
+                                                                            ng-class="{active:pane.selected}" href=""
+                                                                            ng-click="select(pane)">Modules</a>
+                                                                    </li><!-- end ngRepeat: pane in panes -->
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </post-parents>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}"
+                                            ng-transclude="" header="Module">
+                                            <div class="card card-body ng-scope">
+                                                <post-modules post="activedData" class="ng-isolate-scope">
+                                                    <!-- ngIf: $ctrl.post.moduleNavs.length>0 -->
+                                                </post-modules>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}"
+                                            ng-transclude="" header="Medias">
+                                            <div class="card card-body ng-scope">
+                                                <post-medias post="activedData" medias="activedData.mediaNavs"
+                                                    class="ng-isolate-scope">
+                                                    <div class="tab-pane">
+                                                        <media-navs prefix="'post_nav'" data="$ctrl.post.mediaNavs"
+                                                            class="ng-isolate-scope">
+                                                            <div class="tab-pane" ng-init="$ctrl.loadMedias()">
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <h6>Selected items</h6>
+                                                                        <navs data="$ctrl.data" prefix="$ctrl.prefix"
+                                                                            class="ng-isolate-scope">
+                                                                            <ul dnd-list="$ctrl.data" class="m-0">
+                                                                                <!-- ngRepeat: nav in $ctrl.data -->
+                                                                            </ul>
+                                                                        </navs>
+                                                                    </div>
+                                                                </div>
+                                                                <hr>
+                                                                <!--activeMedias-->
+                                                                <div class="row">
+                                                                    <div class="col-12">
+                                                                        <media-upload on-update="$ctrl.loadMedias()"
+                                                                            class="ng-isolate-scope">
+                                                                            <div class="form-row">
+                                                                                <div class="form-group col-md-5">
+                                                                                    <label
+                                                                                        for="inputEmail4">Title</label>
+                                                                                    <input type="text"
+                                                                                        placeholder="Media Title"
+                                                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                        ng-model="$ctrl.activedData.title">
+                                                                                </div>
+                                                                                <div class="form-group col-md-7">
+                                                                                    <label
+                                                                                        for="inputPassword4">Description</label>
+                                                                                    <input type="text"
+                                                                                        placeholder="Media Description"
+                                                                                        class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                        ng-model="$ctrl.activedData.description">
+                                                                                </div>
+                                                                            </div>
+
+                                                                            <custom-file header="''" folder="'Medias'"
+                                                                                media-file="$ctrl.activedData.mediaFile"
+                                                                                data="$ctrl.activedData"
+                                                                                src-url="$ctrl.activedData.mediaFile.fullPath"
+                                                                                save="$ctrl.save($ctrl.activedData)"
+                                                                                auto="'false'" class="ng-isolate-scope">
+                                                                                <div class="form-row"
+                                                                                    ng-init="$ctrl.init()">
+                                                                                    <input type="hidden" value="/Medias"
+                                                                                        class="folder-val"
+                                                                                        autocomplete="off">
+                                                                                    <div class="form-group col-md-5">
+                                                                                        <input type="text"
+                                                                                            placeholder="https://your-image-url..."
+                                                                                            ng-model="$ctrl.src"
+                                                                                            ng-change="$ctrl.srcUrl = $ctrl.src"
+                                                                                            class="form-control ng-pristine ng-untouched ng-valid ng-empty">
+                                                                                    </div>
+                                                                                    <div class="form-group col-md-4">
+                                                                                        <div class="custom-file">
+                                                                                            <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                                                                                            <input
+                                                                                                id="0.7584157072291229"
+                                                                                                type="file" name="pic"
+                                                                                                ngf-select="$ctrl.selectFile($file, $invalidFiles)"
+                                                                                                data-file="file.file"
+                                                                                                class="form-control position-absolute hidden ng-isolate-scope"
+                                                                                                style="width:100%; /*height:130px;*/ cursor:pointer;">
+                                                                                            <label
+                                                                                                class="custom-file-label"
+                                                                                                for="0.7584157072291229">Or
+                                                                                                choose file...</label>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="form-group col-md-3">
+                                                                                        <button type="button"
+                                                                                            ng-click="$ctrl.save({activedData: $ctrl.data})"
+                                                                                            class="btn btn-secondary btn-block">
+                                                                                            <span
+                                                                                                class="fa fa-file-upload"></span>
+                                                                                            Upload</button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </custom-file>
+                                                                        </media-upload>
+                                                                    </div>
+
+                                                                </div>
+                                                                <hr>
+                                                                <div class="row mb-3">
+                                                                    <!-- <div class="col-12">
+                                        <h3>Medias</h3>
+                                    </div> -->
+                                                                    <div class="col-md-8">
+                                                                        <div class="btn-toolbar mb-3" role="toolbar"
+                                                                            aria-label="Toolbar with button groups">
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-md-4">
+                                                                        <div class="input-group input-group-sm">
+                                                                            <div class="input-group-prepend">
+                                                                                <div class="input-group-text"
+                                                                                    id="btnGroupAddon">
+                                                                                    <i class="mi mi-Search btn-search-media"
+                                                                                        ng-click="$ctrl.loadMedias()"
+                                                                                        style="top:0;cursor:pointer;"></i>
+                                                                                </div>
+                                                                            </div>
+                                                                            <input type="text"
+                                                                                ng-model="$ctrl.request.keyword"
+                                                                                ng-enter="$ctrl.loadMedias()"
+                                                                                class="form-control media-keyword ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                placeholder="Search media items..."
+                                                                                aria-label="Search media items..."
+                                                                                aria-describedby="btnGroupAddon">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="card-columns"
+                                                                    style="column-count: 3 !important;column-gap: 0.75rem;">
+                                                                    <!-- ngRepeat: media in $ctrl.medias.items -->
+                                                                </div>
+                                                                <!-- ngIf: $ctrl.medias.totalPage>0 -->
+                                                            </div>
+                                                        </media-navs>
+                                                    </div>
+                                                    <!--activeMedias
+                                    <h6>List items</h6>
+                                    <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="btn-toolbar mb-3" role="toolbar" aria-label="Toolbar with button groups">
+                                                <div class="btn-group mr-2">
+                                                    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target=".upload-image-modal-lg"><i class="mi mi-Add"></i></button>
+                                                    <button type="button" class="btn btn-secondary"><i class="mi mi-ViewAll"></i></button>
+                                                    <button type="button" class="btn btn-secondary"><i class="mi mi-List"></i></button>
+                                                    <button type="button" class="btn btn-secondary"><i class="mi mi-TabletSelected"></i></button>
+                                                </div>
+                                                <div class="btn-group mr-2" role="group" aria-label="Button group with nested dropdown">
+                                                    <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            All media types
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                            <a class="dropdown-item" href="#">All media types</a>
+                                                            <a class="dropdown-item" href="#">Images</a>
+                                                            <a class="dropdown-item" href="#">Audios</a>
+                                                            <a class="dropdown-item" href="#">Videos</a>
+                                                            <a class="dropdown-item" href="#">Documents</a>
+                                                            <a class="dropdown-item" href="#">Zips</a>
+                                                            <a class="dropdown-item" href="#">Others</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="btn-group mr-2" role="group" aria-label="Button group with nested dropdown">
+                                                    <div class="btn-group" role="group">
+                                                        <button id="btnGroupDrop1" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                            All times
+                                                        </button>
+                                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                            <a class="dropdown-item" href="#">Jan 2018</a>
+                                                            <a class="dropdown-item" href="#">Dec 2017</a>
+                                                            <a class="dropdown-item" href="#">Nov 2017</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <div class="input-group-text" id="btnGroupAddon">
+                                                        <i class="mi mi-Search btn-search-media" ng-click="$ctrl.loadMedias()" style="top:0;cursor:pointer;"></i>
+                                                    </div>
+                                                </div>
+                                                <input type="text" ng-model="request.keyword" ng-enter="$ctrl.loadMedias()" class="form-control media-keyword" placeholder="Search media items..." aria-label="Search media items..." aria-describedby="btnGroupAddon">
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="card-columns" style="column-count: 3 !important;column-gap: 0.75rem;">
+                                        <div class="card mb-3" ng-repeat="media in $ctrl.medias.items" ng-hide="media.isHidden">
+                                            <span class="switch switch-sm position-absolute m-1">
+                                                <input type="checkbox" class="switch" ng-model="media.isActived" ng-change="$ctrl.activeMedia(media)" id="Media_Image_{{media.id}}" value="true">
+                                                <label class="switch m-0" for="Media_Image_{{media.id}}">
+                                                    @* {{media.title}} {{$ctrl.medias.totalPage}}*@
+                                                </label>
+                                            </span>
+                                            <div class="btn-group btn-group-sm position-absolute m-1" role="group" aria-label="Basic example" style="z-index:3; right:0;">
+                                                <button class="btn btn-dark custom-file-cropper" data-toggle="modal" data-target=".image-crop-modal-lg" data-imgsrc="{{media.fullPath}}" data-imgid="{{media.id}}">
+                                                    <i class="mi mi-Crop"></i>
+                                                </button>
+                                                <button class="btn btn-dark btn-sm" data-imgsrc="{{media.fullPath}}" data-imgid="{{media.id}}" ng-click="removeMedia(media.id)">
+                                                    <i class="mi mi-Delete"></i>
+                                                </button>
+                                            </div>
+                                            <a href="#" data-toggle="modal" data-target=".image-preview-modal-lg" data-imgsrc="{{media.fullPath}}">
+                                                <img class="card-img-top" ng-src="{{media.fullPath}}" alt="{{media.title}}">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination pagination-sm pull-right">
+                                            <li class="page-item">
+                                                <a class="page-link active" href="javascript:void(0)" ng-click="$ctrl.loadMedias($ctrl.medias.pageIndex-1)" ng-hide="$ctrl.medias.pageIndex==0">Prev</a>
+                                            </li>
+                                            <li class="page-item" ng-class="{active: n-1==$ctrl.medias.pageIndex}" ng-repeat="n in range($ctrl.medias.totalPage)"><a class="page-link" href="javascript:void(0)" ng-click="$ctrl.loadMedias(n-1)">{{n}}</a></li>
+                                            <li class="page-item">
+                                                <a class="page-link" href="javascript:void(0)" ng-click="$ctrl.loadMedias($ctrl.medias.pageIndex + 1)" ng-hide="$ctrl.medias.pageIndex >= ($ctrl.medias.totalPage-1)">Next</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>-->
+                                                </post-medias>
+                                            </div>
+                                        </div>
+                                        <div class="tab-pane ng-scope ng-isolate-scope" ng-class="{active: selected}"
+                                            ng-transclude="" header="Related">
+                                            <related-navs request="request" source-id="activedData.id"
+                                                culture="activedData.specificulture" prefix="'post'"
+                                                navs="activedData.postNavs" data="data"
+                                                load-data="getListRelated(pageIndex)" class="ng-scope ng-isolate-scope">
+                                                <div class="tab-pane">
+                                                    <div class="card card-body">
+                                                        <div class="row">
+                                                            <navs class="col-12 mb-2 ng-isolate-scope" data="$ctrl.navs"
+                                                                prefix="'module-nav'" model="'nav-related'">
+                                                                <ul dnd-list="$ctrl.data" class="m-0">
+                                                                    <!-- ngRepeat: nav in $ctrl.data -->
+                                                                    <li ng-repeat="nav in $ctrl.data"
+                                                                        class="container border-left-0 border-right-0 py-1 rounded-0 ng-scope"
+                                                                        dnd-draggable="nav" dnd-type="'nav'"
+                                                                        dnd-effect-allowed="move"
+                                                                        dnd-selected="$ctrl.selected = nav"
+                                                                        dnd-moved="$ctrl.updateOrders($index)"
+                                                                        ng-class="{'selected': $ctrl.selected === nav}"
+                                                                        draggable="true">
+                                                                        <div class="row">
+                                                                            <div class="drag-header"
+                                                                                style="cursor:grab; width: 15px;">
+                                                                                <small
+                                                                                    class="fa fa-grip-vertical text-black-50 align-middle"></small>
+                                                                            </div>
+                                                                            <!--<div class="col-1">
+                                            <input type="text" ng-model="nav.priority" ng-change="$ctrl.updatePriorities()" 
+                                                   class="item-priority d-none form-control form-control-sm d"/>
+                                        </div>-->
+                                                                            <div class="col-7">
+                                                                                <div
+                                                                                    class="custom-control custom-switch">
+                                                                                    <input type="checkbox"
+                                                                                        ng-change="$ctrl.callback({nav: nav})"
+                                                                                        ng-model="nav.isActived"
+                                                                                        id="module-nav_0"
+                                                                                        class="custom-control-input ng-pristine ng-untouched ng-valid ng-empty">
+                                                                                    <label
+                                                                                        class="custom-control-label align-middle ng-binding"
+                                                                                        for="module-nav_0"
+                                                                                        ng-bind="$ctrl.limString(nav.description, 30)">Hello
+                                                                                        post!</label></div>
+                                                                                <span class="switch switch-sm">
+
+
+                                                                                </span>
+                                                                            </div>
+                                                                            <div class="col-2 text-right">
+                                                                                <img class="rounded" height="30">
+                                                                            </div>
+
+                                                                            <div class="col-2 text-right">
+                                                                                <!-- ngIf: $ctrl.detailsUrl -->
+                                                                            </div>
+
+                                                                        </div>
+                                                                    </li><!-- end ngRepeat: nav in $ctrl.data -->
+                                                                </ul>
+                                                            </navs>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <filter-list request="$ctrl.request"
+                                                                    callback="$ctrl.load(pageIndex)"
+                                                                    class="ng-isolate-scope">
+                                                                    <div class="row" ng-init="$ctrl.init()">
+                                                                        <div class="col-md-5">
+                                                                            <div class="" role="toolbar"
+                                                                                aria-label="Toolbar with button groups">
+                                                                                <div
+                                                                                    class="input-group input-group-sm mr-2">
+
+                                                                                    <select
+                                                                                        class="custom-select custom-select-sm col-6 ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                                                        ng-model="$ctrl.request.status"
+                                                                                        ng-change="$ctrl.callback({pageIndex: 0})">
+                                                                                        <!-- ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.statuses track by $index"
+                                                                                            value="0"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Deleted
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.statuses track by $index"
+                                                                                            value="1"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Preview
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.statuses track by $index"
+                                                                                            value="2"
+                                                                                            class="ng-binding ng-scope"
+                                                                                            selected="selected">
+                                                                                            Published
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.statuses track by $index"
+                                                                                            value="3"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Draft
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.statuses track by $index"
+                                                                                            value="4"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Schedule
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.statuses track by $index -->
+                                                                                    </select>
+                                                                                    <select
+                                                                                        class="custom-select custom-select-sm col-6 ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                                                        ng-model="$ctrl.request.orderBy"
+                                                                                        ng-change="$ctrl.callback({pageIndex: 0})">
+                                                                                        <!-- ngRepeat: item in $ctrl.orders track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.orders track by $index"
+                                                                                            value="CreatedDateTime"
+                                                                                            class="ng-binding ng-scope"
+                                                                                            selected="selected">Created
+                                                                                            Date
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.orders track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.orders track by $index"
+                                                                                            value="Priority"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Priority
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.orders track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.orders track by $index"
+                                                                                            value="Title"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Title
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.orders track by $index -->
+                                                                                    </select>
+                                                                                    <select
+                                                                                        class="custom-select custom-select-sm col-2 ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                                                        ng-model="$ctrl.request.direction"
+                                                                                        ng-change="$ctrl.callback({pageIndex: 0})">
+                                                                                        <!-- ngRepeat: item in $ctrl.directions track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.directions track by $index"
+                                                                                            value="0"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            Asc
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.directions track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.directions track by $index"
+                                                                                            value="1"
+                                                                                            class="ng-binding ng-scope"
+                                                                                            selected="selected">Desc
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.directions track by $index -->
+                                                                                    </select>
+                                                                                    <select
+                                                                                        class="custom-select custom-select-sm col-2 ng-pristine ng-untouched ng-valid ng-not-empty"
+                                                                                        ng-model="$ctrl.request.pageSize"
+                                                                                        ng-change="$ctrl.callback({pageIndex: 0})">
+                                                                                        <!-- ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.pageSizes track by $index"
+                                                                                            value=""
+                                                                                            class="ng-binding ng-scope">
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.pageSizes track by $index"
+                                                                                            value="5"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            5</option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.pageSizes track by $index"
+                                                                                            value="10"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            10</option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.pageSizes track by $index"
+                                                                                            value="15"
+                                                                                            class="ng-binding ng-scope">
+                                                                                            15</option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                        <option
+                                                                                            ng-repeat="item in $ctrl.pageSizes track by $index"
+                                                                                            value="20"
+                                                                                            class="ng-binding ng-scope"
+                                                                                            selected="selected">20
+                                                                                        </option>
+                                                                                        <!-- end ngRepeat: item in $ctrl.pageSizes track by $index -->
+                                                                                    </select>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-4">
+                                                                            <div class="" role="toolbar"
+                                                                                aria-label="Toolbar with button groups">
+                                                                                <div class="input-group input-group-sm">
+                                                                                    <input type="date"
+                                                                                        data-date-format="dd.MM.yyyy"
+                                                                                        ng-model="$ctrl.dateRange.fromDate"
+                                                                                        class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                        ng-change="$ctrl.updateDate()">
+                                                                                    <input type="date"
+                                                                                        data-date-format="dd.MM.yyyy"
+                                                                                        ng-model="$ctrl.dateRange.toDate"
+                                                                                        class="form-control form-control-sm ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                        ng-change="$ctrl.updateDate()">
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-md-3">
+                                                                            <div class="input-group input-group-sm">
+                                                                                <div class="input-group-prepend"
+                                                                                    ng-click="$ctrl.callback({pageIndex: 0})">
+                                                                                    <div class="input-group-text"
+                                                                                        id="btnGroupAddon"><i
+                                                                                            class="mi mi-Search"
+                                                                                            style="top:0;"></i></div>
+                                                                                </div>
+                                                                                <input ng-model="$ctrl.request.keyword"
+                                                                                    ng-enter="$ctrl.callback()"
+                                                                                    type="text"
+                                                                                    class="form-control ng-pristine ng-untouched ng-valid ng-empty"
+                                                                                    placeholder="Search..."
+                                                                                    aria-label="Search..."
+                                                                                    aria-describedby="btnGroupAddon">
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="row float-right">
+                                                                        <div class="col-md-12">
+                                                                            <!-- ngIf: $ctrl.createUrl -->
+                                                                        </div>
+                                                                    </div>
+                                                                </filter-list>
+                                                                <table class="table table-sm table-hover mt-2"
+                                                                    cellspacing="0">
+                                                                    <thead class="thead-light">
+                                                                        <tr>
+                                                                            <th scope="col">
+                                                                                Title
+                                                                            </th>
+                                                                            <th scope="col" width="15%">
+                                                                                Image
+                                                                            </th>
+                                                                            <th scope="col" width="5%">
+                                                                                Actived
+                                                                            </th>
+                                                                        </tr>
+                                                                    </thead>
+
+                                                                    <tbody class="sortable" ng-init="$ctrl.load()">
+                                                                        <!-- ngRepeat: item in $ctrl.data.items track by $index -->
+                                                                    </tbody>
+                                                                </table>
+                                                                <paging class="small ng-isolate-scope"
+                                                                    page="$ctrl.data.page"
+                                                                    page-size="$ctrl.data.pageSize"
+                                                                    total="$ctrl.data.totalItems"
+                                                                    ul-class="pagination justify-content-end m-0"
+                                                                    a-class="page-link" paging-action="callback(page-1)"
+                                                                    scroll-top="true">
+                                                                    <ul data-ng-hide="Hide" data-ng-class="ulClass"
+                                                                        class="pagination justify-content-end m-0">
+                                                                        <!-- ngRepeat: Item in List -->
+                                                                    </ul>
+                                                                </paging>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </related-navs>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="card-body">
+                                    </div> -->
+                                </div>
                             </section>
                             <section class="col-lg-4">
 
@@ -1112,7 +2210,29 @@
     </div>
 
     <div class="card-footer">
-        <paging class="small ng-isolate-scope" page="data.page" page-size="data.pageSize" total="data.totalItems" ul-class="pagination justify-content-end" a-class="page-link" paging-action="getList(page-1)" scroll-top="true"><ul data-ng-hide="Hide" data-ng-class="ulClass" class="pagination justify-content-end"> <!-- ngRepeat: Item in List --><li class="page-item ng-scope active" title="Page 1" data-ng-class="Item.liClass" data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()" data-ng-bind="Item.value" class="ng-binding page-link">1</a> </li><!-- end ngRepeat: Item in List --><li class="page-item ng-scope" title="Page 2" data-ng-class="Item.liClass" data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()" data-ng-bind="Item.value" class="ng-binding page-link">2</a> </li><!-- end ngRepeat: Item in List --><li class="page-item ng-scope" title="Page 3" data-ng-class="Item.liClass" data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()" data-ng-bind="Item.value" class="ng-binding page-link">3</a> </li><!-- end ngRepeat: Item in List --><li class="page-item ng-scope" title="Page 4" data-ng-class="Item.liClass" data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()" data-ng-bind="Item.value" class="ng-binding page-link">4</a> </li><!-- end ngRepeat: Item in List --></ul></paging>
+        <paging class="small ng-isolate-scope" page="data.page" page-size="data.pageSize" total="data.totalItems"
+            ul-class="pagination justify-content-end" a-class="page-link" paging-action="getList(page-1)"
+            scroll-top="true">
+            <ul data-ng-hide="Hide" data-ng-class="ulClass" class="pagination justify-content-end">
+                <!-- ngRepeat: Item in List -->
+                <li class="page-item ng-scope active" title="Page 1" data-ng-class="Item.liClass"
+                    data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()"
+                        data-ng-bind="Item.value" class="ng-binding page-link">1</a> </li>
+                <!-- end ngRepeat: Item in List -->
+                <li class="page-item ng-scope" title="Page 2" data-ng-class="Item.liClass"
+                    data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()"
+                        data-ng-bind="Item.value" class="ng-binding page-link">2</a> </li>
+                <!-- end ngRepeat: Item in List -->
+                <li class="page-item ng-scope" title="Page 3" data-ng-class="Item.liClass"
+                    data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()"
+                        data-ng-bind="Item.value" class="ng-binding page-link">3</a> </li>
+                <!-- end ngRepeat: Item in List -->
+                <li class="page-item ng-scope" title="Page 4" data-ng-class="Item.liClass"
+                    data-ng-repeat="Item in List"> <a href="" data-ng-class="aClass" data-ng-click="Item.action()"
+                        data-ng-bind="Item.value" class="ng-binding page-link">4</a> </li>
+                <!-- end ngRepeat: Item in List -->
+            </ul>
+        </paging>
     </div>
 
     <div class="modal modal-default fade show" id="modal-files">

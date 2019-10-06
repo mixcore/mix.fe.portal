@@ -11,7 +11,7 @@
     -webkit-box-shadow: $box-shadow-sm;
     box-shadow: $box-shadow-sm;
 
-    border-bottom: 1px solid rgba($black, .125);
+    border-bottom: 1px solid $card-border-color;
     @include media-breakpoint-down(md) {
       padding-right: .5rem;
       padding-left: .5rem;

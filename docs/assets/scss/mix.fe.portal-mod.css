@@ -10878,7 +10878,7 @@ a.text-dark:hover, a.text-dark:focus {
 }
 
 .sw-sidebar .sw-toc-item li .sw-toc-sub-link:hover .mi {
-  color: hsla(var(--primary-color-hue,211), var(--primary-color-saturation,100%), 100%, 1) !important;
+  color: hsla(var(--primary-color-hue,211), var(--primary-color-saturation,100%),var(--primary-color-brightness,50%), 1);
 }
 
 .sw-sidebar .sw-toc-item li .sw-toc-sub-link:hover .inner .btn-group {
@@ -11021,6 +11021,7 @@ a.text-dark:hover, a.text-dark:focus {
 .table th {
   font-weight: normal;
   font-size: small;
+  border-bottom: 1px;
 }
 
 .table tbody tr {

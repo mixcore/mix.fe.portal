@@ -281,9 +281,9 @@
                 //     color: $color; 
                 // }
                 .mi{
-                    //color: $color;
+                    color: theme-color($key: "primary");
                     
-                    color: $white !important;
+                    // color: $white !important;
                 }
                 
                 .inner .btn-group{

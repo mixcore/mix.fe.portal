@@ -1,9 +1,9 @@
 .table {
   // color: $color;
-  th {
+  thead th {
     font-weight: normal;
     font-size: small;
-    border-bottom: 1px;
+    border-bottom: 1px !important;
     // color: $color;
   }
   tbody {

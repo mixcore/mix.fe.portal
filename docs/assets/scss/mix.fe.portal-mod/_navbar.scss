@@ -101,9 +101,11 @@
   }
 
 .position-sticky-under-navbar{
-  top: 3.90rem; z-index: 12;
+  top: 5.5rem; z-index: 12;
+  //border-top: 1px solid $card-border-color;
 }
   
 .position-sticky-under-actionbar{
-  top: 8.90rem; z-index: 12;
+  top: 10.5rem; z-index: 12;
+  
 }

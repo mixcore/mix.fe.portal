@@ -1,7 +1,8 @@
 .card{    
     background-color: $body-bg;
     .card-header {
-        background-color: hsla(var(--primary-color-hue,211), 100%, 98%, 1);;
+        background-color: hsla(var(--primary-color-hue,211), 100%, 98%, 1);
+        border-top: 3px solid hsla(var(--primary-color-hue,211),100%,90%,1);
     }
     -webkit-box-shadow: $box-shadow-sm;
     box-shadow: $box-shadow-sm;

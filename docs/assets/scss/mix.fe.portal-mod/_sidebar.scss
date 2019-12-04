@@ -115,7 +115,7 @@
             }
 
             &:hover {
-                background-color: theme-color($key: "primary") !important;
+                // background-color: theme-color($key: "primary") !important;
                 .sw-toc-link {
                     // color: $color !important;
                     span:first-child {
@@ -315,7 +315,7 @@
             //     color: $color; 
             // }
             // .mi{
-            //     color: $color;
+            //     color: $white !important;
             // }
             
             .inner:first-child .btn-group{

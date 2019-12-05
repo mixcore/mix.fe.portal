@@ -11046,8 +11046,12 @@ a.text-dark:hover, a.text-dark:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 }
 
+.table .thead-light th {
+  background-color: hsla(var(--primary-color-hue, 211), 100%, 98%, 1);
+}
+
 .table thead th {
-  font-weight: normal;
+  font-weight: 500;
   font-size: small;
   border-bottom: 1px !important;
 }

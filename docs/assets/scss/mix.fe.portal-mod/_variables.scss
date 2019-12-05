@@ -77,6 +77,33 @@ $table-hover-bg: rgba($blue, 0.035) !default;
 $table-head-bg: rgba($blue, 0.075) !default;
 $input-placeholder-color: $gray-500 !default;
 $card-border-color:                 rgba($black, .08) !default;
+
+
+// $font-size-base:              1rem !default;
+$font-size-xs:                ($font-size-base * .2) !default;
+$line-height-xs:              1.5 !default;
+
+$border-radius-xs:            .1rem !default;
+
+$input-btn-padding-y-xs:      .25rem !default;
+$input-btn-padding-x-xs:      .25rem !default;
+$input-btn-line-height-xs:    $line-height-xs !default;
+
+
+$input-height-inner-xs:                 ($font-size-xs * $input-btn-line-height-xs) + ($input-btn-padding-y-xs * 4) !default;
+$input-height-xs:                       calc(#{$input-height-inner-xs} + #{$input-height-border}) !default;
+
+
+$input-padding-y-xs:                    $input-btn-padding-y-xs !default;
+$input-padding-x-xs:                    $input-btn-padding-x-xs !default;
+$input-line-height-xs:                  $input-btn-line-height-xs !default;
+
+$input-btn-font-size-xs:      $font-size-xs !default;
+$input-font-size-xs:                    $input-btn-font-size-xs !default;
+
+
+$input-border-radius-xs:                $border-radius-xs !default;
+
 // $card-bg: v(bg-color, $white) !default;
 
 // //$component-active-bg:         $primary !default;

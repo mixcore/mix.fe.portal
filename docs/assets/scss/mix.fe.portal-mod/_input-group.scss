@@ -1,4 +1,26 @@
-.dropdown-menu {
-    // color: $color;
-    // background-color: $body-bg;
+
+// Sizing
+//
+// Remix the default form control sizing classes into new ones for easier
+// manipulation.
+
+.input-group-xs > .form-control:not(textarea),
+.input-group-xs > .custom-select {
+  height: $input-height-xs;
+}
+
+.input-group-xs > .form-control,
+.input-group-xs > .custom-select,
+.input-group-xs > .input-group-prepend > .input-group-text,
+.input-group-xs > .input-group-append > .input-group-text,
+.input-group-xs > .input-group-prepend > .btn,
+.input-group-xs > .input-group-append > .btn {
+  padding: $input-padding-y-xs $input-padding-x-xs;
+  @include font-size($input-font-size-xs);
+  line-height: $input-line-height-xs;
+  @include border-radius($input-border-radius-xs);
+}
+
+.input-group-xs > .custom-select {
+  padding-right: $custom-select-padding-x + $custom-select-indicator-padding;
 }

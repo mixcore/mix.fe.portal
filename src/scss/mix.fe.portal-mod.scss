@@ -1,0 +1,30 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+
+@import "mix.fe.portal-mod/reboot";
+@import "mix.fe.portal-mod/variables";
+
+// Custom components
+// @import "mix.fe.portal-mod/mixore";
+@import "mix.fe.portal-mod/nav";
+@import "mix.fe.portal-mod/navbar";
+@import "mix.fe.portal-mod/sidebar";
+@import "mix.fe.portal-mod/card";
+@import "mix.fe.portal-mod/input-group";
+// @import "mix.fe.portal-mod/breadcrumb";
+// @import "mix.fe.portal-mod/text";
+// @import "mix.fe.portal-mod/nav-action";
+// @import "mix.fe.portal-mod/buttons";
+// @import "mix.fe.portal-mod/form";
+// @import "mix.fe.portal-mod/switch";
+@import "mix.fe.portal-mod/custom-forms";
+// @import "mix.fe.portal-mod/micon";
+@import "mix.fe.portal-mod/tables";
+@import "mix.fe.portal-mod/modal";
+@import "mix.fe.portal-mod/pagination";
+// @import "mix.fe.portal-mod/dropdown";
+// @import "mix.fe.portal-mod/tables";
+
+
+@import "mix.fe.portal-mod/dnd";

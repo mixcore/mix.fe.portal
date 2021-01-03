@@ -1,0 +1,15 @@
+.modal{
+    z-index: 1072;
+}
+.modal-content{
+    background-color: $body-bg;
+
+    .modal-footer
+    {
+        border-color: $card-border-color;
+    }
+    .modal-header
+    {
+        border-color: $card-border-color;
+    }
+}

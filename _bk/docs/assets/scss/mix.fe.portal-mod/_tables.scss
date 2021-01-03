@@ -1,0 +1,30 @@
+.table {
+  // color: $color;
+  .thead-light {
+    th {
+      background-color: hsla(var(--primary-color-hue, 211), 100%, 98%, 1);
+      // border-top: 1px solid hsla(var(--primary-color-hue,211),100%,90%,1);
+    }
+  }
+  thead th {
+    font-weight: 500;
+    font-size: small;
+    border-bottom: 1px !important;
+    // color: $color;
+  }
+  tbody {
+    tr {
+      border: 0px;
+      td {
+        //border-top: 1px solid #444;
+      }
+    }
+  }
+}
+.table-hover tbody tr:hover {
+  // color: $link-hover-color;
+  // background-color: $table-dark-row-hover;
+
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}

@@ -1,12 +1,23 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.5.3): tab.js
+ * Bootstrap (v5.0.0-beta1): tab.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import $ from 'jquery'
-import Util from './util'
+import {
+  getjQuery,
+  onDOMContentLoaded,
+  TRANSITION_END,
+  emulateTransitionEnd,
+  getElementFromSelector,
+  getTransitionDurationFromElement,
+  reflow
+} from './util/index'
+import Data from './dom/data'
+import EventHandler from './dom/event-handler'
+import SelectorEngine from './dom/selector-engine'
+import BaseComponent from './base-component'
 
 /**
  * ------------------------------------------------------------------------
@@ -15,11 +26,9 @@ import Util from './util'
  */
 
 const NAME = 'tab'
-const VERSION = '4.5.3'
 const DATA_KEY = 'bs.tab'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
 
 const EVENT_HIDE = `hide${EVENT_KEY}`
 const EVENT_HIDDEN = `hidden${EVENT_KEY}`
@@ -36,10 +45,10 @@ const CLASS_NAME_SHOW = 'show'
 const SELECTOR_DROPDOWN = '.dropdown'
 const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group'
 const SELECTOR_ACTIVE = '.active'
-const SELECTOR_ACTIVE_UL = '> li > .active'
-const SELECTOR_DATA_TOGGLE = '[data-toggle="tab"], [data-toggle="pill"], [data-toggle="list"]'
+const SELECTOR_ACTIVE_UL = ':scope > li > .active'
+const SELECTOR_DATA_TOGGLE = '[data-bs-toggle="tab"], [data-bs-toggle="pill"], [data-bs-toggle="list"]'
 const SELECTOR_DROPDOWN_TOGGLE = '.dropdown-toggle'
-const SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active'
+const SELECTOR_DROPDOWN_ACTIVE_CHILD = ':scope > .dropdown-menu .active'
 
 /**
  * ------------------------------------------------------------------------
@@ -47,77 +56,58 @@ const SELECTOR_DROPDOWN_ACTIVE_CHILD = '> .dropdown-menu .active'
  * ------------------------------------------------------------------------
  */
 
-class Tab {
-  constructor(element) {
-    this._element = element
-  }
-
+class Tab extends BaseComponent {
   // Getters
 
-  static get VERSION() {
-    return VERSION
+  static get DATA_KEY() {
+    return DATA_KEY
   }
 
   // Public
 
   show() {
-    if (this._element.parentNode &&
-        this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
-        $(this._element).hasClass(CLASS_NAME_ACTIVE) ||
-        $(this._element).hasClass(CLASS_NAME_DISABLED)) {
+    if ((this._element.parentNode &&
+      this._element.parentNode.nodeType === Node.ELEMENT_NODE &&
+      this._element.classList.contains(CLASS_NAME_ACTIVE)) ||
+      this._element.classList.contains(CLASS_NAME_DISABLED)) {
       return
     }
 
-    let target
     let previous
-    const listElement = $(this._element).closest(SELECTOR_NAV_LIST_GROUP)[0]
-    const selector = Util.getSelectorFromElement(this._element)
+    const target = getElementFromSelector(this._element)
+    const listElement = this._element.closest(SELECTOR_NAV_LIST_GROUP)
 
     if (listElement) {
       const itemSelector = listElement.nodeName === 'UL' || listElement.nodeName === 'OL' ? SELECTOR_ACTIVE_UL : SELECTOR_ACTIVE
-      previous = $.makeArray($(listElement).find(itemSelector))
+      previous = SelectorEngine.find(itemSelector, listElement)
       previous = previous[previous.length - 1]
     }
 
-    const hideEvent = $.Event(EVENT_HIDE, {
-      relatedTarget: this._element
-    })
+    let hideEvent = null
 
-    const showEvent = $.Event(EVENT_SHOW, {
+    if (previous) {
+      hideEvent = EventHandler.trigger(previous, EVENT_HIDE, {
+        relatedTarget: this._element
+      })
+    }
+
+    const showEvent = EventHandler.trigger(this._element, EVENT_SHOW, {
       relatedTarget: previous
     })
 
-    if (previous) {
-      $(previous).trigger(hideEvent)
-    }
-
-    $(this._element).trigger(showEvent)
-
-    if (showEvent.isDefaultPrevented() ||
-        hideEvent.isDefaultPrevented()) {
+    if (showEvent.defaultPrevented || (hideEvent !== null && hideEvent.defaultPrevented)) {
       return
     }
 
-    if (selector) {
-      target = document.querySelector(selector)
-    }
-
-    this._activate(
-      this._element,
-      listElement
-    )
+    this._activate(this._element, listElement)
 
     const complete = () => {
-      const hiddenEvent = $.Event(EVENT_HIDDEN, {
+      EventHandler.trigger(previous, EVENT_HIDDEN, {
         relatedTarget: this._element
       })
-
-      const shownEvent = $.Event(EVENT_SHOWN, {
+      EventHandler.trigger(this._element, EVENT_SHOWN, {
         relatedTarget: previous
       })
-
-      $(previous).trigger(hiddenEvent)
-      $(this._element).trigger(shownEvent)
     }
 
     if (target) {
@@ -127,33 +117,24 @@ class Tab {
     }
   }
 
-  dispose() {
-    $.removeData(this._element, DATA_KEY)
-    this._element = null
-  }
-
   // Private
 
   _activate(element, container, callback) {
     const activeElements = container && (container.nodeName === 'UL' || container.nodeName === 'OL') ?
-      $(container).find(SELECTOR_ACTIVE_UL) :
-      $(container).children(SELECTOR_ACTIVE)
+      SelectorEngine.find(SELECTOR_ACTIVE_UL, container) :
+      SelectorEngine.children(container, SELECTOR_ACTIVE)
 
     const active = activeElements[0]
-    const isTransitioning = callback && (active && $(active).hasClass(CLASS_NAME_FADE))
-    const complete = () => this._transitionComplete(
-      element,
-      active,
-      callback
-    )
+    const isTransitioning = callback && (active && active.classList.contains(CLASS_NAME_FADE))
+
+    const complete = () => this._transitionComplete(element, active, callback)
 
     if (active && isTransitioning) {
-      const transitionDuration = Util.getTransitionDurationFromElement(active)
+      const transitionDuration = getTransitionDurationFromElement(active)
+      active.classList.remove(CLASS_NAME_SHOW)
 
-      $(active)
-        .removeClass(CLASS_NAME_SHOW)
-        .one(Util.TRANSITION_END, complete)
-        .emulateTransitionEnd(transitionDuration)
+      EventHandler.one(active, TRANSITION_END, complete)
+      emulateTransitionEnd(active, transitionDuration)
     } else {
       complete()
     }
@@ -161,14 +142,12 @@ class Tab {
 
   _transitionComplete(element, active, callback) {
     if (active) {
-      $(active).removeClass(CLASS_NAME_ACTIVE)
+      active.classList.remove(CLASS_NAME_ACTIVE)
 
-      const dropdownChild = $(active.parentNode).find(
-        SELECTOR_DROPDOWN_ACTIVE_CHILD
-      )[0]
+      const dropdownChild = SelectorEngine.findOne(SELECTOR_DROPDOWN_ACTIVE_CHILD, active.parentNode)
 
       if (dropdownChild) {
-        $(dropdownChild).removeClass(CLASS_NAME_ACTIVE)
+        dropdownChild.classList.remove(CLASS_NAME_ACTIVE)
       }
 
       if (active.getAttribute('role') === 'tab') {
@@ -176,24 +155,23 @@ class Tab {
       }
     }
 
-    $(element).addClass(CLASS_NAME_ACTIVE)
+    element.classList.add(CLASS_NAME_ACTIVE)
     if (element.getAttribute('role') === 'tab') {
       element.setAttribute('aria-selected', true)
     }
 
-    Util.reflow(element)
+    reflow(element)
 
     if (element.classList.contains(CLASS_NAME_FADE)) {
       element.classList.add(CLASS_NAME_SHOW)
     }
 
-    if (element.parentNode && $(element.parentNode).hasClass(CLASS_NAME_DROPDOWN_MENU)) {
-      const dropdownElement = $(element).closest(SELECTOR_DROPDOWN)[0]
+    if (element.parentNode && element.parentNode.classList.contains(CLASS_NAME_DROPDOWN_MENU)) {
+      const dropdownElement = element.closest(SELECTOR_DROPDOWN)
 
       if (dropdownElement) {
-        const dropdownToggleList = [].slice.call(dropdownElement.querySelectorAll(SELECTOR_DROPDOWN_TOGGLE))
-
-        $(dropdownToggleList).addClass(CLASS_NAME_ACTIVE)
+        SelectorEngine.find(SELECTOR_DROPDOWN_TOGGLE)
+          .forEach(dropdown => dropdown.classList.add(CLASS_NAME_ACTIVE))
       }
 
       element.setAttribute('aria-expanded', true)
@@ -206,15 +184,9 @@ class Tab {
 
   // Static
 
-  static _jQueryInterface(config) {
+  static jQueryInterface(config) {
     return this.each(function () {
-      const $this = $(this)
-      let data = $this.data(DATA_KEY)
-
-      if (!data) {
-        data = new Tab(this)
-        $this.data(DATA_KEY, data)
-      }
+      const data = Data.getData(this, DATA_KEY) || new Tab(this)
 
       if (typeof config === 'string') {
         if (typeof data[config] === 'undefined') {
@@ -233,23 +205,32 @@ class Tab {
  * ------------------------------------------------------------------------
  */
 
-$(document)
-  .on(EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
-    event.preventDefault()
-    Tab._jQueryInterface.call($(this), 'show')
-  })
+EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_TOGGLE, function (event) {
+  event.preventDefault()
+
+  const data = Data.getData(this, DATA_KEY) || new Tab(this)
+  data.show()
+})
 
 /**
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
+ * add .Tab to jQuery only if jQuery is present
  */
 
-$.fn[NAME] = Tab._jQueryInterface
-$.fn[NAME].Constructor = Tab
-$.fn[NAME].noConflict = () => {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Tab._jQueryInterface
-}
+onDOMContentLoaded(() => {
+  const $ = getjQuery()
+  /* istanbul ignore if */
+  if ($) {
+    const JQUERY_NO_CONFLICT = $.fn[NAME]
+    $.fn[NAME] = Tab.jQueryInterface
+    $.fn[NAME].Constructor = Tab
+    $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = JQUERY_NO_CONFLICT
+      return Tab.jQueryInterface
+    }
+  }
+})
 
 export default Tab

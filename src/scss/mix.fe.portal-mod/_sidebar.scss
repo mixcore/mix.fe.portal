@@ -97,7 +97,7 @@
                 &:hover {
                     color: $white;
                     text-decoration: none;
-                    background-color: theme-color($key: "primary") !important;
+                    background-color: map_get($theme-colors, 'primary') !important;
                     //color: $color;
                     span:first-child {
                         // color: $color; 
@@ -115,14 +115,14 @@
             }
 
             &:hover {
-                // background-color: theme-color($key: "primary") !important;
+                // background-color: map_get($theme-colors, 'primary') !important;
                 .sw-toc-link {
                     // color: $color !important;
                     span:first-child {
                         // color: $color;
                     }
                     .mi{
-                        //color: theme-color($key: "primary");
+                        //color: map_get($theme-colors, 'primary');
                         font-size: 2em;
                     }
                     
@@ -192,7 +192,7 @@
             .fas{
                 padding: 0 !important;
                 margin:0;
-                color: theme-color($key: "primary") !important;
+                color: map_get($theme-colors, 'primary') !important;
             }
         }
     }
@@ -266,22 +266,22 @@
                 }
                 .btn:hover {
                     .fas{
-                        color: theme-color($key: "primary") !important;
+                        color: map_get($theme-colors, 'primary') !important;
                     }
                 }
             }
 
             
             &:hover {
-                color: theme-color($key: "primary");
+                color: map_get($theme-colors, 'primary');
                 // text-decoration: none;
-                // background-color: theme-color($key: "primary");
+                // background-color: map_get($theme-colors, 'primary');
                 // //color: $color;
                 // span:first-child {
                 //     color: $color; 
                 // }
                 .mi{
-                    color: theme-color($key: "primary");
+                    color: map_get($theme-colors, 'primary');
                     
                     // color: $white !important;
                 }
@@ -309,7 +309,7 @@
         &:hover {
             // color: $color;
             // text-decoration: none;
-            // background-color: theme-color($key: "primary");
+            // background-color: map_get($theme-colors, 'primary');
             // //color: $color;
             // span:first-child {
             //     color: $color; 
@@ -335,12 +335,12 @@
             }
             span:first-child {
                 padding-right: 10px;
-                color: theme-color($key: "primary"); 
+                color: map_get($theme-colors, 'primary'); 
             } // All levels of nav
             &:hover {
                 color: $body-bg;
                 text-decoration: none;
-                background-color: theme-color($key: "primary");
+                background-color: map_get($theme-colors, 'primary');
                 //color: $color;
                 span:first-child {
                     // color: $color; 

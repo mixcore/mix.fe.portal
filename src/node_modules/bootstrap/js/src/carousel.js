@@ -1,12 +1,27 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.5.3): carousel.js
+ * Bootstrap (v5.0.0-beta1): carousel.js
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
-import $ from 'jquery'
-import Util from './util'
+import {
+  getjQuery,
+  onDOMContentLoaded,
+  TRANSITION_END,
+  emulateTransitionEnd,
+  getElementFromSelector,
+  getTransitionDurationFromElement,
+  isVisible,
+  reflow,
+  triggerTransitionEnd,
+  typeCheckConfig
+} from './util/index'
+import Data from './dom/data'
+import EventHandler from './dom/event-handler'
+import Manipulator from './dom/manipulator'
+import SelectorEngine from './dom/selector-engine'
+import BaseComponent from './base-component'
 
 /**
  * ------------------------------------------------------------------------
@@ -15,13 +30,12 @@ import Util from './util'
  */
 
 const NAME = 'carousel'
-const VERSION = '4.5.3'
 const DATA_KEY = 'bs.carousel'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
-const JQUERY_NO_CONFLICT = $.fn[NAME]
-const ARROW_LEFT_KEYCODE = 37 // KeyboardEvent.which value for left arrow key
-const ARROW_RIGHT_KEYCODE = 39 // KeyboardEvent.which value for right arrow key
+
+const ARROW_LEFT_KEY = 'ArrowLeft'
+const ARROW_RIGHT_KEY = 'ArrowRight'
 const TOUCHEVENT_COMPAT_WAIT = 500 // Time for mouse compat events to fire after touch
 const SWIPE_THRESHOLD = 40
 
@@ -65,8 +79,8 @@ const EVENT_CLICK_DATA_API = `click${EVENT_KEY}${DATA_API_KEY}`
 const CLASS_NAME_CAROUSEL = 'carousel'
 const CLASS_NAME_ACTIVE = 'active'
 const CLASS_NAME_SLIDE = 'slide'
-const CLASS_NAME_RIGHT = 'carousel-item-right'
-const CLASS_NAME_LEFT = 'carousel-item-left'
+const CLASS_NAME_END = 'carousel-item-end'
+const CLASS_NAME_START = 'carousel-item-start'
 const CLASS_NAME_NEXT = 'carousel-item-next'
 const CLASS_NAME_PREV = 'carousel-item-prev'
 const CLASS_NAME_POINTER_EVENT = 'pointer-event'
@@ -77,8 +91,8 @@ const SELECTOR_ITEM = '.carousel-item'
 const SELECTOR_ITEM_IMG = '.carousel-item img'
 const SELECTOR_NEXT_PREV = '.carousel-item-next, .carousel-item-prev'
 const SELECTOR_INDICATORS = '.carousel-indicators'
-const SELECTOR_DATA_SLIDE = '[data-slide], [data-slide-to]'
-const SELECTOR_DATA_RIDE = '[data-ride="carousel"]'
+const SELECTOR_DATA_SLIDE = '[data-bs-slide], [data-bs-slide-to]'
+const SELECTOR_DATA_RIDE = '[data-bs-ride="carousel"]'
 
 const PointerType = {
   TOUCH: 'touch',
@@ -90,8 +104,10 @@ const PointerType = {
  * Class Definition
  * ------------------------------------------------------------------------
  */
-class Carousel {
+class Carousel extends BaseComponent {
   constructor(element, config) {
+    super(element)
+
     this._items = null
     this._interval = null
     this._activeElement = null
@@ -102,22 +118,21 @@ class Carousel {
     this.touchDeltaX = 0
 
     this._config = this._getConfig(config)
-    this._element = element
-    this._indicatorsElement = this._element.querySelector(SELECTOR_INDICATORS)
+    this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element)
     this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0
-    this._pointerEvent = Boolean(window.PointerEvent || window.MSPointerEvent)
+    this._pointerEvent = Boolean(window.PointerEvent)
 
     this._addEventListeners()
   }
 
   // Getters
 
-  static get VERSION() {
-    return VERSION
-  }
-
   static get Default() {
     return Default
+  }
+
+  static get DATA_KEY() {
+    return DATA_KEY
   }
 
   // Public
@@ -129,11 +144,9 @@ class Carousel {
   }
 
   nextWhenVisible() {
-    const $element = $(this._element)
     // Don't call next when the page isn't visible
     // or the carousel or its parent isn't visible
-    if (!document.hidden &&
-      ($element.is(':visible') && $element.css('visibility') !== 'hidden')) {
+    if (!document.hidden && isVisible(this._element)) {
       this.next()
     }
   }
@@ -149,8 +162,8 @@ class Carousel {
       this._isPaused = true
     }
 
-    if (this._element.querySelector(SELECTOR_NEXT_PREV)) {
-      Util.triggerTransitionEnd(this._element)
+    if (SelectorEngine.findOne(SELECTOR_NEXT_PREV, this._element)) {
+      triggerTransitionEnd(this._element)
       this.cycle(true)
     }
 
@@ -168,7 +181,9 @@ class Carousel {
       this._interval = null
     }
 
-    if (this._config.interval && !this._isPaused) {
+    if (this._config && this._config.interval && !this._isPaused) {
+      this._updateInterval()
+
       this._interval = setInterval(
         (document.visibilityState ? this.nextWhenVisible : this.next).bind(this),
         this._config.interval
@@ -177,8 +192,7 @@ class Carousel {
   }
 
   to(index) {
-    this._activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM)
-
+    this._activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element)
     const activeIndex = this._getItemIndex(this._activeElement)
 
     if (index > this._items.length - 1 || index < 0) {
@@ -186,7 +200,7 @@ class Carousel {
     }
 
     if (this._isSliding) {
-      $(this._element).one(EVENT_SLID, () => this.to(index))
+      EventHandler.one(this._element, EVENT_SLID, () => this.to(index))
       return
     }
 
@@ -204,12 +218,11 @@ class Carousel {
   }
 
   dispose() {
-    $(this._element).off(EVENT_KEY)
-    $.removeData(this._element, DATA_KEY)
+    super.dispose()
+    EventHandler.off(this._element, EVENT_KEY)
 
     this._items = null
     this._config = null
-    this._element = null
     this._interval = null
     this._isPaused = null
     this._isSliding = null
@@ -224,7 +237,7 @@ class Carousel {
       ...Default,
       ...config
     }
-    Util.typeCheckConfig(NAME, config, DefaultType)
+    typeCheckConfig(NAME, config, DefaultType)
     return config
   }
 
@@ -252,45 +265,40 @@ class Carousel {
 
   _addEventListeners() {
     if (this._config.keyboard) {
-      $(this._element).on(EVENT_KEYDOWN, event => this._keydown(event))
+      EventHandler.on(this._element, EVENT_KEYDOWN, event => this._keydown(event))
     }
 
     if (this._config.pause === 'hover') {
-      $(this._element)
-        .on(EVENT_MOUSEENTER, event => this.pause(event))
-        .on(EVENT_MOUSELEAVE, event => this.cycle(event))
+      EventHandler.on(this._element, EVENT_MOUSEENTER, event => this.pause(event))
+      EventHandler.on(this._element, EVENT_MOUSELEAVE, event => this.cycle(event))
     }
 
-    if (this._config.touch) {
+    if (this._config.touch && this._touchSupported) {
       this._addTouchEventListeners()
     }
   }
 
   _addTouchEventListeners() {
-    if (!this._touchSupported) {
-      return
-    }
-
     const start = event => {
-      if (this._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-        this.touchStartX = event.originalEvent.clientX
+      if (this._pointerEvent && PointerType[event.pointerType.toUpperCase()]) {
+        this.touchStartX = event.clientX
       } else if (!this._pointerEvent) {
-        this.touchStartX = event.originalEvent.touches[0].clientX
+        this.touchStartX = event.touches[0].clientX
       }
     }
 
     const move = event => {
       // ensure swiping with one touch and not pinching
-      if (event.originalEvent.touches && event.originalEvent.touches.length > 1) {
+      if (event.touches && event.touches.length > 1) {
         this.touchDeltaX = 0
       } else {
-        this.touchDeltaX = event.originalEvent.touches[0].clientX - this.touchStartX
+        this.touchDeltaX = event.touches[0].clientX - this.touchStartX
       }
     }
 
     const end = event => {
-      if (this._pointerEvent && PointerType[event.originalEvent.pointerType.toUpperCase()]) {
-        this.touchDeltaX = event.originalEvent.clientX - this.touchStartX
+      if (this._pointerEvent && PointerType[event.pointerType.toUpperCase()]) {
+        this.touchDeltaX = event.clientX - this.touchStartX
       }
 
       this._handleSwipe()
@@ -312,18 +320,19 @@ class Carousel {
       }
     }
 
-    $(this._element.querySelectorAll(SELECTOR_ITEM_IMG))
-      .on(EVENT_DRAG_START, e => e.preventDefault())
+    SelectorEngine.find(SELECTOR_ITEM_IMG, this._element).forEach(itemImg => {
+      EventHandler.on(itemImg, EVENT_DRAG_START, e => e.preventDefault())
+    })
 
     if (this._pointerEvent) {
-      $(this._element).on(EVENT_POINTERDOWN, event => start(event))
-      $(this._element).on(EVENT_POINTERUP, event => end(event))
+      EventHandler.on(this._element, EVENT_POINTERDOWN, event => start(event))
+      EventHandler.on(this._element, EVENT_POINTERUP, event => end(event))
 
       this._element.classList.add(CLASS_NAME_POINTER_EVENT)
     } else {
-      $(this._element).on(EVENT_TOUCHSTART, event => start(event))
-      $(this._element).on(EVENT_TOUCHMOVE, event => move(event))
-      $(this._element).on(EVENT_TOUCHEND, event => end(event))
+      EventHandler.on(this._element, EVENT_TOUCHSTART, event => start(event))
+      EventHandler.on(this._element, EVENT_TOUCHMOVE, event => move(event))
+      EventHandler.on(this._element, EVENT_TOUCHEND, event => end(event))
     }
   }
 
@@ -332,12 +341,12 @@ class Carousel {
       return
     }
 
-    switch (event.which) {
-      case ARROW_LEFT_KEYCODE:
+    switch (event.key) {
+      case ARROW_LEFT_KEY:
         event.preventDefault()
         this.prev()
         break
-      case ARROW_RIGHT_KEYCODE:
+      case ARROW_RIGHT_KEY:
         event.preventDefault()
         this.next()
         break
@@ -347,8 +356,9 @@ class Carousel {
 
   _getItemIndex(element) {
     this._items = element && element.parentNode ?
-      [].slice.call(element.parentNode.querySelectorAll(SELECTOR_ITEM)) :
+      SelectorEngine.find(SELECTOR_ITEM, element.parentNode) :
       []
+
     return this._items.indexOf(element)
   }
 
@@ -357,8 +367,8 @@ class Carousel {
     const isPrevDirection = direction === DIRECTION_PREV
     const activeIndex = this._getItemIndex(activeElement)
     const lastItemIndex = this._items.length - 1
-    const isGoingToWrap = isPrevDirection && activeIndex === 0 ||
-                            isNextDirection && activeIndex === lastItemIndex
+    const isGoingToWrap = (isPrevDirection && activeIndex === 0) ||
+                            (isNextDirection && activeIndex === lastItemIndex)
 
     if (isGoingToWrap && !this._config.wrap) {
       return activeElement
@@ -368,44 +378,62 @@ class Carousel {
     const itemIndex = (activeIndex + delta) % this._items.length
 
     return itemIndex === -1 ?
-      this._items[this._items.length - 1] : this._items[itemIndex]
+      this._items[this._items.length - 1] :
+      this._items[itemIndex]
   }
 
   _triggerSlideEvent(relatedTarget, eventDirectionName) {
     const targetIndex = this._getItemIndex(relatedTarget)
-    const fromIndex = this._getItemIndex(this._element.querySelector(SELECTOR_ACTIVE_ITEM))
-    const slideEvent = $.Event(EVENT_SLIDE, {
+    const fromIndex = this._getItemIndex(SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element))
+
+    return EventHandler.trigger(this._element, EVENT_SLIDE, {
       relatedTarget,
       direction: eventDirectionName,
       from: fromIndex,
       to: targetIndex
     })
-
-    $(this._element).trigger(slideEvent)
-
-    return slideEvent
   }
 
   _setActiveIndicatorElement(element) {
     if (this._indicatorsElement) {
-      const indicators = [].slice.call(this._indicatorsElement.querySelectorAll(SELECTOR_ACTIVE))
-      $(indicators).removeClass(CLASS_NAME_ACTIVE)
+      const indicators = SelectorEngine.find(SELECTOR_ACTIVE, this._indicatorsElement)
+
+      for (let i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove(CLASS_NAME_ACTIVE)
+      }
 
       const nextIndicator = this._indicatorsElement.children[
         this._getItemIndex(element)
       ]
 
       if (nextIndicator) {
-        $(nextIndicator).addClass(CLASS_NAME_ACTIVE)
+        nextIndicator.classList.add(CLASS_NAME_ACTIVE)
       }
     }
   }
 
+  _updateInterval() {
+    const element = this._activeElement || SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element)
+
+    if (!element) {
+      return
+    }
+
+    const elementInterval = Number.parseInt(element.getAttribute('data-bs-interval'), 10)
+
+    if (elementInterval) {
+      this._config.defaultInterval = this._config.defaultInterval || this._config.interval
+      this._config.interval = elementInterval
+    } else {
+      this._config.interval = this._config.defaultInterval || this._config.interval
+    }
+  }
+
   _slide(direction, element) {
-    const activeElement = this._element.querySelector(SELECTOR_ACTIVE_ITEM)
+    const activeElement = SelectorEngine.findOne(SELECTOR_ACTIVE_ITEM, this._element)
     const activeElementIndex = this._getItemIndex(activeElement)
-    const nextElement = element || activeElement &&
-      this._getItemByDirection(direction, activeElement)
+    const nextElement = element || (activeElement && this._getItemByDirection(direction, activeElement))
+
     const nextElementIndex = this._getItemIndex(nextElement)
     const isCycling = Boolean(this._interval)
 
@@ -414,22 +442,22 @@ class Carousel {
     let eventDirectionName
 
     if (direction === DIRECTION_NEXT) {
-      directionalClassName = CLASS_NAME_LEFT
+      directionalClassName = CLASS_NAME_START
       orderClassName = CLASS_NAME_NEXT
       eventDirectionName = DIRECTION_LEFT
     } else {
-      directionalClassName = CLASS_NAME_RIGHT
+      directionalClassName = CLASS_NAME_END
       orderClassName = CLASS_NAME_PREV
       eventDirectionName = DIRECTION_RIGHT
     }
 
-    if (nextElement && $(nextElement).hasClass(CLASS_NAME_ACTIVE)) {
+    if (nextElement && nextElement.classList.contains(CLASS_NAME_ACTIVE)) {
       this._isSliding = false
       return
     }
 
     const slideEvent = this._triggerSlideEvent(nextElement, eventDirectionName)
-    if (slideEvent.isDefaultPrevented()) {
+    if (slideEvent.defaultPrevented) {
       return
     }
 
@@ -445,51 +473,48 @@ class Carousel {
     }
 
     this._setActiveIndicatorElement(nextElement)
+    this._activeElement = nextElement
 
-    const slidEvent = $.Event(EVENT_SLID, {
-      relatedTarget: nextElement,
-      direction: eventDirectionName,
-      from: activeElementIndex,
-      to: nextElementIndex
-    })
+    if (this._element.classList.contains(CLASS_NAME_SLIDE)) {
+      nextElement.classList.add(orderClassName)
 
-    if ($(this._element).hasClass(CLASS_NAME_SLIDE)) {
-      $(nextElement).addClass(orderClassName)
+      reflow(nextElement)
 
-      Util.reflow(nextElement)
+      activeElement.classList.add(directionalClassName)
+      nextElement.classList.add(directionalClassName)
 
-      $(activeElement).addClass(directionalClassName)
-      $(nextElement).addClass(directionalClassName)
+      const transitionDuration = getTransitionDurationFromElement(activeElement)
 
-      const nextElementInterval = parseInt(nextElement.getAttribute('data-interval'), 10)
-      if (nextElementInterval) {
-        this._config.defaultInterval = this._config.defaultInterval || this._config.interval
-        this._config.interval = nextElementInterval
-      } else {
-        this._config.interval = this._config.defaultInterval || this._config.interval
-      }
+      EventHandler.one(activeElement, TRANSITION_END, () => {
+        nextElement.classList.remove(directionalClassName, orderClassName)
+        nextElement.classList.add(CLASS_NAME_ACTIVE)
 
-      const transitionDuration = Util.getTransitionDurationFromElement(activeElement)
+        activeElement.classList.remove(CLASS_NAME_ACTIVE, orderClassName, directionalClassName)
 
-      $(activeElement)
-        .one(Util.TRANSITION_END, () => {
-          $(nextElement)
-            .removeClass(`${directionalClassName} ${orderClassName}`)
-            .addClass(CLASS_NAME_ACTIVE)
+        this._isSliding = false
 
-          $(activeElement).removeClass(`${CLASS_NAME_ACTIVE} ${orderClassName} ${directionalClassName}`)
+        setTimeout(() => {
+          EventHandler.trigger(this._element, EVENT_SLID, {
+            relatedTarget: nextElement,
+            direction: eventDirectionName,
+            from: activeElementIndex,
+            to: nextElementIndex
+          })
+        }, 0)
+      })
 
-          this._isSliding = false
-
-          setTimeout(() => $(this._element).trigger(slidEvent), 0)
-        })
-        .emulateTransitionEnd(transitionDuration)
+      emulateTransitionEnd(activeElement, transitionDuration)
     } else {
-      $(activeElement).removeClass(CLASS_NAME_ACTIVE)
-      $(nextElement).addClass(CLASS_NAME_ACTIVE)
+      activeElement.classList.remove(CLASS_NAME_ACTIVE)
+      nextElement.classList.add(CLASS_NAME_ACTIVE)
 
       this._isSliding = false
-      $(this._element).trigger(slidEvent)
+      EventHandler.trigger(this._element, EVENT_SLID, {
+        relatedTarget: nextElement,
+        direction: eventDirectionName,
+        from: activeElementIndex,
+        to: nextElementIndex
+      })
     }
 
     if (isCycling) {
@@ -499,70 +524,67 @@ class Carousel {
 
   // Static
 
-  static _jQueryInterface(config) {
+  static carouselInterface(element, config) {
+    let data = Data.getData(element, DATA_KEY)
+    let _config = {
+      ...Default,
+      ...Manipulator.getDataAttributes(element)
+    }
+
+    if (typeof config === 'object') {
+      _config = {
+        ..._config,
+        ...config
+      }
+    }
+
+    const action = typeof config === 'string' ? config : _config.slide
+
+    if (!data) {
+      data = new Carousel(element, _config)
+    }
+
+    if (typeof config === 'number') {
+      data.to(config)
+    } else if (typeof action === 'string') {
+      if (typeof data[action] === 'undefined') {
+        throw new TypeError(`No method named "${action}"`)
+      }
+
+      data[action]()
+    } else if (_config.interval && _config.ride) {
+      data.pause()
+      data.cycle()
+    }
+  }
+
+  static jQueryInterface(config) {
     return this.each(function () {
-      let data = $(this).data(DATA_KEY)
-      let _config = {
-        ...Default,
-        ...$(this).data()
-      }
-
-      if (typeof config === 'object') {
-        _config = {
-          ..._config,
-          ...config
-        }
-      }
-
-      const action = typeof config === 'string' ? config : _config.slide
-
-      if (!data) {
-        data = new Carousel(this, _config)
-        $(this).data(DATA_KEY, data)
-      }
-
-      if (typeof config === 'number') {
-        data.to(config)
-      } else if (typeof action === 'string') {
-        if (typeof data[action] === 'undefined') {
-          throw new TypeError(`No method named "${action}"`)
-        }
-
-        data[action]()
-      } else if (_config.interval && _config.ride) {
-        data.pause()
-        data.cycle()
-      }
+      Carousel.carouselInterface(this, config)
     })
   }
 
-  static _dataApiClickHandler(event) {
-    const selector = Util.getSelectorFromElement(this)
+  static dataApiClickHandler(event) {
+    const target = getElementFromSelector(this)
 
-    if (!selector) {
-      return
-    }
-
-    const target = $(selector)[0]
-
-    if (!target || !$(target).hasClass(CLASS_NAME_CAROUSEL)) {
+    if (!target || !target.classList.contains(CLASS_NAME_CAROUSEL)) {
       return
     }
 
     const config = {
-      ...$(target).data(),
-      ...$(this).data()
+      ...Manipulator.getDataAttributes(target),
+      ...Manipulator.getDataAttributes(this)
     }
-    const slideIndex = this.getAttribute('data-slide-to')
+    const slideIndex = this.getAttribute('data-bs-slide-to')
 
     if (slideIndex) {
       config.interval = false
     }
 
-    Carousel._jQueryInterface.call($(target), config)
+    Carousel.carouselInterface(target, config)
 
     if (slideIndex) {
-      $(target).data(DATA_KEY).to(slideIndex)
+      Data.getData(target, DATA_KEY).to(slideIndex)
     }
 
     event.preventDefault()
@@ -575,13 +597,13 @@ class Carousel {
  * ------------------------------------------------------------------------
  */
 
-$(document).on(EVENT_CLICK_DATA_API, SELECTOR_DATA_SLIDE, Carousel._dataApiClickHandler)
+EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_SLIDE, Carousel.dataApiClickHandler)
 
-$(window).on(EVENT_LOAD_DATA_API, () => {
-  const carousels = [].slice.call(document.querySelectorAll(SELECTOR_DATA_RIDE))
+EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
+  const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE)
+
   for (let i = 0, len = carousels.length; i < len; i++) {
-    const $carousel = $(carousels[i])
-    Carousel._jQueryInterface.call($carousel, $carousel.data())
+    Carousel.carouselInterface(carousels[i], Data.getData(carousels[i], DATA_KEY))
   }
 })
 
@@ -589,13 +611,21 @@ $(window).on(EVENT_LOAD_DATA_API, () => {
  * ------------------------------------------------------------------------
  * jQuery
  * ------------------------------------------------------------------------
+ * add .Carousel to jQuery only if jQuery is present
  */
 
-$.fn[NAME] = Carousel._jQueryInterface
-$.fn[NAME].Constructor = Carousel
-$.fn[NAME].noConflict = () => {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return Carousel._jQueryInterface
-}
+onDOMContentLoaded(() => {
+  const $ = getjQuery()
+  /* istanbul ignore if */
+  if ($) {
+    const JQUERY_NO_CONFLICT = $.fn[NAME]
+    $.fn[NAME] = Carousel.jQueryInterface
+    $.fn[NAME].Constructor = Carousel
+    $.fn[NAME].noConflict = () => {
+      $.fn[NAME] = JQUERY_NO_CONFLICT
+      return Carousel.jQueryInterface
+    }
+  }
+})
 
 export default Carousel

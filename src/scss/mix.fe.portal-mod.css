@@ -11444,7 +11444,7 @@ body {
   body {
     display: -ms-grid;
     display: grid;
-    gap: 1rem;
+    gap: 5rem;
     -ms-grid-columns: 1fr 5fr;
         grid-template-columns: 1fr 5fr;
     -ms-grid-rows: auto;
@@ -11465,8 +11465,8 @@ body {
   .bd-aside,
   .bd-cheatsheet {
     padding-top: 4rem;
-    -ms-grid-columns: 3fr 1fr;
-        grid-template-columns: 3fr 1fr;
+    -ms-grid-columns: 5fr 2fr;
+        grid-template-columns: 5fr 2fr;
   }
   /**
      * 1. Too bad only Firefox supports subgrids ATM
@@ -11475,8 +11475,7 @@ body {
   .bd-cheatsheet article {
     display: inherit;
     /* 1 */
-    gap: inherit;
-    /* 1 */
+    gap: 5rem;
   }
   .bd-aside {
     -ms-grid-row: 1;

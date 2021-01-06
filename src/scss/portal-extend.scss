@@ -1,14 +1,21 @@
 .main-sidebar{
   width: 15%;
 }
+.content-body
+{
+  width: 100%;
+}
 .sub-sidebar{
-  width: 60%;
+  width: 35%;
 }
  
  
  .bd-navbar {
   padding: .75rem 0;
-  background-color: #7952b3
+  // background-color: #7952b3
+  background-color: rgba(255,255,255,0.95);
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.05), inset 0 -1px 0 rgba(0,0,0,0.15);
+  z-index: 9999;
 }
 
 .bd-navbar .navbar-toggler {
@@ -350,18 +357,18 @@
   }
 }
 
-.bd-links a {
-  padding: .1875rem .5rem;
-  margin-top: .125rem;
-  margin-left: 1.25rem;
-  color: rgba(0,0,0,0.65);
-  text-decoration: none
-}
+// .bd-links a {
+//   padding: .1875rem .5rem;
+//   margin-top: .125rem;
+//   margin-left: 1.25rem;
+//   color: rgba(0,0,0,0.65);
+//   text-decoration: none
+// }
 
-.bd-links a:hover,.bd-links a:focus {
-  color: rgba(0,0,0,0.85);
-  background-color: rgba(121,82,179,0.1)
-}
+// .bd-links a:hover,.bd-links a:focus {
+//   color: rgba(0,0,0,0.85);
+//   background-color: rgba(121,82,179,0.1)
+// }
 
 // .bd-links .btn {
 //   padding: .25rem .5rem;
